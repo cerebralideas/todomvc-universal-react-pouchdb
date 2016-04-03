@@ -20,7 +20,7 @@
   },
   "scripts": {
     "transpile": "tsc",
-    "bundle": "tsc --jsx react -m system --outFile ./js/ts-bundle.js ./js/app.tsx",
+    "bundle": "tsc --watch --jsx react -m system --outFile ./bundle.js ./index.tsx",
     "lint": "tslint {lib,tests}/*.ts index.ts -r node_modules/tslint-microsoft-contrib",
     "stylecheck": "jscs {lib,tests}/*.js",
     "test": "tape tests/**/*.test.js",
@@ -30,15 +30,20 @@
   },
   "config": {
     "ghooks": {
-      "pre-commit": "npm run dev",
-      "pre-push": "npm run build"
+      "pre-commit": "",
+      "pre-push": ""
     }
   },
   "dependencies": {
-    "director": "^1.2.0",
-    "react": "^0.13.3",
-    "todomvc-app-css": "^2.0.0",
-    "todomvc-common": "^1.0.1"
+    "babel-polyfill": "^6.3.14",
+    "classnames": "^2.1.2",
+    "lodash": "^4.7.0",
+    "page": "^1.7.1",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.2.1",
+    "redux": "^3.2.1",
+    "todomvc-app-css": "^2.0.0"
   },
   "devDependencies": {
     "commonweb-setup": "^0.3.2",

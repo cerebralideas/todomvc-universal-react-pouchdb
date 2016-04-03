@@ -5,27 +5,38 @@
 		<title>React • TodoMVC</title>
 		<link rel="stylesheet" href="node_modules/todomvc-common/base.css">
 		<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css">
+		<base href="/todoapp/" >
 	</head>
 	<body>
-		<section class="todoapp"></section>
+		<section class="todoapp" id="root"></section>
 		<footer class="info">
 			<p>Double-click to edit a todo</p>
 			<p>Created by <a href="http://github.com/remojansen/">Remo H. Jansen</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.25/system.js"></script>
-		<script type="text/javascript" src="node_modules/react/dist/react-with-addons.js"></script>
-		<script type="text/javascript" src="node_modules/classnames/index.js"></script>
-		<script type="text/javascript" src="node_modules/director/build/director.js"></script>
-		<script type="text/javascript" src="js/ts-bundle.js"></script>
+		<script type="text/javascript" src="node_modules/babel-polyfill/dist/polyfill.js"></script>
+		<script type="text/javascript" src="bundle.js"></script>
 
 		<script>
 			// set our baseURL reference path
 			System.config({
-				baseURL: '/todoapp'
+				baseURL: '/todoapp',
+				map: {
+					'lodash': 'node_modules/lodash/lodash.js',
+					'page': 'node_modules/page/index.js',
+					'path-to-regexp': 'node_modules/page/node_modules/path-to-regexp/index.js',
+					'isarray': 'node_modules/page/node_modules/path-to-regexp/node_modules/isarray/index.js',
+					'react': 'node_modules/react/dist/react-with-addons.js',
+					'react-dom': 'node_modules/react-dom/dist/react-dom.js',
+					'redux': 'node_modules/redux/dist/redux.js',
+					'react-redux': 'node_modules/react-redux/dist/react-redux.js',
+					'classnames': 'node_modules/classnames/index.js'
+				}
 			});
 
-			System.import('app');
+			System.import('index');
+
 		</script>
 	</body>
 </html>
