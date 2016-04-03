@@ -2,11 +2,13 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
+.idea/
 *.iml
 out
 gen
 # Created by .ignore support plugin (hsz.mobi)
 
 .DS_Store
-node_modules
+node_modules/
+users/
+system

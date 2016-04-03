@@ -624,10 +624,18 @@ System.register("client", ['react', 'react-dom', 'react-redux', "containers/App"
             }],
         execute: function() {
             store = configureStore_1["default"]();
-            page_1["default"]('/', function () { store.dispatch({ type: 'SHOW_ALL' }); });
-            page_1["default"]('/show_all', function () { store.dispatch({ type: 'SHOW_ALL' }); });
-            page_1["default"]('/show_active', function () { store.dispatch({ type: 'SHOW_ACTIVE' }); });
-            page_1["default"]('/show_completed', function () { store.dispatch({ type: 'SHOW_COMPLETED' }); });
+            page_1["default"]('/', function () {
+                store.dispatch({ type: 'SHOW_ALL' });
+            });
+            page_1["default"]('/show_all', function () {
+                store.dispatch({ type: 'SHOW_ALL' });
+            });
+            page_1["default"]('/show_active', function () {
+                store.dispatch({ type: 'SHOW_ACTIVE' });
+            });
+            page_1["default"]('/show_completed', function () {
+                store.dispatch({ type: 'SHOW_COMPLETED' });
+            });
             page_1["default"]();
             react_dom_1.render(React.createElement(react_redux_2.Provider, {store: store}, React.createElement(App_1["default"], null)), document.getElementById('root'));
         }

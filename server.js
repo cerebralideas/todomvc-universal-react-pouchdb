@@ -4,49 +4,74 @@ var path_1 = require('path');
 var express = require('express');
 var ReactEngine = require('react-engine');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var multer = require('multer');
+var PouchDB = require('pouchdb');
 var configureStore_1 = require('./store/configureStore');
 var app = express();
-var store = configureStore_1.default();
+var db = new PouchDB('users');
 require('babel-register')({
     presets: ['es2015', 'react']
 });
 var engine = ReactEngine.server.create({
     routesFilePath: path_1.join(__dirname, '/public/routes.jsx'),
-    performanceCollector: function (stats) {
-        console.log(stats);
-    }
+    performanceCollector: function (stats) { }
 });
 var upload = multer();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.engine('.js', engine);
 app.set('views', path_1.join(__dirname, '/components'));
 app.set('view engine', 'js');
 app.set('view', ReactEngine.expressView);
 app.use(express.static(path_1.join(__dirname, '/')));
-console.log(__dirname);
+function dbGet(req, res, configureStore, callback) {
+    var filter = req.params.filter && req.params.filter.toUpperCase() || 'SHOW_ALL';
+    db.get(req.ip, function (err, doc) {
+        var store = configureStore(doc.store);
+        store.dispatch({ type: filter });
+        var model = {
+            _id: doc._id,
+            _rev: doc._rev,
+            store: store.getState()
+        };
+        db.put(model, function (err, doc) {
+            callback(req, res, model.store);
+        });
+    });
+}
+function dbPut(req, res, store, callback) {
+    var filter = req.query.filter && req.query.filter.toUpperCase() || 'SHOW_ALL';
+    db.get(req.ip, function (err, doc) {
+        var store = configureStore_1.default(doc.store);
+        store.dispatch({ type: filter });
+        store.dispatch({ type: 'ADD_TODO', text: req.body.todo });
+        var model = {
+            _id: doc._id,
+            _rev: doc._rev,
+            store: store.getState()
+        };
+        db.put(model, function (err, doc) {
+            console.log(model.store);
+            callback(req, res, model.store);
+        });
+    });
+}
 app.get('/', function (req, res) {
-    store.dispatch({ type: 'SHOW_ALL' });
-    res.render('Layout', store.getState());
+    dbGet(req, res, configureStore_1.default, function (req, res, model) {
+        res.render('Layout', model);
+    });
 });
-app.get('/show_all', function (req, res) {
-    store.dispatch({ type: 'SHOW_ALL' });
-    res.render('Layout', store.getState());
-});
-app.get('/show_active', function (req, res) {
-    store.dispatch({ type: 'SHOW_ACTIVE' });
-    res.render('Layout', store.getState());
-});
-app.get('/show_completed', function (req, res) {
-    store.dispatch({ type: 'SHOW_COMPLETED' });
-    res.render('Layout', store.getState());
+app.get('/:filter', function (req, res) {
+    dbGet(req, res, configureStore_1.default, function (req, res, model) {
+        res.render('Layout', model);
+    });
 });
 app.post('/todos', function (req, res) {
-    console.log('####### req.body ', req.body);
-    store.dispatch({ type: req.query.filter.toUpperCase() });
-    store.dispatch({ type: 'ADD_TODO', text: req.body.todo });
-    res.redirect('/' + req.query.filter);
+    dbPut(req, res, configureStore_1.default, function (req, res, model) {
+        res.redirect('/' + req.query.filter);
+    });
 });
 app.use(function (err, req, res, next) {
     console.error(err);

@@ -22,12 +22,14 @@ import * as express from 'express';
 import * as favicon from 'serve-favicon';
 import * as ReactEngine from 'react-engine';
 import * as bodyParser from 'body-parser';
+import * as cookieParser from 'cookie-parser';
 import * as multer from 'multer';
+
+import * as PouchDB from 'pouchdb';
 import configureStore from './store/configureStore';
 
 let app = express();
-
-let store = configureStore();
+let db = new PouchDB('users');
 
 require('babel-register')({
 	presets: ['es2015', 'react']
@@ -36,15 +38,14 @@ require('babel-register')({
 // create the view engine with `react-engine`
 let engine = ReactEngine.server.create({
 	routesFilePath: join(__dirname, '/public/routes.jsx'),
-	performanceCollector: function(stats) {
-		console.log(stats);
-	}
+	performanceCollector: function(stats) {}
 });
 
 let upload = multer(); // for parsing multipart/form-data
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
+app.use(cookieParser()); // for parsing cookies
 
 // set the engine
 app.engine('.js', engine);
@@ -61,32 +62,62 @@ app.set('view', ReactEngine.expressView);
 // expose public folder as static assets
 app.use(express.static(join(__dirname, '/')));
 
-console.log(__dirname);
-
 // app.use(favicon(join(__dirname, '/public/favicon.ico')));
 
-// add our app routes
+// Database GET
+function dbGet(req, res, configureStore, callback) {
+	let filter = req.params.filter && req.params.filter.toUpperCase() || 'SHOW_ALL';
+
+	db.get(req.ip, function (err: any, doc: any) {
+		let store = configureStore(doc.store);
+		store.dispatch({ type: filter });
+		
+		let model = {
+			_id: doc._id,
+			_rev: doc._rev,
+			store: store.getState()
+		};
+		db.put(model, function (err: any, doc: any) {
+			callback(req, res, model.store);
+		});
+	});
+}
+// Database PUT
+function dbPut(req, res, store, callback) {
+	let filter = req.query.filter && req.query.filter.toUpperCase() || 'SHOW_ALL';
+
+	db.get(req.ip, function (err: any, doc: any) {
+		let store = configureStore(doc.store);
+		store.dispatch({ type: filter });
+		store.dispatch({ type: 'ADD_TODO', text: req.body.todo });
+		
+		let model = {
+			_id: doc._id,
+			_rev: doc._rev,
+			store: store.getState()
+		};
+		db.put(model, function (err: any, doc: any) {
+			console.log(model.store);
+			callback(req, res, model.store);
+		});
+	});
+}
+
+// Routes
 app.get('/', function(req, res) {
-	store.dispatch({ type: 'SHOW_ALL' });
-	res.render('Layout', store.getState());
+	dbGet(req, res, configureStore, function (req, res, model) {
+		res.render('Layout', model);
+	});
 });
-app.get('/show_all', function(req, res) {
-	store.dispatch({ type: 'SHOW_ALL' });
-	res.render('Layout', store.getState());
-});
-app.get('/show_active', function(req, res) {
-	store.dispatch({ type: 'SHOW_ACTIVE' });
-	res.render('Layout', store.getState());
-});
-app.get('/show_completed', function(req, res) {
-	store.dispatch({ type: 'SHOW_COMPLETED' });
-	res.render('Layout', store.getState());
+app.get('/:filter', function(req, res) {
+	dbGet(req, res, configureStore, function (req, res, model) {
+		res.render('Layout', model);
+	});
 });
 app.post('/todos', function(req, res) {
-	console.log('####### req.body ', req.body);
-	store.dispatch({ type: req.query.filter.toUpperCase() });
-	store.dispatch({ type: 'ADD_TODO', text: req.body.todo });
-	res.redirect('/' + req.query.filter);
+	dbPut(req, res, configureStore, function (req, res, model) {
+		res.redirect('/' + req.query.filter);
+	});
 });
 
 app.use(function(err: any, req: any, res: any, next: any) {
