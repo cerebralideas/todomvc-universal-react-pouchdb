@@ -18,7 +18,7 @@ var App = (function (_super) {
     }
     App.prototype.render = function () {
         var _a = this.props, todos = _a.todos, actions = _a.actions, filter = _a.filter;
-        return (React.createElement("div", null, React.createElement(Header_1.default, {addTodo: actions.addTodo}), React.createElement(MainSection_1.default, {todos: todos, filter: filter, actions: actions})));
+        return (React.createElement("div", null, React.createElement(Header_1.default, {addTodo: actions.addTodo, filter: filter}), React.createElement(MainSection_1.default, {todos: todos, filter: filter, actions: actions})));
     };
     App.propTypes = {
         todos: react_1.PropTypes.array.isRequired,

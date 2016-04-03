@@ -67,13 +67,13 @@ class MainSection extends Component<Props, {}> {
 				todo.completed ? count + 1 : count,
 				0
 		);
-
+		
 		return (
 			<section className="main">
 				{this.renderToggleAll(completedCount)}
 				<ul className="todo-list">
 					{filteredTodos.map(todo =>
-						<TodoItem key={ todo.id } todo={ todo } { ...actions } />
+						<TodoItem key={ todo.id } todo={ todo } filter={ filter } { ...actions } />
 					)}
 				</ul>
 				{this.renderFooter(completedCount)}

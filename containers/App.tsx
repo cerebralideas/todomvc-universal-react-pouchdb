@@ -31,7 +31,7 @@ class App extends Component<Props, State> {
 		const { todos, actions, filter } = this.props;
 		return (
 			<div>
-				<Header addTodo={actions.addTodo}/>
+				<Header addTodo={actions.addTodo} filter={filter} />
 				<MainSection todos={todos} filter={filter} actions={actions}/>
 			</div>
 		);

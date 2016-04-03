@@ -6,7 +6,6 @@ var App_1 = require('./containers/App');
 var configureStore_1 = require('./store/configureStore');
 var page_1 = require('page');
 var store = configureStore_1.default();
-page_1.default.base('/todoapp');
 page_1.default('/', function () { store.dispatch({ type: 'SHOW_ALL' }); });
 page_1.default('/show_all', function () { store.dispatch({ type: 'SHOW_ALL' }); });
 page_1.default('/show_active', function () { store.dispatch({ type: 'SHOW_ACTIVE' }); });

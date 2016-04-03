@@ -1,5 +1,7 @@
 /// <reference path="commonweb-setup.d.ts" />
 /// <reference path="page/page.d.ts" />
+/// <reference path="body-parser/body-parser.d.ts" />
+/// <reference path="multer/multer.d.ts" />
 /// <reference path="react/react.d.ts" />
 /// <reference path="react/react-global.d.ts" />
 /// <reference path="redux/redux.d.ts" />

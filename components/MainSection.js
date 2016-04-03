@@ -43,7 +43,7 @@ var MainSection = (function (_super) {
             return todo.completed ? count + 1 : count;
         }, 0);
         return (React.createElement("section", {className: "main"}, this.renderToggleAll(completedCount), React.createElement("ul", {className: "todo-list"}, filteredTodos.map(function (todo) {
-            return React.createElement(TodoItem_1.default, React.__spread({key: todo.id, todo: todo}, actions));
+            return React.createElement(TodoItem_1.default, React.__spread({key: todo.id, todo: todo, filter: filter}, actions));
         })), this.renderFooter(completedCount)));
     };
     MainSection.propTypes = {

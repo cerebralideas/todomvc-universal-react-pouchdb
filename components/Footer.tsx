@@ -2,8 +2,12 @@
 
 import * as React from 'react';
 import { PropTypes, Component } from 'react';
-import classnames from 'classnames';
+import * as classnames from 'classnames';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
+
+if (typeof window === 'object') {
+	classnames = classnames.default;
+}
 
 const FILTER_TITLES = {
 	[SHOW_ALL]: 'All',

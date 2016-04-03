@@ -1,13 +1,18 @@
 import * as React from 'react';
 import { Component, PropTypes } from 'react';
-import classnames from 'classnames';
+import * as classnames from 'classnames';
 import TodoTextInput from './TodoTextInput';
+
+if (typeof window === 'object') {
+	classnames = classnames.default;
+}
 
 interface Props {
 	todo?: any;
 	editTodo?: Function;
 	deleteTodo?: Function;
 	completeTodo?: Function;
+	filter: string;
 }
 interface State {
 	editing?: boolean;
@@ -18,7 +23,8 @@ class TodoItem extends Component<Props, State> {
 		todo: PropTypes.object.isRequired,
 		editTodo: PropTypes.func.isRequired,
 		deleteTodo: PropTypes.func.isRequired,
-		completeTodo: PropTypes.func.isRequired
+		completeTodo: PropTypes.func.isRequired,
+		filter: PropTypes.string.isRequired
 	};
 
 	constructor(props, context) {
@@ -42,12 +48,13 @@ class TodoItem extends Component<Props, State> {
 	}
 
 	render() {
-		const {todo, completeTodo, deleteTodo} = this.props;
-
+		const {todo, completeTodo, deleteTodo, filter } = this.props;
+		
 		let element;
 		if (this.state.editing) {
 			element = (
 				<TodoTextInput text={ todo.text }
+							   filter={ filter }
 							   editing={ this.state.editing }
 							   onSave={ (text) => this.handleSave(todo.id, text) }/>
 			);

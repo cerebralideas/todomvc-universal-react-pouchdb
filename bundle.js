@@ -6,7 +6,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 System.register("components/TodoTextInput", ['react', 'classnames'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var React, react_1, classnames_1;
+    var React, react_1, classnames;
     var TodoTextInput;
     return {
         setters:[
@@ -14,10 +14,13 @@ System.register("components/TodoTextInput", ['react', 'classnames'], function(ex
                 React = React_1;
                 react_1 = React_1;
             },
-            function (classnames_1_1) {
-                classnames_1 = classnames_1_1;
+            function (classnames_1) {
+                classnames = classnames_1;
             }],
         execute: function() {
+            if (typeof window === 'object') {
+                classnames = classnames.default;
+            }
             TodoTextInput = (function (_super) {
                 __extends(TodoTextInput, _super);
                 function TodoTextInput(props, context) {
@@ -44,17 +47,18 @@ System.register("components/TodoTextInput", ['react', 'classnames'], function(ex
                     }
                 };
                 TodoTextInput.prototype.render = function () {
-                    return (React.createElement("input", {className: classnames_1["default"]({
+                    return (React.createElement("form", {action: "/todos?filter=" + this.props.filter, method: "POST", onSubmit: function (e) { return e.preventDefault(); }}, React.createElement("input", {className: classnames({
                         edit: this.props.editing,
                         'new-todo': this.props.newTodo
-                    }), type: "text", placeholder: this.props.placeholder, autoFocus: "true", value: this.state.text, onBlur: this.handleBlur.bind(this), onChange: this.handleChange.bind(this), onKeyDown: this.handleSubmit.bind(this)}));
+                    }), name: "todo", type: "text", placeholder: this.props.placeholder, autoFocus: "true", value: this.state.text, onBlur: this.handleBlur.bind(this), onChange: this.handleChange.bind(this), onKeyDown: this.handleSubmit.bind(this)})));
                 };
                 TodoTextInput.propTypes = {
                     onSave: react_1.PropTypes.func.isRequired,
                     text: react_1.PropTypes.string,
                     placeholder: react_1.PropTypes.string,
                     editing: react_1.PropTypes.bool,
-                    newTodo: react_1.PropTypes.bool
+                    newTodo: react_1.PropTypes.bool,
+                    filter: react_1.PropTypes.string
                 };
                 return TodoTextInput;
             }(react_1.Component));
@@ -88,10 +92,11 @@ System.register("components/Header", ['react', "components/TodoTextInput"], func
                     }
                 };
                 Header.prototype.render = function () {
-                    return (React.createElement("header", {className: "header"}, React.createElement("h1", null, "todos"), React.createElement(TodoTextInput_1["default"], {newTodo: true, onSave: this.handleSave.bind(this), placeholder: "What needs to be done?"})));
+                    return (React.createElement("header", {className: "header"}, React.createElement("h1", null, "todos"), React.createElement(TodoTextInput_1["default"], {newTodo: true, filter: this.props.filter, onSave: this.handleSave.bind(this), placeholder: "What needs to be done?"})));
                 };
                 Header.propTypes = {
-                    addTodo: react_2.PropTypes.func.isRequired
+                    addTodo: react_2.PropTypes.func.isRequired,
+                    filter: react_2.PropTypes.string
                 };
                 return Header;
             }(react_2.Component));
@@ -102,7 +107,7 @@ System.register("components/Header", ['react', "components/TodoTextInput"], func
 System.register("components/TodoItem", ['react', 'classnames', "components/TodoTextInput"], function(exports_3, context_3) {
     "use strict";
     var __moduleName = context_3 && context_3.id;
-    var React, react_3, classnames_2, TodoTextInput_2;
+    var React, react_3, classnames, TodoTextInput_2;
     var TodoItem;
     return {
         setters:[
@@ -110,13 +115,16 @@ System.register("components/TodoItem", ['react', 'classnames', "components/TodoT
                 React = React_3;
                 react_3 = React_3;
             },
-            function (classnames_2_1) {
-                classnames_2 = classnames_2_1;
+            function (classnames_2) {
+                classnames = classnames_2;
             },
             function (TodoTextInput_2_1) {
                 TodoTextInput_2 = TodoTextInput_2_1;
             }],
         execute: function() {
+            if (typeof window === 'object') {
+                classnames = classnames.default;
+            }
             TodoItem = (function (_super) {
                 __extends(TodoItem, _super);
                 function TodoItem(props, context) {
@@ -139,15 +147,15 @@ System.register("components/TodoItem", ['react', 'classnames', "components/TodoT
                 };
                 TodoItem.prototype.render = function () {
                     var _this = this;
-                    var _a = this.props, todo = _a.todo, completeTodo = _a.completeTodo, deleteTodo = _a.deleteTodo;
+                    var _a = this.props, todo = _a.todo, completeTodo = _a.completeTodo, deleteTodo = _a.deleteTodo, filter = _a.filter;
                     var element;
                     if (this.state.editing) {
-                        element = (React.createElement(TodoTextInput_2["default"], {text: todo.text, editing: this.state.editing, onSave: function (text) { return _this.handleSave(todo.id, text); }}));
+                        element = (React.createElement(TodoTextInput_2["default"], {text: todo.text, filter: filter, editing: this.state.editing, onSave: function (text) { return _this.handleSave(todo.id, text); }}));
                     }
                     else {
                         element = (React.createElement("div", {className: "view"}, React.createElement("input", {className: "toggle", type: "checkbox", checked: todo.completed, onChange: function () { return completeTodo(todo.id); }}), React.createElement("label", {onDoubleClick: this.handleDoubleClick.bind(this)}, todo.text), React.createElement("button", {className: "destroy", onClick: function () { return deleteTodo(todo.id); }})));
                     }
-                    return (React.createElement("li", {className: classnames_2["default"]({
+                    return (React.createElement("li", {className: classnames({
                         completed: todo.completed,
                         editing: this.state.editing
                     })}, element));
@@ -156,7 +164,8 @@ System.register("components/TodoItem", ['react', 'classnames', "components/TodoT
                     todo: react_3.PropTypes.object.isRequired,
                     editTodo: react_3.PropTypes.func.isRequired,
                     deleteTodo: react_3.PropTypes.func.isRequired,
-                    completeTodo: react_3.PropTypes.func.isRequired
+                    completeTodo: react_3.PropTypes.func.isRequired,
+                    filter: react_3.PropTypes.string.isRequired
                 };
                 return TodoItem;
             }(react_3.Component));
@@ -181,7 +190,7 @@ System.register("constants/TodoFilters", [], function(exports_4, context_4) {
 System.register("components/Footer", ['react', 'classnames', "constants/TodoFilters"], function(exports_5, context_5) {
     "use strict";
     var __moduleName = context_5 && context_5.id;
-    var React, react_4, classnames_3, TodoFilters_1;
+    var React, react_4, classnames, TodoFilters_1;
     var FILTER_TITLES, Footer;
     return {
         setters:[
@@ -189,13 +198,16 @@ System.register("components/Footer", ['react', 'classnames', "constants/TodoFilt
                 React = React_4;
                 react_4 = React_4;
             },
-            function (classnames_3_1) {
-                classnames_3 = classnames_3_1;
+            function (classnames_3) {
+                classnames = classnames_3;
             },
             function (TodoFilters_1_1) {
                 TodoFilters_1 = TodoFilters_1_1;
             }],
         execute: function() {
+            if (typeof window === 'object') {
+                classnames = classnames.default;
+            }
             FILTER_TITLES = (_a = {},
                 _a[TodoFilters_1.SHOW_ALL] = 'All',
                 _a[TodoFilters_1.SHOW_ACTIVE] = 'Active',
@@ -215,7 +227,7 @@ System.register("components/Footer", ['react', 'classnames', "constants/TodoFilt
                 Footer.prototype.renderFilterLink = function (filter) {
                     var title = FILTER_TITLES[filter];
                     var selectedFilter = this.props.filter;
-                    return (React.createElement("a", {className: classnames_3["default"]({ selected: filter === selectedFilter }), href: filter, style: { cursor: 'pointer' }}, title));
+                    return (React.createElement("a", {className: classnames({ selected: filter === selectedFilter }), href: filter, style: { cursor: 'pointer' }}, title));
                 };
                 Footer.prototype.renderClearButton = function () {
                     var _a = this.props, completedCount = _a.completedCount, onClearCompleted = _a.onClearCompleted;
@@ -297,7 +309,7 @@ System.register("components/MainSection", ['react', "components/TodoItem", "comp
                         return todo.completed ? count + 1 : count;
                     }, 0);
                     return (React.createElement("section", {className: "main"}, this.renderToggleAll(completedCount), React.createElement("ul", {className: "todo-list"}, filteredTodos.map(function (todo) {
-                        return React.createElement(TodoItem_1["default"], React.__spread({key: todo.id, todo: todo}, actions));
+                        return React.createElement(TodoItem_1["default"], React.__spread({key: todo.id, todo: todo, filter: filter}, actions));
                     })), this.renderFooter(completedCount)));
                 };
                 MainSection.propTypes = {
@@ -427,7 +439,7 @@ System.register("containers/App", ['react', 'redux', 'react-redux', "components/
                 }
                 App.prototype.render = function () {
                     var _a = this.props, todos = _a.todos, actions = _a.actions, filter = _a.filter;
-                    return (React.createElement("div", null, React.createElement(Header_1["default"], {addTodo: actions.addTodo}), React.createElement(MainSection_1["default"], {todos: todos, filter: filter, actions: actions})));
+                    return (React.createElement("div", null, React.createElement(Header_1["default"], {addTodo: actions.addTodo, filter: filter}), React.createElement(MainSection_1["default"], {todos: todos, filter: filter, actions: actions})));
                 };
                 App.propTypes = {
                     todos: react_6.PropTypes.array.isRequired,
@@ -565,8 +577,9 @@ System.register("store/configureStore", ['redux', "reducers/index"], function(ex
     "use strict";
     var __moduleName = context_13 && context_13.id;
     var redux_3, index_1;
-    function configureStore() {
-        var store = redux_3.createStore(index_1["default"]);
+    function configureStore(initialState) {
+        if (initialState === void 0) { initialState = {}; }
+        var store = redux_3.createStore(index_1["default"], initialState);
         return store;
     }
     exports_13("default", configureStore);
@@ -584,7 +597,7 @@ System.register("store/configureStore", ['redux', "reducers/index"], function(ex
     var _a, _b;
 });
 /// <reference path="./definitions/tsd.d.ts" />
-System.register("index", ['react', 'react-dom', 'react-redux', "containers/App", "store/configureStore", 'page'], function(exports_14, context_14) {
+System.register("client", ['react', 'react-dom', 'react-redux', "containers/App", "store/configureStore", 'page'], function(exports_14, context_14) {
     "use strict";
     var __moduleName = context_14 && context_14.id;
     var React, react_dom_1, react_redux_2, App_1, configureStore_1, page_1;
@@ -611,7 +624,6 @@ System.register("index", ['react', 'react-dom', 'react-redux', "containers/App",
             }],
         execute: function() {
             store = configureStore_1["default"]();
-            page_1["default"].base('/todoapp');
             page_1["default"]('/', function () { store.dispatch({ type: 'SHOW_ALL' }); });
             page_1["default"]('/show_all', function () { store.dispatch({ type: 'SHOW_ALL' }); });
             page_1["default"]('/show_active', function () { store.dispatch({ type: 'SHOW_ACTIVE' }); });

@@ -6,8 +6,11 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var React = require('react');
 var react_1 = require('react');
-var classnames_1 = require('classnames');
+var classnames = require('classnames');
 var TodoFilters_1 = require('../constants/TodoFilters');
+if (typeof window === 'object') {
+    classnames = classnames.default;
+}
 var FILTER_TITLES = (_a = {},
     _a[TodoFilters_1.SHOW_ALL] = 'All',
     _a[TodoFilters_1.SHOW_ACTIVE] = 'Active',
@@ -27,7 +30,7 @@ var Footer = (function (_super) {
     Footer.prototype.renderFilterLink = function (filter) {
         var title = FILTER_TITLES[filter];
         var selectedFilter = this.props.filter;
-        return (React.createElement("a", {className: classnames_1.default({ selected: filter === selectedFilter }), href: filter, style: { cursor: 'pointer' }}, title));
+        return (React.createElement("a", {className: classnames({ selected: filter === selectedFilter }), href: filter, style: { cursor: 'pointer' }}, title));
     };
     Footer.prototype.renderClearButton = function () {
         var _a = this.props, completedCount = _a.completedCount, onClearCompleted = _a.onClearCompleted;

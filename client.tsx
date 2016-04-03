@@ -9,8 +9,6 @@ import page from 'page';
 
 const store = configureStore();
 
-page.base('/todoapp');
-
 page('/', function () { store.dispatch({ type: 'SHOW_ALL' }) });
 page('/show_all', function () { store.dispatch({ type: 'SHOW_ALL' }) });
 page('/show_active', function () { store.dispatch({ type: 'SHOW_ACTIVE' }) });

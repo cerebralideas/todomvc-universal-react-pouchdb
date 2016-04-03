@@ -6,7 +6,10 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var React = require('react');
 var react_1 = require('react');
-var classnames_1 = require('classnames');
+var classnames = require('classnames');
+if (typeof window === 'object') {
+    classnames = classnames.default;
+}
 var TodoTextInput = (function (_super) {
     __extends(TodoTextInput, _super);
     function TodoTextInput(props, context) {
@@ -33,17 +36,18 @@ var TodoTextInput = (function (_super) {
         }
     };
     TodoTextInput.prototype.render = function () {
-        return (React.createElement("input", {className: classnames_1.default({
+        return (React.createElement("form", {action: "/todos?filter=" + this.props.filter, method: "POST", onSubmit: function (e) { return e.preventDefault(); }}, React.createElement("input", {className: classnames({
             edit: this.props.editing,
             'new-todo': this.props.newTodo
-        }), type: "text", placeholder: this.props.placeholder, autoFocus: "true", value: this.state.text, onBlur: this.handleBlur.bind(this), onChange: this.handleChange.bind(this), onKeyDown: this.handleSubmit.bind(this)}));
+        }), name: "todo", type: "text", placeholder: this.props.placeholder, autoFocus: "true", value: this.state.text, onBlur: this.handleBlur.bind(this), onChange: this.handleChange.bind(this), onKeyDown: this.handleSubmit.bind(this)})));
     };
     TodoTextInput.propTypes = {
         onSave: react_1.PropTypes.func.isRequired,
         text: react_1.PropTypes.string,
         placeholder: react_1.PropTypes.string,
         editing: react_1.PropTypes.bool,
-        newTodo: react_1.PropTypes.bool
+        newTodo: react_1.PropTypes.bool,
+        filter: react_1.PropTypes.string
     };
     return TodoTextInput;
 }(react_1.Component));

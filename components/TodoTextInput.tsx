@@ -1,6 +1,10 @@
 import * as React from 'react';
 import { Component, PropTypes } from 'react';
-import classnames from 'classnames';
+import * as classnames from 'classnames';
+
+if (typeof window === 'object') {
+	classnames = classnames.default;
+}
 
 interface Props {
 	onSave?: Function;
@@ -8,6 +12,7 @@ interface Props {
 	placeholder?: string;
 	editing?: boolean;
 	newTodo?: boolean;
+	filter?: string;
 }
 interface State {
 	text?: string;
@@ -19,9 +24,10 @@ class TodoTextInput extends Component<Props, State> {
 		text: PropTypes.string,
 		placeholder: PropTypes.string,
 		editing: PropTypes.bool,
-		newTodo: PropTypes.bool
+		newTodo: PropTypes.bool,
+		filter: PropTypes.string
 	};
-	
+
 	constructor(props, context) {
 		super(props, context);
 		this.state = {
@@ -51,18 +57,24 @@ class TodoTextInput extends Component<Props, State> {
 
 	render() {
 		return (
-			<input className={
-        classnames({
-          edit: this.props.editing,
-          'new-todo': this.props.newTodo
-        })}
-				   type="text"
-				   placeholder={this.props.placeholder}
-				   autoFocus="true"
-				   value={this.state.text}
-				   onBlur={this.handleBlur.bind(this)}
-				   onChange={this.handleChange.bind(this)}
-				   onKeyDown={this.handleSubmit.bind(this)}/>
+			<form action={"/todos?filter=" + this.props.filter } 
+				  method="POST"
+				  onSubmit={ (e) => e.preventDefault() }>
+				<input className={
+					       classnames({
+						       edit: this.props.editing,
+						       'new-todo': this.props.newTodo
+					       })
+					   }
+					   name="todo"
+					   type="text"
+					   placeholder={this.props.placeholder}
+					   autoFocus="true"
+					   value={this.state.text}
+					   onBlur={this.handleBlur.bind(this)}
+					   onChange={this.handleChange.bind(this)}
+					   onKeyDown={this.handleSubmit.bind(this)}/>
+			</form>
 		);
 	}
 }

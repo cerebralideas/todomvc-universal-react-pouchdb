@@ -6,8 +6,11 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var React = require('react');
 var react_1 = require('react');
-var classnames_1 = require('classnames');
+var classnames = require('classnames');
 var TodoTextInput_1 = require('./TodoTextInput');
+if (typeof window === 'object') {
+    classnames = classnames.default;
+}
 var TodoItem = (function (_super) {
     __extends(TodoItem, _super);
     function TodoItem(props, context) {
@@ -30,15 +33,15 @@ var TodoItem = (function (_super) {
     };
     TodoItem.prototype.render = function () {
         var _this = this;
-        var _a = this.props, todo = _a.todo, completeTodo = _a.completeTodo, deleteTodo = _a.deleteTodo;
+        var _a = this.props, todo = _a.todo, completeTodo = _a.completeTodo, deleteTodo = _a.deleteTodo, filter = _a.filter;
         var element;
         if (this.state.editing) {
-            element = (React.createElement(TodoTextInput_1.default, {text: todo.text, editing: this.state.editing, onSave: function (text) { return _this.handleSave(todo.id, text); }}));
+            element = (React.createElement(TodoTextInput_1.default, {text: todo.text, filter: filter, editing: this.state.editing, onSave: function (text) { return _this.handleSave(todo.id, text); }}));
         }
         else {
             element = (React.createElement("div", {className: "view"}, React.createElement("input", {className: "toggle", type: "checkbox", checked: todo.completed, onChange: function () { return completeTodo(todo.id); }}), React.createElement("label", {onDoubleClick: this.handleDoubleClick.bind(this)}, todo.text), React.createElement("button", {className: "destroy", onClick: function () { return deleteTodo(todo.id); }})));
         }
-        return (React.createElement("li", {className: classnames_1.default({
+        return (React.createElement("li", {className: classnames({
             completed: todo.completed,
             editing: this.state.editing
         })}, element));
@@ -47,7 +50,8 @@ var TodoItem = (function (_super) {
         todo: react_1.PropTypes.object.isRequired,
         editTodo: react_1.PropTypes.func.isRequired,
         deleteTodo: react_1.PropTypes.func.isRequired,
-        completeTodo: react_1.PropTypes.func.isRequired
+        completeTodo: react_1.PropTypes.func.isRequired,
+        filter: react_1.PropTypes.string.isRequired
     };
     return TodoItem;
 }(react_1.Component));
