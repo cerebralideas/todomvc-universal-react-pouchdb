@@ -20,24 +20,43 @@
     <favorites_list name="todoapp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="filter.ts" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/reducers/filter.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.54129034">
+      <split-first>
+        <leaf>
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/index.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="627">
+                  <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="MainSection.tsx" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/components/MainSection.tsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="247">
+                  <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+                  <folding>
+                    <element signature="e#0#31#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/node_modules/commonweb-setup/package.json" />
-        <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/js/hello.js" />
         <option value="$PROJECT_DIR$/js/ts-bundle.js" />
         <option value="$PROJECT_DIR$/js/app.tsx" />
@@ -50,20 +69,24 @@
         <option value="$PROJECT_DIR$/definitions/classnames/classnames.d.ts" />
         <option value="$PROJECT_DIR$/components/TodoItem.tsx" />
         <option value="$PROJECT_DIR$/components/TodoTextInput.tsx" />
-        <option value="$PROJECT_DIR$/definitions/tsd.d.ts" />
         <option value="$PROJECT_DIR$/definitions/page/page.d.ts" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/reducers/filters.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/reducers/index.ts" />
         <option value="$PROJECT_DIR$/containers/App.tsx" />
         <option value="$PROJECT_DIR$/actions/index.ts" />
         <option value="$PROJECT_DIR$/constants/ActionTypes.ts" />
         <option value="$PROJECT_DIR$/index.tsx" />
-        <option value="$PROJECT_DIR$/components/MainSection.tsx" />
         <option value="$PROJECT_DIR$/components/Footer.tsx" />
         <option value="$PROJECT_DIR$/reducers/filter.ts" />
+        <option value="$PROJECT_DIR$/tsconfig.json" />
+        <option value="$PROJECT_DIR$/definitions/tsd.d.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/definitions/serve-favicon/serve-favicon.d.ts" />
+        <option value="$PROJECT_DIR$/definitions/react-engine.d.ts" />
+        <option value="$PROJECT_DIR$/components/MainSection.tsx" />
+        <option value="$PROJECT_DIR$/server.ts" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -122,90 +145,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="store" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reducers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="constants" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="components" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="todoapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="actions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -217,7 +156,7 @@
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="editor.config.accepted" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/jlowery/side-projects/todoapp/components/MainSection.tsx" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/jlowery/side-projects/todoapp/index.html" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../react-redux-workshop 2" />
     <property name="typescript-compiler-editor-notification" value="false" />
   </component>
@@ -283,12 +222,12 @@
       <workItem from="1459180017305" duration="612000" />
       <workItem from="1459215989974" duration="436000" />
       <workItem from="1459616706389" duration="566000" />
-      <workItem from="1459617317594" duration="29512000" />
+      <workItem from="1459617317594" duration="34409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33403000" />
+    <option name="totallyTimeSpent" value="38300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="1173" extended-state="6" />
@@ -332,133 +271,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/actions/index.js" />
-    <entry file="file://$PROJECT_DIR$/server.js" />
-    <entry file="file://$PROJECT_DIR$/actions/index.js" />
-    <entry file="file://$PROJECT_DIR$/js/interfaces.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/commonweb-setup/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding>
-            <marker date="1459617282000" expanded="true" signature="0:2258" placeholder="{&quot;name&quot;: &quot;commonweb-setup&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="158:250" placeholder="{&quot;type&quot;: &quot;git&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="270:434" placeholder="[...]" />
-            <marker date="1459617282000" expanded="true" signature="276:430" placeholder="{&quot;name&quot;: &quot;Team Six&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="455:500" placeholder="{&quot;registry&quot;: &quot;http://npm.paypal.com&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="515:902" placeholder="{&quot;transpile&quot;: &quot;tsc&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="916:1012" placeholder="{...}" />
-            <marker date="1459617282000" expanded="true" signature="932:1008" placeholder="{&quot;pre-commit&quot;: &quot;npm run dev&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1057:1281" placeholder="{&quot;chokidar-cli&quot;: &quot;^1.2.0&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1534:1601" placeholder="{&quot;name&quot;: &quot;kcummings&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1620:1947" placeholder="[...]" />
-            <marker date="1459617282000" expanded="true" signature="1626:1694" placeholder="{&quot;name&quot;: &quot;jlowery&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1700:1773" placeholder="{&quot;name&quot;: &quot;kcummings&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1779:1853" placeholder="{&quot;name&quot;: &quot;bewhite&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1859:1943" placeholder="{&quot;name&quot;: &quot;vbalachandran&quot;...}" />
-            <marker date="1459617282000" expanded="true" signature="1959:2106" placeholder="{&quot;shasum&quot;: &quot;4eded7a5951c359fda087b59440e7339b2aadd0f&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsd.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
-          <folding>
-            <marker date="1459110868000" expanded="true" signature="0:349" placeholder="{&quot;version&quot;: &quot;v4&quot;...}" />
-            <marker date="1459110868000" expanded="true" signature="149:347" placeholder="{...}" />
-            <marker date="1459110868000" expanded="true" signature="175:241" placeholder="{&quot;commit&quot;: &quot;3fc1377ce29dd9670975cb68615edf1b819fc4a5&quot;...}" />
-            <marker date="1459110868000" expanded="true" signature="277:343" placeholder="{&quot;commit&quot;: &quot;14ab703f435375194360cdba3abab61afc879c18&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/commonweb-setup/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="25" selection-start-line="1" selection-start-column="24" selection-end-line="8" selection-end-column="25" />
-          <folding>
-            <marker date="1454359657000" expanded="true" signature="0:233" placeholder="{...}" />
-            <marker date="1454359657000" expanded="true" signature="22:201" placeholder="{&quot;module&quot;: &quot;commonjs&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js.map">
-      <provider editor-type-id="sourcemapFileViewerProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/constants.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/todoItem.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/footer.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/todomvc-common/base.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-798">
-          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/hello.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ts-bundle.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5814">
@@ -527,18 +339,6 @@
         <state relative-caret-position="209">
           <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <marker date="1459618349000" expanded="true" signature="0:435" placeholder="{...}" />
-            <marker date="1459618349000" expanded="true" signature="22:398" placeholder="{&quot;target&quot;: &quot;es5&quot;...}" />
-            <marker date="1459618349000" expanded="true" signature="412:433" placeholder="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,178 +502,6 @@
             <marker date="1459463894000" expanded="true" signature="57718:62740" placeholder="..." />
             <marker date="1459463894000" expanded="true" signature="57868:57906" placeholder="..." />
             <marker date="1459463894000" expanded="true" signature="57995:62738" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1459652306000" expanded="true" signature="60:256" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="358:462" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="498:2839" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="516:729" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="549:632" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="670:728" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="759:2833" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="808:2754" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="915:1099" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1005:1080" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1168:1487" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1264:1469" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1363:1447" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1557:1637" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1705:1852" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1752:1834" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1915:2359" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="1974:2338" placeholder="{&quot;type&quot;: &quot;text&quot;...}" />
-            <marker date="1459652306000" expanded="true" signature="1997:2125" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="2403:2701" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="2951:4341" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3089:4339" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3107:3335" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="3140:3223" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3266:3334" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3365:4333" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3407:4261" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3486:3556" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3619:3755" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3664:3737" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="3811:4096" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="4133:4215" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6935:7545" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6935:7543" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="4637:4961" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="4670:4753" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="4791:4849" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="4892:4960" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6935:7537" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6935:7463" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="5132:5303" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="5222:5284" placeholder="{&quot;editing&quot;: false...}" />
-            <marker date="1459652306000" expanded="true" signature="5371:5444" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="5514:5810" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="5559:5633" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="5659:5737" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6935:7094" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6102:6327" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6353:6816" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6935:7064" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="6936:7062" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="7133:7415" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="7624:8022" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="7752:8020" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="7802:8014" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="9875:11506" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="9875:11492" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="8282:8600" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="8315:8398" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="8436:8494" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="8535:8599" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="9875:11486" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="9875:11414" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="8997:9067" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="9131:9452" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="9875:10024" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="10091:10437" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="10254:10419" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="10493:10969" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="10792:10920" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="11006:11368" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="11662:15423" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="11839:15405" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="11857:12265" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="11890:11973" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12011:12069" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12105:12159" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12200:12264" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12295:15399" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12676:15322" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12779:12922" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="12996:13072" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="13143:13217" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="13301:13648" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="13426:13630" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="13729:14224" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="13940:14206" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="14285:15082" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="14573:14663" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="14873:15024" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="15124:15271" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="15502:16164" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="15671:16146" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="15721:16140" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="16258:17305" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="16370:16430" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="16494:16553" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="16627:16696" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="16764:16825" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="16898:16950" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17024:17079" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17140:17287" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17158:17240" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="17191:17239" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17270:17281" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17472:19480" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17677:17743" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17694:17736" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17786:17892" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17803:17885" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17904:19462" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="17922:18525" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="17955:18038" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18073:18125" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18166:18230" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18266:18320" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18361:18425" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18464:18524" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18555:19456" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18594:19327" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18667:18737" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="18789:19103" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="19137:19284" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="19587:21852" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="19741:21367" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="19828:21361" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="19894:20152" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="19916:20134" placeholder="{&quot;completed&quot;: false...}" />
-            <marker date="1459652306000" expanded="true" signature="20264:20333" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="20427:20595" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="20693:20870" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21061:21159" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21089:21155" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21413:21834" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21431:21604" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="21472:21536" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21564:21603" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21634:21828" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="21663:21817" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="21681:21803" placeholder="{&quot;id&quot;: 0...}" />
-            <marker date="1459652306000" expanded="true" signature="21951:22496" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22081:22478" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22099:22274" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="22134:22186" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22221:22273" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22304:22472" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22356:22413" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22601:23132" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22729:22819" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22874:23114" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="22892:23067" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="22927:22979" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23014:23066" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23097:23108" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="26293:26363" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="26293:26345" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23985:23987" placeholder="[...]" />
-            <marker date="1459652306000" expanded="true" signature="23486:23534" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23573:23633" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23674:23738" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23771:23819" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="23863:23933" placeholder="{...}" />
-            <marker date="1459652306000" expanded="true" signature="26293:26339" placeholder="{...}" />
           </folding>
         </state>
       </provider>
@@ -2945,16 +2573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/definitions/tsd.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <marker date="1459643368000" expanded="true" signature="0:400" placeholder="//..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/definitions/page/page.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -3014,41 +2632,6 @@
             <marker date="1459646160000" expanded="true" signature="850:919" placeholder="{...}" />
             <marker date="1459646160000" expanded="true" signature="939:1008" placeholder="{...}" />
             <marker date="1459646160000" expanded="true" signature="1033:1138" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <marker date="1459646486000" expanded="true" signature="59:1578" placeholder="..." />
-            <marker date="1459646486000" expanded="true" signature="67:303" placeholder="..." />
-            <marker date="1459646486000" expanded="true" signature="311:1570" placeholder="..." />
-            <marker date="1459646486000" expanded="true" signature="383:572" placeholder="..." />
-            <marker date="1459646486000" expanded="true" signature="852:1561" placeholder="..." />
-            <marker date="1459646486000" expanded="true" signature="908:1519" placeholder="{&quot;baseURL&quot;: '/todoapp'...}" />
-            <marker date="1459646486000" expanded="true" signature="944:1514" placeholder="{&quot;lodash&quot;: 'node_modules/lodash/lodash.js'...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/definitions/redux/redux.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-          <folding>
-            <marker date="1459463894000" expanded="false" signature="0:265" placeholder="//..." />
-            <marker date="1459463894000" expanded="true" signature="291:1402" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="339:377" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="418:465" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="507:542" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="571:631" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="662:725" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="769:816" placeholder="..." />
-            <marker date="1459463894000" expanded="true" signature="834:1034" placeholder="{...}" />
-            <marker date="1459463894000" expanded="true" signature="1427:1450" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -3417,32 +3000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
-          <folding>
-            <marker date="1459647918000" expanded="true" signature="0:2640" placeholder="{&quot;name&quot;: &quot;commonweb-setup&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="177:268" placeholder="{&quot;type&quot;: &quot;git&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="288:452" placeholder="[...]" />
-            <marker date="1459647918000" expanded="true" signature="294:448" placeholder="{&quot;name&quot;: &quot;Team Six&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="473:518" placeholder="{&quot;registry&quot;: &quot;http://npm.paypal.com&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="533:1005" placeholder="{&quot;transpile&quot;: &quot;tsc&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="1019:1115" placeholder="{...}" />
-            <marker date="1459647918000" expanded="true" signature="1035:1111" placeholder="{&quot;pre-commit&quot;: &quot;npm run dev&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="1135:1383" placeholder="{&quot;babel-polyfill&quot;: &quot;^6.3.14&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="1406:1663" placeholder="{&quot;commonweb-setup&quot;: &quot;^0.3.2&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="1916:1983" placeholder="{&quot;name&quot;: &quot;kcummings&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="2002:2329" placeholder="[...]" />
-            <marker date="1459647918000" expanded="true" signature="2008:2076" placeholder="{&quot;name&quot;: &quot;jlowery&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="2082:2155" placeholder="{&quot;name&quot;: &quot;kcummings&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="2161:2235" placeholder="{&quot;name&quot;: &quot;bewhite&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="2241:2325" placeholder="{&quot;name&quot;: &quot;vbalachandran&quot;...}" />
-            <marker date="1459647918000" expanded="true" signature="2341:2488" placeholder="{&quot;shasum&quot;: &quot;4eded7a5951c359fda087b59440e7339b2aadd0f&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/TodoItem.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -3495,17 +3052,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <marker date="1459651948000" expanded="true" signature="56:270" placeholder="..." />
-            <marker date="1459651948000" expanded="true" signature="650:700" placeholder="&lt;xml/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/actions/index.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -3554,32 +3100,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/MainSection.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="60" column="5" selection-start-line="60" selection-start-column="5" selection-end-line="60" selection-end-column="5" />
-          <folding>
-            <marker date="1459652147000" expanded="true" signature="7:225" placeholder="..." />
-            <marker date="1459652147000" expanded="true" signature="248:359" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="378:491" placeholder="..." />
-            <marker date="1459652147000" expanded="true" signature="430:488" placeholder="..." />
-            <marker date="1459652147000" expanded="true" signature="543:1958" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="565:684" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="716:745" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="771:813" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="848:1092" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="913:1089" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="931:1079" placeholder="&lt;xml/&gt;" />
-            <marker date="1459652147000" expanded="true" signature="1124:1436" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="1240:1433" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="1258:1423" placeholder="&lt;xml/&gt;" />
-            <marker date="1459652147000" expanded="true" signature="1448:1956" placeholder="{...}" />
-            <marker date="1459652147000" expanded="true" signature="1680:1948" placeholder="&lt;xml/&gt;" />
-            <marker date="1459652147000" expanded="true" signature="1754:1894" placeholder="&lt;xml/&gt;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Footer.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -3617,6 +3137,549 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <marker date="1459652338000" expanded="true" signature="184:380" placeholder="{...}" />
+            <marker date="1459652338000" expanded="true" signature="208:378" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="26" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+          <folding>
+            <marker date="1459651948000" expanded="true" signature="56:270" placeholder="..." />
+            <marker date="1459651948000" expanded="true" signature="650:700" placeholder="&lt;xml/&gt;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <marker date="1459660584000" expanded="false" signature="0:1679" placeholder="/*...*/" />
+            <marker date="1459660584000" expanded="false" signature="1723:1928" placeholder="..." />
+            <marker date="1459660584000" expanded="true" signature="2037:2185" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="2154:2183" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="2660:2712" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="2684:2708" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="2754:3369" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="2857:2884" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="2971:3028" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="3120:3178" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="3186:3367" placeholder="{...}" />
+            <marker date="1459660584000" expanded="true" signature="3192:3317" placeholder="//..." />
+            <marker date="1459660584000" expanded="true" signature="3416:3488" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definitions/redux/redux.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="21" column="24" selection-start-line="0" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <marker date="1459463894000" expanded="false" signature="0:265" placeholder="//..." />
+            <marker date="1459463894000" expanded="true" signature="291:1402" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="339:377" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="418:465" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="507:542" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="571:631" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="662:725" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="769:816" placeholder="..." />
+            <marker date="1459463894000" expanded="true" signature="834:1034" placeholder="{...}" />
+            <marker date="1459463894000" expanded="true" signature="1427:1450" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-engine/lib/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-608">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1459219603000" expanded="true" signature="0:1679" placeholder="/*...*/" />
+            <marker date="1459219603000" expanded="true" signature="2416:2503" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="2519:2667" placeholder="[...]" />
+            <marker date="1459219603000" expanded="true" signature="2765:2949" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2889:2932" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2999:8946" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3106:3149" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3162:3233" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3205:3229" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3758:3901" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3985:8943" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4055:4103" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4134:4660" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4179:4509" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4189:4345" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="4557:4626" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4716:5429" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="5012:5322" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="5022:5290" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="5334:5403" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="5493:5713" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="5501:5639" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="5794:5980" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="6002:6151" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="6018:6145" placeholder="{&quot;view&quot;: null...}" />
+            <marker date="1459219603000" expanded="true" signature="6259:6368" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="6378:8820" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="6406:7962" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="6548:7952" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="6571:6781" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="6809:7151" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="7008:7107" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="7174:7756" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="7365:7630" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="7381:7533" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="7762:7942" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="7974:8814" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="7984:8427" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="8837:8939" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="8846:8909" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-engine/lib/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <marker date="1459219603000" expanded="true" signature="0:1679" placeholder="/*...*/" />
+            <marker date="1459219603000" expanded="true" signature="1987:2074" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="2173:2220" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2259:2443" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2267:2386" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2399:2441" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2445:2518" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="2550:2616" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2700:4699" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2756:2799" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2812:2877" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2849:2873" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3203:4195" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3231:3333" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3488:3623" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="3693:4188" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3702:3846" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="3912:4128" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="3970:4061" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4201:4584" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="4409:4528" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-engine/lib/expressView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-418">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1459219603000" expanded="true" signature="0:1679" placeholder="/*...*/" />
+            <marker date="1459219603000" expanded="true" signature="1978:2324" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2091:2187" placeholder="//..." />
+            <marker date="1459219603000" expanded="true" signature="2249:2287" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2445:2615" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2529:2551" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2557:2613" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2682:2868" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2751:2797" placeholder="{...}" />
+            <marker date="1459219603000" expanded="true" signature="2803:2866" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-engine/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
+          <folding>
+            <marker date="1452535133000" expanded="true" signature="0:1679" placeholder="/*...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/commonweb-setup/definitions/internal/commonweb.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1457024360000" expanded="true" signature="0:68" placeholder="/** @file commonweb - defines the commonweb module interfaces ...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/commonweb-setup/definitions/internal/paypal-infra.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <marker date="1457024360000" expanded="true" signature="0:74" placeholder="/** @file paypal-infra - defines the PayPal Infra module interfaces ...*/" />
+            <marker date="1457024360000" expanded="true" signature="76:106" placeholder="/** @module servicecore ...*/" />
+            <marker date="1457024360000" expanded="true" signature="136:252" placeholder="..." />
+            <marker date="1457024360000" expanded="true" signature="254:291" placeholder="/** @module consumerweb-logger ...*/" />
+            <marker date="1457024360000" expanded="true" signature="328:387" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/commonweb-setup/definitions/internal/griffin.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1454359657000" expanded="true" signature="0:126" placeholder="/** @file griffin - defines the interface for Griffin ...*/" />
+            <marker date="1454359657000" expanded="true" signature="146:196" placeholder="..." />
+            <marker date="1454359657000" expanded="true" signature="159:193" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsd.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1459110868000" expanded="true" signature="0:349" placeholder="{&quot;version&quot;: &quot;v4&quot;...}" />
+            <marker date="1459110868000" expanded="true" signature="149:347" placeholder="{...}" />
+            <marker date="1459110868000" expanded="true" signature="175:241" placeholder="{&quot;commit&quot;: &quot;3fc1377ce29dd9670975cb68615edf1b819fc4a5&quot;...}" />
+            <marker date="1459110868000" expanded="true" signature="277:343" placeholder="{&quot;commit&quot;: &quot;14ab703f435375194360cdba3abab61afc879c18&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+          <folding>
+            <marker date="1459659223000" expanded="true" signature="0:452" placeholder="{...}" />
+            <marker date="1459659223000" expanded="true" signature="22:398" placeholder="{&quot;target&quot;: &quot;es5&quot;...}" />
+            <marker date="1459659223000" expanded="true" signature="412:450" placeholder="[...]" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="31" column="15" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="15" />
+          <folding>
+            <marker date="1459659543000" expanded="true" signature="0:2760" placeholder="{&quot;name&quot;: &quot;commonweb-setup&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="177:268" placeholder="{&quot;type&quot;: &quot;git&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="288:452" placeholder="[...]" />
+            <marker date="1459659543000" expanded="true" signature="294:448" placeholder="{&quot;name&quot;: &quot;Team Six&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="473:518" placeholder="{&quot;registry&quot;: &quot;http://npm.paypal.com&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="533:1006" placeholder="{&quot;transpile&quot;: &quot;tsc&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="1020:1092" placeholder="{...}" />
+            <marker date="1459659543000" expanded="true" signature="1036:1088" placeholder="{&quot;pre-commit&quot;: &quot;&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="1112:1503" placeholder="{&quot;babel-polyfill&quot;: &quot;^6.3.14&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="1526:1783" placeholder="{&quot;commonweb-setup&quot;: &quot;^0.3.2&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="2036:2103" placeholder="{&quot;name&quot;: &quot;kcummings&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="2122:2449" placeholder="[...]" />
+            <marker date="1459659543000" expanded="true" signature="2128:2196" placeholder="{&quot;name&quot;: &quot;jlowery&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="2202:2275" placeholder="{&quot;name&quot;: &quot;kcummings&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="2281:2355" placeholder="{&quot;name&quot;: &quot;bewhite&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="2361:2445" placeholder="{&quot;name&quot;: &quot;vbalachandran&quot;...}" />
+            <marker date="1459659543000" expanded="true" signature="2461:2608" placeholder="{&quot;shasum&quot;: &quot;4eded7a5951c359fda087b59440e7339b2aadd0f&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definitions/tsd.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <marker date="1459659264000" expanded="true" signature="0:501" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definitions/commonweb-setup.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="86" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="86" />
+          <folding>
+            <marker date="1458252654000" expanded="true" signature="0:38" placeholder="/** External module definitions ...*/" />
+            <marker date="1458252654000" expanded="true" signature="39:673" placeholder="//..." />
+            <marker date="1458252654000" expanded="true" signature="675:713" placeholder="/** External module definitions ...*/" />
+            <marker date="1458252654000" expanded="true" signature="714:900" placeholder="//..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definitions/serve-favicon/serve-favicon.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+          <folding>
+            <marker date="1459659589000" expanded="true" signature="0:231" placeholder="//..." />
+            <marker date="1459659589000" expanded="true" signature="233:449" placeholder="/*...*/" />
+            <marker date="1459659589000" expanded="true" signature="577:1008" placeholder="..." />
+            <marker date="1459659589000" expanded="true" signature="625:685" placeholder="/** Node.js middleware for serving a favicon. ...*/" />
+            <marker date="1459659589000" expanded="true" signature="736:918" placeholder="..." />
+            <marker date="1459659589000" expanded="true" signature="746:887" placeholder="/** The cache-control max-age directive in ms, defaulting to 1 day. This can also be a string accepted by the ms module. ...*/" />
+            <marker date="1459659589000" expanded="true" signature="976:978" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/commonweb-setup/definitions/external/mime.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding>
+            <marker date="1454359657000" expanded="true" signature="0:199" placeholder="//..." />
+            <marker date="1454359657000" expanded="true" signature="306:624" placeholder="..." />
+            <marker date="1454359657000" expanded="true" signature="519:555" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definitions/react-engine.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <marker date="1459660472000" expanded="false" signature="0:265" placeholder="//..." />
+            <marker date="1459660472000" expanded="true" signature="297:398" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/MainSection.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+          <folding>
+            <marker date="1459660573000" expanded="false" signature="0:1692" placeholder="/*...*/" />
+            <marker date="1459660573000" expanded="true" signature="1736:1880" placeholder="..." />
+            <marker date="1459660573000" expanded="true" signature="1989:2114" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="2086:2112" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="2586:2614" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="2676:3269" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="2776:2800" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="2886:2940" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="3031:3086" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="3093:3267" placeholder="{...}" />
+            <marker date="1459660573000" expanded="true" signature="3097:3220" placeholder="//..." />
+            <marker date="1459660573000" expanded="true" signature="3316:3387" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10830">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+          <folding>
+            <marker date="1459652341000" expanded="true" signature="60:256" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="358:462" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="358:2862" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="500:2860" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="518:737" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="551:634" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="674:736" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="767:2854" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="816:2775" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="923:1107" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1013:1088" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1176:1495" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1272:1477" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1371:1455" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1565:1645" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1713:1860" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1760:1842" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1923:2380" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="1982:2359" placeholder="{&quot;type&quot;: &quot;text&quot;...}" />
+            <marker date="1459652341000" expanded="true" signature="2018:2146" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="2424:2722" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="2972:4362" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3110:4360" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3128:3356" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="3161:3244" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3287:3355" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3386:4354" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3428:4282" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3507:3577" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3640:3776" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3685:3758" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="3832:4117" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="4154:4236" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="4488:7545" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="4642:7543" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="4660:4990" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="4693:4776" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="4816:4878" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="4921:4989" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5020:7537" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5064:7463" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5161:5332" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5251:5313" placeholder="{&quot;editing&quot;: false...}" />
+            <marker date="1459652341000" expanded="true" signature="5400:5473" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5543:5839" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5588:5662" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5688:5766" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="5897:7094" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="6131:6356" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="6382:6845" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="6900:7064" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="6936:7062" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="7133:7415" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="7624:8022" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="7752:8020" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="7802:8014" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="8210:11379" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="8375:11365" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="8393:8717" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="8426:8509" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="8549:8611" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="8652:8716" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="8747:11359" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="9035:11287" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="9114:9184" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="9248:9569" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="9641:9960" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="10027:10373" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="10190:10355" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="10429:10905" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="10728:10856" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="10942:11241" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="11535:15056" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="11712:15038" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="11730:12138" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="11763:11846" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="11884:11942" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="11978:12032" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="12073:12137" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="12168:15032" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="12549:14955" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="12652:12726" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="12800:12876" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="12960:13307" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="13085:13289" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="13388:13824" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="13576:13806" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="13885:14650" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="14141:14231" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="14441:14592" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="14692:14904" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="15135:16037" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="15343:16019" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="15393:16013" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16131:17535" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16243:16303" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16367:16426" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16500:16569" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16637:16698" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16771:16823" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="16897:16952" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17025:17073" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17135:17186" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17257:17311" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17370:17517" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17388:17470" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="17421:17469" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17500:17511" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17702:19845" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17907:18007" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="17924:18000" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18050:18156" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18067:18149" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18168:19827" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18186:18789" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="18219:18302" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18337:18389" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18430:18494" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18530:18584" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18625:18689" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18728:18788" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18819:19821" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18858:19692" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="18931:19001" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="19053:19403" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="19437:19649" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="19952:22217" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="20106:21732" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="20193:21726" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="20259:20517" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="20281:20499" placeholder="{&quot;completed&quot;: false...}" />
+            <marker date="1459652341000" expanded="true" signature="20629:20698" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="20792:20960" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21058:21235" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21426:21524" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21454:21520" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21778:22199" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21796:21969" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="21837:21901" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21929:21968" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="21999:22193" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="22028:22182" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="22046:22168" placeholder="{&quot;id&quot;: 0...}" />
+            <marker date="1459652341000" expanded="true" signature="22315:23145" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="22468:22869" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="22555:22863" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="22917:23127" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="22935:23041" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="22976:23040" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23071:23121" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23263:23953" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23403:23935" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23421:23686" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="23456:23508" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23543:23595" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23631:23685" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23716:23929" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="23768:23870" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24058:24589" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24186:24276" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24331:24571" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24349:24524" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="24384:24436" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24471:24523" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24554:24565" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24787:26318" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24961:26300" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="24979:25544" placeholder="[...]" />
+            <marker date="1459652341000" expanded="true" signature="25012:25060" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="25099:25159" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="25200:25264" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="25297:25345" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="25389:25459" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="25493:25543" placeholder="{...}" />
+            <marker date="1459652341000" expanded="true" signature="25574:26294" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
           <folding />
         </state>
       </provider>

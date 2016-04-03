@@ -20,7 +20,7 @@
   },
   "scripts": {
     "transpile": "tsc",
-    "bundle": "tsc --watch --jsx react -m system --outFile ./bundle.js ./index.tsx",
+    "bundle": "tsc --watch --jsx react -m system --outFile ./bundle.js ./client.tsx",
     "lint": "tslint {lib,tests}/*.ts index.ts -r node_modules/tslint-microsoft-contrib",
     "stylecheck": "jscs {lib,tests}/*.js",
     "test": "tape tests/**/*.test.js",
@@ -39,9 +39,14 @@
     "classnames": "^2.1.2",
     "lodash": "^4.7.0",
     "page": "^1.7.1",
+    "express": "^4.13.3",
+    "history": "^1.17.0",
     "react": "^0.14.7",
+    "serve-favicon": "^2.3.0",
     "react-dom": "^0.14.7",
+    "react-engine": "^3.2.0",
     "react-redux": "^4.2.1",
+    "react-router": "^2.0.1",
     "redux": "^3.2.1",
     "todomvc-app-css": "^2.0.0"
   },
