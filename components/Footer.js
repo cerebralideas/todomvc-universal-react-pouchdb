@@ -6,11 +6,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var React = require('react');
 var react_1 = require('react');
-var classnames = require('classnames');
 var TodoFilters_1 = require('../constants/TodoFilters');
-if (typeof window === 'object') {
-    classnames = classnames.default;
-}
 var FILTER_TITLES = (_a = {},
     _a[TodoFilters_1.SHOW_ALL] = 'All',
     _a[TodoFilters_1.SHOW_ACTIVE] = 'Active',
@@ -25,12 +21,17 @@ var Footer = (function (_super) {
     Footer.prototype.renderTodoCount = function () {
         var activeCount = this.props.activeCount;
         var itemWord = activeCount === 1 ? 'item' : 'items';
-        return (React.createElement("span", {className: "todo-count"}, React.createElement("strong", null, activeCount || 'No'), " ", itemWord, " left"));
+        return (React.createElement("span", {className: "todo-count"}, 
+            React.createElement("strong", null, activeCount || 'No'), 
+            " ", 
+            itemWord, 
+            " left"));
     };
     Footer.prototype.renderFilterLink = function (filter) {
         var title = FILTER_TITLES[filter];
         var selectedFilter = this.props.filter;
-        return (React.createElement("a", {className: classnames({ selected: filter === selectedFilter }), href: filter, style: { cursor: 'pointer' }}, title));
+        var isSelected = filter === selectedFilter ? 'selected' : '';
+        return (React.createElement("a", {className: isSelected, href: filter, style: { cursor: 'pointer' }}, title));
     };
     Footer.prototype.renderClearButton = function () {
         var _a = this.props, completedCount = _a.completedCount, onClearCompleted = _a.onClearCompleted;
@@ -40,9 +41,12 @@ var Footer = (function (_super) {
     };
     Footer.prototype.render = function () {
         var _this = this;
-        return (React.createElement("footer", {className: "footer"}, this.renderTodoCount(), React.createElement("ul", {className: "filters"}, [TodoFilters_1.SHOW_ALL, TodoFilters_1.SHOW_ACTIVE, TodoFilters_1.SHOW_COMPLETED].map(function (filter) {
-            return React.createElement("li", {key: filter}, _this.renderFilterLink(filter));
-        })), this.renderClearButton()));
+        return (React.createElement("footer", {className: "footer"}, 
+            this.renderTodoCount(), 
+            React.createElement("ul", {className: "filters"}, [TodoFilters_1.SHOW_ALL, TodoFilters_1.SHOW_ACTIVE, TodoFilters_1.SHOW_COMPLETED].map(function (filter) {
+                return React.createElement("li", {key: filter}, _this.renderFilterLink(filter));
+            })), 
+            this.renderClearButton()));
     };
     Footer.propTypes = {
         completedCount: react_1.PropTypes.number.isRequired,

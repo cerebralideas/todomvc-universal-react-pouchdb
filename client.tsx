@@ -7,18 +7,21 @@ import App from './containers/App';
 import configureStore from './store/configureStore';
 import page from 'page';
 
-const store = configureStore();
+declare var __REACT_ENGINE__: any;
 
-page('/', function () { 
+let serverState =  __REACT_ENGINE__;
+const store = configureStore({ todos: serverState.todos, filter: serverState.filter });
+
+page('/', function () {
 	store.dispatch({ type: 'SHOW_ALL' })
 });
-page('/show_all', function () { 
+page('/show_all', function () {
 	store.dispatch({ type: 'SHOW_ALL' })
 });
-page('/show_active', function () { 
+page('/show_active', function () {
 	store.dispatch({ type: 'SHOW_ACTIVE' })
 });
-page('/show_completed', function () { 
+page('/show_completed', function () {
 	store.dispatch({ type: 'SHOW_COMPLETED' })
 });
 page();

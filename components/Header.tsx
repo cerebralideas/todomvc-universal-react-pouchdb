@@ -13,7 +13,7 @@ class Header extends Component<Props, State> {
 		addTodo: PropTypes.func.isRequired,
 		filter: PropTypes.string
 	};
-	
+
 	handleSave(text) {
 		if (text.length !== 0) {
 			this.props.addTodo(text)

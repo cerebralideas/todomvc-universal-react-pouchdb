@@ -67,7 +67,7 @@ class MainSection extends Component<Props, {}> {
 				todo.completed ? count + 1 : count,
 				0
 		);
-		
+
 		return (
 			<section className="main">
 				{this.renderToggleAll(completedCount)}

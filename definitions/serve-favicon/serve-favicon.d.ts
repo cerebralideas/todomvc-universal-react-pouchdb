@@ -10,7 +10,7 @@
 
  =============================================== */
 
-/// <reference path="../../node_modules/commonweb-setup/definitions/external/express.d.ts" />
+/// <reference path="../express/express.d.ts" />
 
 declare module "serve-favicon" {
     import express = require('express');

@@ -19,6 +19,7 @@ const PORT = 3000;
 
 import { join } from 'path';
 import * as express from 'express';
+import * as React from 'react';
 import * as favicon from 'serve-favicon';
 import * as ReactEngine from 'react-engine';
 import * as bodyParser from 'body-parser';
@@ -68,15 +69,19 @@ app.use(express.static(join(__dirname, '/')));
 function dbGet(req, res, configureStore, callback) {
 	let filter = req.params.filter && req.params.filter.toUpperCase() || 'SHOW_ALL';
 
-	db.get(req.ip, function (err: any, doc: any) {
-		let store = configureStore(doc.store);
+	db.get(req.ip, function (err: any, doc: any = {}) {
+		let store = configureStore(doc.store),
+			model;
+		
 		store.dispatch({ type: filter });
 		
-		let model = {
-			_id: doc._id,
-			_rev: doc._rev,
+		model = {
+			_id: req.ip,
 			store: store.getState()
 		};
+		if (doc._rev) {
+			model._rev = doc._rev;
+		}
 		db.put(model, function (err: any, doc: any) {
 			callback(req, res, model.store);
 		});

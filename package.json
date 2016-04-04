@@ -19,8 +19,8 @@
     "registry": "http://npm.paypal.com"
   },
   "scripts": {
-    "transpile": "tsc --watch",
-    "bundle": "tsc --watch --jsx react -m system --outFile ./bundle.js ./client.tsx",
+    "transpile": "tsc",
+    "bundle": "tsc --jsx react -m system --outFile ./bundle.js ./client.tsx",
     "lint": "tslint {lib,tests}/*.ts index.ts -r node_modules/tslint-microsoft-contrib",
     "stylecheck": "jscs {lib,tests}/*.js",
     "test": "tape tests/**/*.test.js",
@@ -60,49 +60,20 @@
     "todomvc-app-css": "^2.0.0"
   },
   "devDependencies": {
-    "commonweb-setup": "^0.3.2",
     "chokidar-cli": "^1.2.0",
     "ghooks": "^1.0.3",
     "jscs": "^2.7.0",
     "proxyquire": "^1.7.3",
     "tape": "^4.4.0",
-    "tslint": "^3.2.1",
+    "tslint": "^3.6.0-dev.1",
     "tslint-microsoft-contrib": "^2.0.0",
-    "typescript": "^1.8.9"
-  },
-  "gitHead": "cea02d94887ad504c2012f4d1e900d5d06e45a5d",
-  "_id": "commonweb-setup@0.3.2",
-  "_shasum": "4eded7a5951c359fda087b59440e7339b2aadd0f",
-  "_from": "commonweb-setup@*",
-  "_npmVersion": "2.14.18",
-  "_nodeVersion": "0.10.42",
-  "_npmUser": {
-    "name": "kcummings",
-    "email": "kcummings2@paypal.com"
+    "typescript": "^1.9.0-dev.20160403",
+    "webpack": "^1.12.14"
   },
   "maintainers": [
     {
       "name": "jlowery",
       "email": "jlowery@paypal.com"
-    },
-    {
-      "name": "kcummings",
-      "email": "kcummings2@paypal.com"
-    },
-    {
-      "name": "bewhite",
-      "email": "bensbigolbeard@gmail.com"
-    },
-    {
-      "name": "vbalachandran",
-      "email": "vbalachandran@paypalCORP.com"
     }
-  ],
-  "dist": {
-    "shasum": "4eded7a5951c359fda087b59440e7339b2aadd0f",
-    "tarball": "https://npm.paypal.com/commonweb-setup/-/commonweb-setup-0.3.2.tgz"
-  },
-  "directories": {},
-  "_resolved": "https://npm.paypal.com/commonweb-setup/-/commonweb-setup-0.3.2.tgz",
-  "readme": "ERROR: No README data found!"
+  ]
 }

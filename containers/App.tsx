@@ -15,12 +15,14 @@ interface Props {
 		editTodo: any,
 		completeTodo: any,
 		completeAll: any,
-		clearCompleted: any
+		clearCompleted: any,
+		showAll: any,
+		showActive: any,
+		showCompleted: any
 	};
-}
-interface State {}
+} 
 
-class App extends Component<Props, State> {
+class App extends Component<Props, {}> {
 	static propTypes = {
 		todos: PropTypes.array.isRequired,
 		filter: PropTypes.string.isRequired,

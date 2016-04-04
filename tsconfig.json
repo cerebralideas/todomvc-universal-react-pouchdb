@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+	"target": "es5",
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"isolatedModules": false,
@@ -14,7 +14,7 @@
 		"preserveConstEnums": true,
 		"suppressImplicitAnyIndexErrors": true,
 		"sourceMap": true,
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": false
 	},
 	"exclude": [
 		"node_modules",

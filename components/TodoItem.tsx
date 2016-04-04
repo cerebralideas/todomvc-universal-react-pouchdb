@@ -1,11 +1,6 @@
 import * as React from 'react';
 import { Component, PropTypes } from 'react';
-import * as classnames from 'classnames';
 import TodoTextInput from './TodoTextInput';
-
-if (typeof window === 'object') {
-	classnames = classnames.default;
-}
 
 interface Props {
 	todo?: any;
@@ -48,7 +43,9 @@ class TodoItem extends Component<Props, State> {
 	}
 
 	render() {
-		const {todo, completeTodo, deleteTodo, filter } = this.props;
+		const { todo, completeTodo, deleteTodo, filter } = this.props;
+		const isCompleted = todo.completed ? 'completed' : '';
+		const isEditing = this.state.editing ? 'editing' : '';
 		
 		let element;
 		if (this.state.editing) {
@@ -75,10 +72,7 @@ class TodoItem extends Component<Props, State> {
 		}
 
 		return (
-			<li className={ classnames({
-				completed: todo.completed,
-				editing: this.state.editing
-			})}>
+			<li className={ isCompleted + ' ' + isEditing }>
 				{element}
 			</li>
 		);

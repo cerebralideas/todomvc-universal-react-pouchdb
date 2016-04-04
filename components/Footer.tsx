@@ -2,12 +2,7 @@
 
 import * as React from 'react';
 import { PropTypes, Component } from 'react';
-import * as classnames from 'classnames';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
-
-if (typeof window === 'object') {
-	classnames = classnames.default;
-}
 
 const FILTER_TITLES = {
 	[SHOW_ALL]: 'All',
@@ -46,9 +41,10 @@ class Footer extends Component<Props, State> {
 	renderFilterLink(filter) {
 		const title = FILTER_TITLES[filter];
 		const { filter: selectedFilter } = this.props;
+		const isSelected =  filter === selectedFilter ? 'selected' : '';
 
 		return (
-			<a className={classnames({ selected: filter === selectedFilter })}
+			<a className={isSelected}
 			   href={filter}
 			   style={{ cursor: 'pointer' }}>
 				{title}

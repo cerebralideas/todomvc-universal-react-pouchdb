@@ -1,24 +1,29 @@
 import * as React from 'react';
+import { PropTypes, Component } from 'react';
+import { Provider } from 'react-redux';
 import App from '../containers/App';
 import configureStore from '../store/configureStore';
 
+class Layout extends Component<any, any>{
+	static propTypes = {
+		store: PropTypes.object.isRequired
+	};
 
-var Layout = React.createClass({
-
-	render: function render() {
+	render() {
 		const store = configureStore(this.props);
-		
+
 		return (
 			<html lang="en">
 			<head>
 				<meta charSet="utf-8" />
 				<title>React • TodoMVC</title>
-				<link rel="stylesheet" href="node_modules/todomvc-common/base.css" />
 				<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css" />
 			</head>
 			<body>
 			<section className="todoapp" id="root">
-				<App store={store} />
+				<Provider store={ store }>
+					<App />
+				</Provider>
 			</section>
 			<footer className="info">
 				<p>Double-click to edit a todo</p>
@@ -36,8 +41,8 @@ var Layout = React.createClass({
 					map: {
 					'lodash': 'node_modules/lodash/lodash.js',
 						'page': 'node_modules/page/index.js',
-						'path-to-regexp': 'node_modules/page/node_modules/path-to-regexp/index.js',
-						'isarray': 'node_modules/page/node_modules/path-to-regexp/node_modules/isarray/index.js',
+						'path-to-regexp': 'node_modules/path-to-regexp/index.js',
+						'isarray': 'node_modules/isarray/index.js',
 						'react': 'node_modules/react/dist/react-with-addons.js',
 						'react-dom': 'node_modules/react-dom/dist/react-dom.js',
 						'redux': 'node_modules/redux/dist/redux.js',
@@ -53,6 +58,6 @@ var Layout = React.createClass({
 			</html>
 		);
 	}
-});
-
+}
+// Old module.exports is required for React-Engine :(
 module.exports = Layout;

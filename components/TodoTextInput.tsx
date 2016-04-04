@@ -1,10 +1,5 @@
 import * as React from 'react';
 import { Component, PropTypes } from 'react';
-import * as classnames from 'classnames';
-
-if (typeof window === 'object') {
-	classnames = classnames.default;
-}
 
 interface Props {
 	onSave?: Function;
@@ -56,16 +51,14 @@ class TodoTextInput extends Component<Props, State> {
 	}
 
 	render() {
+		const isEditing = this.props.editing ? 'edit' : '';
+		const isNew = this.props.newTodo ? 'new-todo' : '';
+		
 		return (
 			<form action={"/todos?filter=" + this.props.filter } 
 				  method="POST"
 				  onSubmit={ (e) => e.preventDefault() }>
-				<input className={
-					       classnames({
-						       edit: this.props.editing,
-						       'new-todo': this.props.newTodo
-					       })
-					   }
+				<input className={ isEditing + ' ' + isNew }
 					   name="todo"
 					   type="text"
 					   placeholder={this.props.placeholder}

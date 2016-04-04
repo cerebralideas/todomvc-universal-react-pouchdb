@@ -29,13 +29,16 @@ app.use(express.static(path_1.join(__dirname, '/')));
 function dbGet(req, res, configureStore, callback) {
     var filter = req.params.filter && req.params.filter.toUpperCase() || 'SHOW_ALL';
     db.get(req.ip, function (err, doc) {
-        var store = configureStore(doc.store);
+        if (doc === void 0) { doc = {}; }
+        var store = configureStore(doc.store), model;
         store.dispatch({ type: filter });
-        var model = {
-            _id: doc._id,
-            _rev: doc._rev,
+        model = {
+            _id: req.ip,
             store: store.getState()
         };
+        if (doc._rev) {
+            model._rev = doc._rev;
+        }
         db.put(model, function (err, doc) {
             callback(req, res, model.store);
         });
