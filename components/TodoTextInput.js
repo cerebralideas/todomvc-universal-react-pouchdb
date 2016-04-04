@@ -6,6 +6,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var React = require('react');
 var react_1 = require('react');
+var client_events_1 = require('../initiators/client-events');
 var TodoTextInput = (function (_super) {
     __extends(TodoTextInput, _super);
     function TodoTextInput(props, context) {
@@ -17,6 +18,7 @@ var TodoTextInput = (function (_super) {
     TodoTextInput.prototype.handleSubmit = function (e) {
         var text = e.target.value.trim();
         if (e.which === 13) {
+            client_events_1.default.postNewTodo(e.target.value.trim());
             this.props.onSave(text);
             if (this.props.newTodo) {
                 this.setState({ text: '' });

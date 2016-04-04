@@ -3,16 +3,51 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-System.register("components/TodoTextInput", ['react'], function(exports_1, context_1) {
+System.register("initiators/client-events", ['superagent'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
-    var React, react_1;
+    var superagent;
+    function postNewTodo(todo) {
+        superagent
+            .post('/api/todos')
+            .send({ todo: todo })
+            .end(function postCb(err, response) {
+            console.log(response);
+        });
+    }
+    function postCompleteTodo(id) {
+        superagent
+            .post('/api/todos/' + id + '?action=complete')
+            .end(function postCb(err, response) {
+            console.log(response);
+        });
+    }
+    return {
+        setters:[
+            function (superagent_1) {
+                superagent = superagent_1;
+            }],
+        execute: function() {
+            exports_1("default",{
+                postNewTodo: postNewTodo,
+                postCompleteTodo: postCompleteTodo
+            });
+        }
+    }
+});
+System.register("components/TodoTextInput", ['react', "initiators/client-events"], function(exports_2, context_2) {
+    "use strict";
+    var __moduleName = context_2 && context_2.id;
+    var React, react_1, client_events_1;
     var TodoTextInput;
     return {
         setters:[
             function (React_1) {
                 React = React_1;
                 react_1 = React_1;
+            },
+            function (client_events_1_1) {
+                client_events_1 = client_events_1_1;
             }],
         execute: function() {
             TodoTextInput = (function (_super) {
@@ -26,6 +61,7 @@ System.register("components/TodoTextInput", ['react'], function(exports_1, conte
                 TodoTextInput.prototype.handleSubmit = function (e) {
                     var text = e.target.value.trim();
                     if (e.which === 13) {
+                        client_events_1["default"].postNewTodo(e.target.value.trim());
                         this.props.onSave(text);
                         if (this.props.newTodo) {
                             this.setState({ text: '' });
@@ -57,13 +93,13 @@ System.register("components/TodoTextInput", ['react'], function(exports_1, conte
                 };
                 return TodoTextInput;
             }(react_1.Component));
-            exports_1("default",TodoTextInput);
+            exports_2("default",TodoTextInput);
         }
     }
 });
-System.register("components/Header", ['react', "components/TodoTextInput"], function(exports_2, context_2) {
+System.register("components/Header", ['react', "components/TodoTextInput"], function(exports_3, context_3) {
     "use strict";
-    var __moduleName = context_2 && context_2.id;
+    var __moduleName = context_3 && context_3.id;
     var React, react_2, TodoTextInput_1;
     var Header;
     return {
@@ -97,14 +133,14 @@ System.register("components/Header", ['react', "components/TodoTextInput"], func
                 };
                 return Header;
             }(react_2.Component));
-            exports_2("default",Header);
+            exports_3("default",Header);
         }
     }
 });
-System.register("components/TodoItem", ['react', "components/TodoTextInput"], function(exports_3, context_3) {
+System.register("components/TodoItem", ['react', "components/TodoTextInput", "initiators/client-events"], function(exports_4, context_4) {
     "use strict";
-    var __moduleName = context_3 && context_3.id;
-    var React, react_3, TodoTextInput_2;
+    var __moduleName = context_4 && context_4.id;
+    var React, react_3, TodoTextInput_2, client_events_2;
     var TodoItem;
     return {
         setters:[
@@ -114,6 +150,9 @@ System.register("components/TodoItem", ['react', "components/TodoTextInput"], fu
             },
             function (TodoTextInput_2_1) {
                 TodoTextInput_2 = TodoTextInput_2_1;
+            },
+            function (client_events_2_1) {
+                client_events_2 = client_events_2_1;
             }],
         execute: function() {
             TodoItem = (function (_super) {
@@ -136,6 +175,10 @@ System.register("components/TodoItem", ['react', "components/TodoTextInput"], fu
                     }
                     this.setState({ editing: false });
                 };
+                TodoItem.prototype.handleComplete = function (id) {
+                    client_events_2["default"].postCompleteTodo(id);
+                    this.props.completeTodo(id);
+                };
                 TodoItem.prototype.render = function () {
                     var _this = this;
                     var _a = this.props, todo = _a.todo, completeTodo = _a.completeTodo, deleteTodo = _a.deleteTodo, filter = _a.filter;
@@ -147,7 +190,7 @@ System.register("components/TodoItem", ['react', "components/TodoTextInput"], fu
                     }
                     else {
                         element = (React.createElement("div", {className: "view"}, 
-                            React.createElement("input", {className: "toggle", type: "checkbox", checked: todo.completed, onChange: function () { return completeTodo(todo.id); }}), 
+                            React.createElement("input", {className: "toggle", type: "checkbox", checked: todo.completed, onChange: function () { return _this.handleComplete(todo.id); }}), 
                             React.createElement("label", {onDoubleClick: this.handleDoubleClick.bind(this)}, todo.text), 
                             React.createElement("button", {className: "destroy", onClick: function () { return deleteTodo(todo.id); }})));
                     }
@@ -162,27 +205,27 @@ System.register("components/TodoItem", ['react', "components/TodoTextInput"], fu
                 };
                 return TodoItem;
             }(react_3.Component));
-            exports_3("default",TodoItem);
+            exports_4("default",TodoItem);
         }
     }
 });
-System.register("constants/TodoFilters", [], function(exports_4, context_4) {
+System.register("constants/TodoFilters", [], function(exports_5, context_5) {
     "use strict";
-    var __moduleName = context_4 && context_4.id;
+    var __moduleName = context_5 && context_5.id;
     var SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE;
     return {
         setters:[],
         execute: function() {
-            exports_4("SHOW_ALL", SHOW_ALL = 'show_all');
-            exports_4("SHOW_COMPLETED", SHOW_COMPLETED = 'show_completed');
-            exports_4("SHOW_ACTIVE", SHOW_ACTIVE = 'show_active');
+            exports_5("SHOW_ALL", SHOW_ALL = 'show_all');
+            exports_5("SHOW_COMPLETED", SHOW_COMPLETED = 'show_completed');
+            exports_5("SHOW_ACTIVE", SHOW_ACTIVE = 'show_active');
         }
     }
 });
 /// <reference path="../definitions/classnames/classnames.d.ts" />
-System.register("components/Footer", ['react', "constants/TodoFilters"], function(exports_5, context_5) {
+System.register("components/Footer", ['react', "constants/TodoFilters"], function(exports_6, context_6) {
     "use strict";
-    var __moduleName = context_5 && context_5.id;
+    var __moduleName = context_6 && context_6.id;
     var React, react_4, TodoFilters_1;
     var FILTER_TITLES, Footer;
     return {
@@ -244,14 +287,14 @@ System.register("components/Footer", ['react', "constants/TodoFilters"], functio
                 };
                 return Footer;
             }(react_4.Component));
-            exports_5("default",Footer);
+            exports_6("default",Footer);
         }
     }
     var _a;
 });
-System.register("components/MainSection", ['react', "components/TodoItem", "components/Footer", "constants/TodoFilters"], function(exports_6, context_6) {
+System.register("components/MainSection", ['react', "components/TodoItem", "components/Footer", "constants/TodoFilters"], function(exports_7, context_7) {
     "use strict";
-    var __moduleName = context_6 && context_6.id;
+    var __moduleName = context_7 && context_7.id;
     var React, react_5, TodoItem_1, Footer_1, TodoFilters_2;
     var TODO_FILTERS, MainSection;
     return {
@@ -317,71 +360,71 @@ System.register("components/MainSection", ['react', "components/TodoItem", "comp
                 };
                 return MainSection;
             }(react_5.Component));
-            exports_6("default",MainSection);
+            exports_7("default",MainSection);
         }
     }
     var _a, _b;
 });
-System.register("constants/ActionTypes", [], function(exports_7, context_7) {
+System.register("constants/ActionTypes", [], function(exports_8, context_8) {
     "use strict";
-    var __moduleName = context_7 && context_7.id;
+    var __moduleName = context_8 && context_8.id;
     var ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED, SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED;
     return {
         setters:[],
         execute: function() {
-            exports_7("ADD_TODO", ADD_TODO = 'ADD_TODO');
-            exports_7("DELETE_TODO", DELETE_TODO = 'DELETE_TODO');
-            exports_7("EDIT_TODO", EDIT_TODO = 'EDIT_TODO');
-            exports_7("COMPLETE_TODO", COMPLETE_TODO = 'COMPLETE_TODO');
-            exports_7("COMPLETE_ALL", COMPLETE_ALL = 'COMPLETE_ALL');
-            exports_7("CLEAR_COMPLETED", CLEAR_COMPLETED = 'CLEAR_COMPLETED');
-            exports_7("SHOW_ALL", SHOW_ALL = 'SHOW_ALL');
-            exports_7("SHOW_ACTIVE", SHOW_ACTIVE = 'SHOW_ACTIVE');
-            exports_7("SHOW_COMPLETED", SHOW_COMPLETED = 'SHOW_COMPLETED');
+            exports_8("ADD_TODO", ADD_TODO = 'ADD_TODO');
+            exports_8("DELETE_TODO", DELETE_TODO = 'DELETE_TODO');
+            exports_8("EDIT_TODO", EDIT_TODO = 'EDIT_TODO');
+            exports_8("COMPLETE_TODO", COMPLETE_TODO = 'COMPLETE_TODO');
+            exports_8("COMPLETE_ALL", COMPLETE_ALL = 'COMPLETE_ALL');
+            exports_8("CLEAR_COMPLETED", CLEAR_COMPLETED = 'CLEAR_COMPLETED');
+            exports_8("SHOW_ALL", SHOW_ALL = 'SHOW_ALL');
+            exports_8("SHOW_ACTIVE", SHOW_ACTIVE = 'SHOW_ACTIVE');
+            exports_8("SHOW_COMPLETED", SHOW_COMPLETED = 'SHOW_COMPLETED');
         }
     }
     var _a, _b;
 });
-System.register("actions/index", ["constants/ActionTypes"], function(exports_8, context_8) {
+System.register("actions/index", ["constants/ActionTypes"], function(exports_9, context_9) {
     "use strict";
-    var __moduleName = context_8 && context_8.id;
+    var __moduleName = context_9 && context_9.id;
     var types;
     function addTodo(text) {
         return { type: types.ADD_TODO, text: text };
     }
-    exports_8("addTodo", addTodo);
+    exports_9("addTodo", addTodo);
     function deleteTodo(id) {
         return { type: types.DELETE_TODO, id: id };
     }
-    exports_8("deleteTodo", deleteTodo);
+    exports_9("deleteTodo", deleteTodo);
     function editTodo(id, text) {
         return { type: types.EDIT_TODO, id: id, text: text };
     }
-    exports_8("editTodo", editTodo);
+    exports_9("editTodo", editTodo);
     function completeTodo(id) {
         return { type: types.COMPLETE_TODO, id: id };
     }
-    exports_8("completeTodo", completeTodo);
+    exports_9("completeTodo", completeTodo);
     function completeAll() {
         return { type: types.COMPLETE_ALL };
     }
-    exports_8("completeAll", completeAll);
+    exports_9("completeAll", completeAll);
     function clearCompleted() {
         return { type: types.CLEAR_COMPLETED };
     }
-    exports_8("clearCompleted", clearCompleted);
+    exports_9("clearCompleted", clearCompleted);
     function showAll() {
         return { type: types.SHOW_ALL };
     }
-    exports_8("showAll", showAll);
+    exports_9("showAll", showAll);
     function showActive() {
         return { type: types.SHOW_ACTIVE };
     }
-    exports_8("showActive", showActive);
+    exports_9("showActive", showActive);
     function showCompleted() {
         return { type: types.SHOW_COMPLETED };
     }
-    exports_8("showCompleted", showCompleted);
+    exports_9("showCompleted", showCompleted);
     return {
         setters:[
             function (types_1) {
@@ -392,9 +435,9 @@ System.register("actions/index", ["constants/ActionTypes"], function(exports_8, 
     }
     var _a, _b;
 });
-System.register("containers/App", ['react', 'redux', 'react-redux', "components/Header", "components/MainSection", "actions/index"], function(exports_9, context_9) {
+System.register("containers/App", ['react', 'redux', 'react-redux', "components/Header", "components/MainSection", "actions/index"], function(exports_10, context_10) {
     "use strict";
-    var __moduleName = context_9 && context_9.id;
+    var __moduleName = context_10 && context_10.id;
     var React, react_6, redux_1, react_redux_1, Header_1, MainSection_1, TodoActions;
     var App;
     function mapStateToProps(state) {
@@ -448,15 +491,15 @@ System.register("containers/App", ['react', 'redux', 'react-redux', "components/
                 };
                 return App;
             }(react_6.Component));
-            exports_9("default",react_redux_1.connect(mapStateToProps, mapDispatchToProps)(App));
+            exports_10("default",react_redux_1.connect(mapStateToProps, mapDispatchToProps)(App));
         }
     }
     var _a, _b;
 });
-System.register("reducers/todos", ["constants/ActionTypes", 'lodash'], function(exports_10, context_10) {
+System.register("reducers/todos", ["constants/ActionTypes"], function(exports_11, context_11) {
     "use strict";
-    var __moduleName = context_10 && context_10.id;
-    var ActionTypes_1, _;
+    var __moduleName = context_11 && context_11.id;
+    var ActionTypes_1;
     var initialState;
     function todos(state, action) {
         if (state === void 0) { state = initialState; }
@@ -476,18 +519,18 @@ System.register("reducers/todos", ["constants/ActionTypes", 'lodash'], function(
             case ActionTypes_1.EDIT_TODO:
                 return state.map(function (todo) {
                     return todo.id === action.id ?
-                        _.assign({}, todo, { text: action.text }) :
+                        Object.assign({}, todo, { text: action.text }) :
                         todo;
                 });
             case ActionTypes_1.COMPLETE_TODO:
                 return state.map(function (todo) {
                     return todo.id === action.id ?
-                        _.assign({}, todo, { completed: !todo.completed }) :
+                        Object.assign({}, todo, { completed: !todo.completed }) :
                         todo;
                 });
             case ActionTypes_1.COMPLETE_ALL:
                 var areAllMarked_1 = state.every(function (todo) { return todo.completed; });
-                return state.map(function (todo) { return _.assign({}, todo, {
+                return state.map(function (todo) { return Object.assign({}, todo, {
                     completed: !areAllMarked_1
                 }); });
             case ActionTypes_1.CLEAR_COMPLETED:
@@ -496,14 +539,11 @@ System.register("reducers/todos", ["constants/ActionTypes", 'lodash'], function(
                 return state;
         }
     }
-    exports_10("default", todos);
+    exports_11("default", todos);
     return {
         setters:[
             function (ActionTypes_1_1) {
                 ActionTypes_1 = ActionTypes_1_1;
-            },
-            function (_1) {
-                _ = _1;
             }],
         execute: function() {
             initialState = [
@@ -517,9 +557,9 @@ System.register("reducers/todos", ["constants/ActionTypes", 'lodash'], function(
     }
     var _a, _b;
 });
-System.register("reducers/filter", ["constants/ActionTypes"], function(exports_11, context_11) {
+System.register("reducers/filter", ["constants/ActionTypes"], function(exports_12, context_12) {
     "use strict";
-    var __moduleName = context_11 && context_11.id;
+    var __moduleName = context_12 && context_12.id;
     var ActionTypes_2;
     var initialState;
     function filters(state, action) {
@@ -535,7 +575,7 @@ System.register("reducers/filter", ["constants/ActionTypes"], function(exports_1
                 return state;
         }
     }
-    exports_11("default", filters);
+    exports_12("default", filters);
     return {
         setters:[
             function (ActionTypes_2_1) {
@@ -547,9 +587,9 @@ System.register("reducers/filter", ["constants/ActionTypes"], function(exports_1
     }
     var _a, _b;
 });
-System.register("reducers/index", ['redux', "reducers/todos", "reducers/filter"], function(exports_12, context_12) {
+System.register("reducers/index", ['redux', "reducers/todos", "reducers/filter"], function(exports_13, context_13) {
     "use strict";
-    var __moduleName = context_12 && context_12.id;
+    var __moduleName = context_13 && context_13.id;
     var redux_2, todos_1, filter_1;
     var rootReducer;
     return {
@@ -568,20 +608,20 @@ System.register("reducers/index", ['redux', "reducers/todos", "reducers/filter"]
                 todos: todos_1["default"],
                 filter: filter_1["default"]
             });
-            exports_12("default",rootReducer);
+            exports_13("default",rootReducer);
         }
     }
     var _a, _b;
 });
-System.register("store/configureStore", ['redux', "reducers/index"], function(exports_13, context_13) {
+System.register("store/configureStore", ['redux', "reducers/index"], function(exports_14, context_14) {
     "use strict";
-    var __moduleName = context_13 && context_13.id;
+    var __moduleName = context_14 && context_14.id;
     var redux_3, index_1;
     function configureStore(initialState) {
         var store = redux_3.createStore(index_1["default"], initialState);
         return store;
     }
-    exports_13("default", configureStore);
+    exports_14("default", configureStore);
     return {
         setters:[
             function (redux_3_1) {
@@ -595,11 +635,42 @@ System.register("store/configureStore", ['redux', "reducers/index"], function(ex
     }
     var _a, _b;
 });
-/// <reference path="./definitions/tsd.d.ts" />
-System.register("client", ['react', 'react-dom', 'react-redux', "containers/App", "store/configureStore", 'page'], function(exports_14, context_14) {
+System.register("initiators/client-routes", ['page'], function(exports_15, context_15) {
     "use strict";
-    var __moduleName = context_14 && context_14.id;
-    var React, react_dom_1, react_redux_2, App_1, configureStore_1, page_1;
+    var __moduleName = context_15 && context_15.id;
+    var page_1;
+    var init;
+    return {
+        setters:[
+            function (page_1_1) {
+                page_1 = page_1_1;
+            }],
+        execute: function() {
+            init = function init(store) {
+                page_1["default"]('/', function () {
+                    store.dispatch({ type: 'SHOW_ALL' });
+                });
+                page_1["default"]('/show_all', function () {
+                    store.dispatch({ type: 'SHOW_ALL' });
+                });
+                page_1["default"]('/show_active', function () {
+                    store.dispatch({ type: 'SHOW_ACTIVE' });
+                });
+                page_1["default"]('/show_completed', function () {
+                    store.dispatch({ type: 'SHOW_COMPLETED' });
+                });
+                page_1["default"]();
+            };
+            exports_15("default",init);
+        }
+    }
+    var _a, _b;
+});
+/// <reference path="./definitions/tsd.d.ts" />
+System.register("client", ['react', 'react-dom', 'react-redux', "containers/App", "store/configureStore", "initiators/client-routes"], function(exports_16, context_16) {
+    "use strict";
+    var __moduleName = context_16 && context_16.id;
+    var React, react_dom_1, react_redux_2, App_1, configureStore_1, client_routes_1;
     var serverState, store;
     return {
         setters:[
@@ -618,25 +689,16 @@ System.register("client", ['react', 'react-dom', 'react-redux', "containers/App"
             function (configureStore_1_1) {
                 configureStore_1 = configureStore_1_1;
             },
-            function (page_1_1) {
-                page_1 = page_1_1;
+            function (client_routes_1_1) {
+                client_routes_1 = client_routes_1_1;
             }],
         execute: function() {
             serverState = __REACT_ENGINE__;
-            store = configureStore_1["default"]({ todos: serverState.todos, filter: serverState.filter });
-            page_1["default"]('/', function () {
-                store.dispatch({ type: 'SHOW_ALL' });
+            store = configureStore_1["default"]({
+                todos: serverState.todos,
+                filter: serverState.filter
             });
-            page_1["default"]('/show_all', function () {
-                store.dispatch({ type: 'SHOW_ALL' });
-            });
-            page_1["default"]('/show_active', function () {
-                store.dispatch({ type: 'SHOW_ACTIVE' });
-            });
-            page_1["default"]('/show_completed', function () {
-                store.dispatch({ type: 'SHOW_COMPLETED' });
-            });
-            page_1["default"]();
+            client_routes_1["default"](store);
             react_dom_1.render(React.createElement(react_redux_2.Provider, {store: store}, 
                 React.createElement(App_1["default"], null)
             ), document.getElementById('root'));

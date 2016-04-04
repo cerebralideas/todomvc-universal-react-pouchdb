@@ -25,12 +25,9 @@ import * as ReactEngine from 'react-engine';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as multer from 'multer';
-
-import * as PouchDB from 'pouchdb';
-import configureStore from './store/configureStore';
+import routes from './initiators/server-routes';
 
 let app = express();
-let db = new PouchDB('users');
 
 require('babel-register')({
 	presets: ['es2015', 'react']
@@ -64,66 +61,7 @@ app.set('view', ReactEngine.expressView);
 app.use(express.static(join(__dirname, '/')));
 
 // app.use(favicon(join(__dirname, '/public/favicon.ico')));
-
-// Database GET
-function dbGet(req, res, configureStore, callback) {
-	let filter = req.params.filter && req.params.filter.toUpperCase() || 'SHOW_ALL';
-
-	db.get(req.ip, function (err: any, doc: any = {}) {
-		let store = configureStore(doc.store),
-			model;
-		
-		store.dispatch({ type: filter });
-		
-		model = {
-			_id: req.ip,
-			store: store.getState()
-		};
-		if (doc._rev) {
-			model._rev = doc._rev;
-		}
-		db.put(model, function (err: any, doc: any) {
-			callback(req, res, model.store);
-		});
-	});
-}
-// Database PUT
-function dbPut(req, res, store, callback) {
-	let filter = req.query.filter && req.query.filter.toUpperCase() || 'SHOW_ALL';
-
-	db.get(req.ip, function (err: any, doc: any) {
-		let store = configureStore(doc.store);
-		store.dispatch({ type: filter });
-		store.dispatch({ type: 'ADD_TODO', text: req.body.todo });
-		
-		let model = {
-			_id: doc._id,
-			_rev: doc._rev,
-			store: store.getState()
-		};
-		db.put(model, function (err: any, doc: any) {
-			console.log(model.store);
-			callback(req, res, model.store);
-		});
-	});
-}
-
-// Routes
-app.get('/', function(req, res) {
-	dbGet(req, res, configureStore, function (req, res, model) {
-		res.render('Layout', model);
-	});
-});
-app.get('/:filter', function(req, res) {
-	dbGet(req, res, configureStore, function (req, res, model) {
-		res.render('Layout', model);
-	});
-});
-app.post('/todos', function(req, res) {
-	dbPut(req, res, configureStore, function (req, res, model) {
-		res.redirect('/' + req.query.filter);
-	});
-});
+routes(app);
 
 app.use(function(err: any, req: any, res: any, next: any) {
 	console.error(err);

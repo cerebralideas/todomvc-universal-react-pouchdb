@@ -1,6 +1,8 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes';
 import * as _ from 'lodash';
 
+declare var Object: any;
+
 const initialState = [
 	{
 		text: 'Use Redux',
@@ -29,20 +31,20 @@ export default function todos(state = initialState, action): any {
 		case EDIT_TODO:
 			return state.map(todo =>
 				todo.id === action.id ?
-					_.assign({}, todo, {text: action.text}) :
+					Object.assign({}, todo, {text: action.text}) :
 					todo
 			);
 
 		case COMPLETE_TODO:
 			return state.map(todo =>
 				todo.id === action.id ?
-					_.assign({}, todo, {completed: !todo.completed}) :
+					Object.assign({}, todo, {completed: !todo.completed}) :
 					todo
 			);
 
 		case COMPLETE_ALL:
 			const areAllMarked = state.every(todo => todo.completed);
-			return state.map(todo => _.assign({}, todo, {
+			return state.map(todo => Object.assign({}, todo, {
 				completed: !areAllMarked
 			}));
 

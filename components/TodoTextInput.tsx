@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Component, PropTypes } from 'react';
+import events from '../initiators/client-events';
 
 interface Props {
 	onSave?: Function;
@@ -33,6 +34,7 @@ class TodoTextInput extends Component<Props, State> {
 	handleSubmit(e) {
 		const text = e.target.value.trim();
 		if (e.which === 13) {
+			events.postNewTodo(e.target.value.trim());
 			this.props.onSave(text);
 			if (this.props.newTodo) {
 				this.setState({text: ''})
@@ -53,9 +55,9 @@ class TodoTextInput extends Component<Props, State> {
 	render() {
 		const isEditing = this.props.editing ? 'edit' : '';
 		const isNew = this.props.newTodo ? 'new-todo' : '';
-		
+
 		return (
-			<form action={"/todos?filter=" + this.props.filter } 
+			<form action={"/todos?filter=" + this.props.filter }
 				  method="POST"
 				  onSubmit={ (e) => e.preventDefault() }>
 				<input className={ isEditing + ' ' + isNew }

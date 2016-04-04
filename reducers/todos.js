@@ -1,6 +1,5 @@
 "use strict";
 var ActionTypes_1 = require('../constants/ActionTypes');
-var _ = require('lodash');
 var initialState = [
     {
         text: 'Use Redux',
@@ -26,18 +25,18 @@ function todos(state, action) {
         case ActionTypes_1.EDIT_TODO:
             return state.map(function (todo) {
                 return todo.id === action.id ?
-                    _.assign({}, todo, { text: action.text }) :
+                    Object.assign({}, todo, { text: action.text }) :
                     todo;
             });
         case ActionTypes_1.COMPLETE_TODO:
             return state.map(function (todo) {
                 return todo.id === action.id ?
-                    _.assign({}, todo, { completed: !todo.completed }) :
+                    Object.assign({}, todo, { completed: !todo.completed }) :
                     todo;
             });
         case ActionTypes_1.COMPLETE_ALL:
             var areAllMarked_1 = state.every(function (todo) { return todo.completed; });
-            return state.map(function (todo) { return _.assign({}, todo, {
+            return state.map(function (todo) { return Object.assign({}, todo, {
                 completed: !areAllMarked_1
             }); });
         case ActionTypes_1.CLEAR_COMPLETED:

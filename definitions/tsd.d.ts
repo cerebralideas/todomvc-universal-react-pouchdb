@@ -8,6 +8,7 @@
 /// <reference path="body-parser/body-parser.d.ts" />
 /// <reference path="cookie-parser/cookie-parser.d.ts" />
 /// <reference path="pouchDB/pouch.d.ts" />
+/// <reference path="superagent/superagent.d.ts" />
 /// <reference path="multer/multer.d.ts" />
 /// <reference path="page/page.d.ts" />
 /// <reference path="react/react.d.ts" />

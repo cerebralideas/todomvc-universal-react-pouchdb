@@ -4,22 +4,13 @@ var react_dom_1 = require('react-dom');
 var react_redux_1 = require('react-redux');
 var App_1 = require('./containers/App');
 var configureStore_1 = require('./store/configureStore');
-var page_1 = require('page');
+var client_routes_1 = require('./initiators/client-routes');
 var serverState = __REACT_ENGINE__;
-var store = configureStore_1.default({ todos: serverState.todos, filter: serverState.filter });
-page_1.default('/', function () {
-    store.dispatch({ type: 'SHOW_ALL' });
+var store = configureStore_1.default({
+    todos: serverState.todos,
+    filter: serverState.filter
 });
-page_1.default('/show_all', function () {
-    store.dispatch({ type: 'SHOW_ALL' });
-});
-page_1.default('/show_active', function () {
-    store.dispatch({ type: 'SHOW_ACTIVE' });
-});
-page_1.default('/show_completed', function () {
-    store.dispatch({ type: 'SHOW_COMPLETED' });
-});
-page_1.default();
+client_routes_1.default(store);
 react_dom_1.render(React.createElement(react_redux_1.Provider, {store: store}, 
     React.createElement(App_1.default, null)
 ), document.getElementById('root'));

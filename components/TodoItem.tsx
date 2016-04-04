@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Component, PropTypes } from 'react';
 import TodoTextInput from './TodoTextInput';
+import events from '../initiators/client-events';
 
 interface Props {
 	todo?: any;
@@ -42,11 +43,16 @@ class TodoItem extends Component<Props, State> {
 		this.setState({editing: false});
 	}
 
+	handleComplete(id) {
+		events.postCompleteTodo(id);
+		this.props.completeTodo(id);
+	}
+
 	render() {
 		const { todo, completeTodo, deleteTodo, filter } = this.props;
 		const isCompleted = todo.completed ? 'completed' : '';
 		const isEditing = this.state.editing ? 'editing' : '';
-		
+
 		let element;
 		if (this.state.editing) {
 			element = (
@@ -61,7 +67,7 @@ class TodoItem extends Component<Props, State> {
 					<input className="toggle"
 						   type="checkbox"
 						   checked={todo.completed}
-						   onChange={() => completeTodo(todo.id)}/>
+						   onChange={ () => this.handleComplete(todo.id) }/>
 					<label onDoubleClick={ this.handleDoubleClick.bind(this) }>
 						{todo.text}
 					</label>

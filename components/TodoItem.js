@@ -7,6 +7,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 var React = require('react');
 var react_1 = require('react');
 var TodoTextInput_1 = require('./TodoTextInput');
+var client_events_1 = require('../initiators/client-events');
 var TodoItem = (function (_super) {
     __extends(TodoItem, _super);
     function TodoItem(props, context) {
@@ -27,6 +28,10 @@ var TodoItem = (function (_super) {
         }
         this.setState({ editing: false });
     };
+    TodoItem.prototype.handleComplete = function (id) {
+        client_events_1.default.postCompleteTodo(id);
+        this.props.completeTodo(id);
+    };
     TodoItem.prototype.render = function () {
         var _this = this;
         var _a = this.props, todo = _a.todo, completeTodo = _a.completeTodo, deleteTodo = _a.deleteTodo, filter = _a.filter;
@@ -38,7 +43,7 @@ var TodoItem = (function (_super) {
         }
         else {
             element = (React.createElement("div", {className: "view"}, 
-                React.createElement("input", {className: "toggle", type: "checkbox", checked: todo.completed, onChange: function () { return completeTodo(todo.id); }}), 
+                React.createElement("input", {className: "toggle", type: "checkbox", checked: todo.completed, onChange: function () { return _this.handleComplete(todo.id); }}), 
                 React.createElement("label", {onDoubleClick: this.handleDoubleClick.bind(this)}, todo.text), 
                 React.createElement("button", {className: "destroy", onClick: function () { return deleteTodo(todo.id); }})));
         }

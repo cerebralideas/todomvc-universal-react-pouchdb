@@ -1,13 +1,10 @@
 import * as React from 'react';
-import { PropTypes, Component } from 'react';
+import { Component } from 'react';
 import { Provider } from 'react-redux';
 import App from '../containers/App';
 import configureStore from '../store/configureStore';
 
 class Layout extends Component<any, any>{
-	static propTypes = {
-		store: PropTypes.object.isRequired
-	};
 
 	render() {
 		const store = configureStore(this.props);
@@ -47,7 +44,7 @@ class Layout extends Component<any, any>{
 						'react-dom': 'node_modules/react-dom/dist/react-dom.js',
 						'redux': 'node_modules/redux/dist/redux.js',
 						'react-redux': 'node_modules/react-redux/dist/react-redux.js',
-						'classnames': 'node_modules/classnames/index.js'
+						'superagent': 'node_modules/superagent/superagent.js'
 					}
 				});
 

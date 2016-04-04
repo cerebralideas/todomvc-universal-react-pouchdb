@@ -9,7 +9,7 @@ var react_1 = require('react');
 var react_redux_1 = require('react-redux');
 var App_1 = require('../containers/App');
 var configureStore_1 = require('../store/configureStore');
-module.exports = (function (_super) {
+var Layout = (function (_super) {
     __extends(Layout, _super);
     function Layout() {
         _super.apply(this, arguments);
@@ -38,12 +38,10 @@ module.exports = (function (_super) {
                 React.createElement("script", {type: "text/javascript", src: "https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.25/system.js"}), 
                 React.createElement("script", {type: "text/javascript", src: "node_modules/babel-polyfill/dist/polyfill.js"}), 
                 React.createElement("script", {type: "text/javascript", src: "bundle.js"}), 
-                React.createElement("script", {dangerouslySetInnerHTML: { __html: "System.config({\n\t\t\t\t\tbaseURL: '/',\n\t\t\t\t\tmap: {\n\t\t\t\t\t'lodash': 'node_modules/lodash/lodash.js',\n\t\t\t\t\t\t'page': 'node_modules/page/index.js',\n\t\t\t\t\t\t'path-to-regexp': 'node_modules/path-to-regexp/index.js',\n\t\t\t\t\t\t'isarray': 'node_modules/isarray/index.js',\n\t\t\t\t\t\t'react': 'node_modules/react/dist/react-with-addons.js',\n\t\t\t\t\t\t'react-dom': 'node_modules/react-dom/dist/react-dom.js',\n\t\t\t\t\t\t'redux': 'node_modules/redux/dist/redux.js',\n\t\t\t\t\t\t'react-redux': 'node_modules/react-redux/dist/react-redux.js',\n\t\t\t\t\t\t'classnames': 'node_modules/classnames/index.js'\n\t\t\t\t\t}\n\t\t\t\t});\n\n\t\t\t\tSystem.import('client');"
+                React.createElement("script", {dangerouslySetInnerHTML: { __html: "System.config({\n\t\t\t\t\tbaseURL: '/',\n\t\t\t\t\tmap: {\n\t\t\t\t\t'lodash': 'node_modules/lodash/lodash.js',\n\t\t\t\t\t\t'page': 'node_modules/page/index.js',\n\t\t\t\t\t\t'path-to-regexp': 'node_modules/path-to-regexp/index.js',\n\t\t\t\t\t\t'isarray': 'node_modules/isarray/index.js',\n\t\t\t\t\t\t'react': 'node_modules/react/dist/react-with-addons.js',\n\t\t\t\t\t\t'react-dom': 'node_modules/react-dom/dist/react-dom.js',\n\t\t\t\t\t\t'redux': 'node_modules/redux/dist/redux.js',\n\t\t\t\t\t\t'react-redux': 'node_modules/react-redux/dist/react-redux.js',\n\t\t\t\t\t\t'superagent': 'node_modules/superagent/superagent.js'\n\t\t\t\t\t}\n\t\t\t\t});\n\n\t\t\t\tSystem.import('client');"
                 }}))));
-    };
-    Layout.propTypes = {
-        store: react_1.PropTypes.object.isRequired
     };
     return Layout;
 }(react_1.Component));
+module.exports = Layout;
 //# sourceMappingURL=Layout.js.map
