@@ -6,16 +6,20 @@ import { Provider } from 'react-redux';
 import App from './containers/App';
 import configureStore from './store/configureStore';
 import routes from './initiators/client-routes';
+import { initStore } from './initiators/client-events';
 
 declare var __REACT_ENGINE__: any;
 
 let serverState =  __REACT_ENGINE__;
-const store = configureStore({
+let store = configureStore({
 	todos: serverState.todos,
 	filter: serverState.filter
 });
 
+store.subscribe(function () { console.log(store.getState()) });
+
 routes(store);
+initStore(store);
 
 render(
   <Provider store={store}>

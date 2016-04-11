@@ -20,13 +20,13 @@
   },
   "scripts": {
     "transpile": "tsc",
-    "bundle": "tsc --jsx react -m system --outFile ./bundle.js ./client.tsx",
+    "bundle": "tsc --jsx react -m system --outFile ./bundle.js ./client.tsx --sourceMap",
     "lint": "tslint {lib,tests}/*.ts index.ts -r node_modules/tslint-microsoft-contrib",
     "stylecheck": "jscs {lib,tests}/*.js",
     "test": "tape tests/**/*.test.js",
     "dev": "npm run lint && npm run transpile",
     "build": "npm run transpile && npm run bundle",
-    "watch": "chokidar '**/*.ts' -c 'npm run transpile'"
+    "watch": "chokidar -i 'node_modules' '**/*.{ts,tsx}' -c 'npm run build' --initial"
   },
   "config": {
     "ghooks": {
@@ -53,9 +53,9 @@
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-engine": "^3.2.0",
-    "react-redux": "^4.2.1",
+    "react-redux": "^4.4.5",
     "react-router": "^2.0.1",
-    "redux": "^3.2.1",
+    "redux": "^3.4.0",
     "serve-favicon": "^2.3.0",
     "superagent": "^1.8.3",
     "todomvc-app-css": "^2.0.0"
@@ -66,8 +66,6 @@
     "jscs": "^2.7.0",
     "proxyquire": "^1.7.3",
     "tape": "^4.4.0",
-    "tslint": "^3.6.0-dev.1",
-    "tslint-microsoft-contrib": "^2.0.0",
     "typescript": "^1.9.0-dev.20160403",
     "webpack": "^1.12.14"
   },

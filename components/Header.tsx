@@ -1,36 +1,27 @@
 import * as React from 'react';
-import { PropTypes, Component } from 'react';
 import TodoTextInput from './TodoTextInput';
 
 interface Props {
 	addTodo?: Function;
 	filter?: string;
 }
-interface State {}
 
-class Header extends Component<Props, State> {
-	static propTypes = {
-		addTodo: PropTypes.func.isRequired,
-		filter: PropTypes.string
+function Header(props: Props) {
+	let newTodo = true;
+	let fakeTodo = {
+		editing: false,
+		title: ''
 	};
 
-	handleSave(text) {
-		if (text.length !== 0) {
-			this.props.addTodo(text)
-		}
-	}
-
-	render() {
-		return (
-			<header className="header">
-				<h1>todos</h1>
-				<TodoTextInput newTodo
-							   filter={this.props.filter}
-							   onSave={this.handleSave.bind(this)}
-							   placeholder="What needs to be done?"/>
-			</header>
-		);
-	}
+	return (
+		<header className="header">
+			<h1>todos</h1>
+			<TodoTextInput todo={ fakeTodo }
+						   newTodo={ newTodo }
+						   filter={props.filter}
+						   placeholder="What needs to be done?" />
+		</header>
+	);
 }
 
 export default Header;

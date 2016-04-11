@@ -1,13 +1,16 @@
-import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes';
-import * as _ from 'lodash';
+import {
+	ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED,
+	EDITING_TODO
+} from '../constants/ActionTypes';
 
 declare var Object: any;
 
 const initialState = [
 	{
-		text: 'Use Redux',
+		title: 'Use Redux',
 		completed: false,
-		id: 0
+		id: 0,
+		editing: false
 	}
 ];
 
@@ -18,7 +21,8 @@ export default function todos(state = initialState, action): any {
 				{
 					id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
 					completed: false,
-					text: action.text
+					title: action.title,
+					editing: false
 				},
 				...state
 			];
@@ -28,19 +32,26 @@ export default function todos(state = initialState, action): any {
 				todo.id !== action.id
 			);
 
+		case EDITING_TODO:
+			return state.map(todo =>
+				todo.id === action.id ?
+					Object.assign({}, todo, { editing: true }) :
+					todo
+				);
+		
 		case EDIT_TODO:
 			return state.map(todo =>
 				todo.id === action.id ?
-					Object.assign({}, todo, {text: action.text}) :
+					Object.assign({}, todo, { title: action.title, editing: false }) :
 					todo
-			);
+				);
 
 		case COMPLETE_TODO:
 			return state.map(todo =>
 				todo.id === action.id ?
 					Object.assign({}, todo, {completed: !todo.completed}) :
 					todo
-			);
+				);
 
 		case COMPLETE_ALL:
 			const areAllMarked = state.every(todo => todo.completed);
