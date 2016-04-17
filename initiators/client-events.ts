@@ -15,6 +15,7 @@ export function formSubmission(event, id) {
 
 	event.preventDefault();
 
+	// Was this an edit?
 	if (id != null && title.length) {
 		// Fire action on client
 		store.dispatch(actions.editTodo(id, title));
@@ -38,6 +39,7 @@ export function formSubmission(event, id) {
 			});
 
 	} else {
+		// This was a new item
 		// Fire action on client
 		store.dispatch(actions.addTodo(title));
 		// Fire action on server

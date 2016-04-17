@@ -21,8 +21,8 @@ function MainSection(props: Props) {
 	let filteredTodos = todos.filter(TODO_FILTERS[filter]);
 	let completedCount = todos.reduce((count, todo) =>
 			todo.completed ? count + 1 : count,
-		0
-	);
+			0
+		);
 
 	function renderToggleAll(completedCount) {
 		if (todos.length > 0) {
@@ -50,13 +50,13 @@ function MainSection(props: Props) {
 
 	return (
 		<section className="main">
-			{renderToggleAll(completedCount)}
+			{ renderToggleAll(completedCount) }
 			<ul className="todo-list">
 				{filteredTodos.map(todo =>
 					<TodoItem key={ todo.id } todo={ todo } filter={ filter } />
 				)}
 			</ul>
-			{renderFooter(completedCount)}
+			{ renderFooter(completedCount) }
 		</section>
 	);
 }

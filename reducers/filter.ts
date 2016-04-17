@@ -2,7 +2,7 @@ import { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } from '../constants/ActionTypes'
 
 const initialState = 'show_all';
 
-export default function filters(state = initialState, action): any {
+export default function filters(state = initialState, action) {
 	switch (action.type) {
 		case SHOW_ALL:
 			return 'show_all';

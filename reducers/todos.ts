@@ -3,7 +3,7 @@ import {
 	EDITING_TODO
 } from '../constants/ActionTypes';
 
-declare var Object: any;
+declare global Object: any;
 
 const initialState = [
 	{
@@ -38,7 +38,7 @@ export default function todos(state = initialState, action): any {
 					Object.assign({}, todo, { editing: true }) :
 					todo
 				);
-		
+
 		case EDIT_TODO:
 			return state.map(todo =>
 				todo.id === action.id ?
