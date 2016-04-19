@@ -4,9 +4,8 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import App from './containers/App';
-import configureStore from './store/redux-store';
+import { configureStore } from './store/redux-store';
 import routes from './initiators/client-routes';
-import { initStore } from './initiators/client-events';
 
 declare var __REACT_ENGINE__: any;
 
@@ -19,7 +18,6 @@ let store = configureStore({
 store.subscribe(function () { console.log(store.getState()) });
 
 routes(store);
-initStore(store);
 
 render(
   <Provider store={store}>

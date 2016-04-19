@@ -26,7 +26,7 @@ function get(req, res, configureStore, callback) {
 }
 // Database PUT
 function create(req, res, configureStore, callback) {
-	let filter = req.query.filter && req.query.filter.toUpperCase() || 'SHOW_ALL';
+	let filter = req.param.query && req.param.query.toUpperCase() || 'SHOW_ALL';
 
 	db.get(req.ip, function (err: any, doc: any) {
 		let store = configureStore(doc.store);

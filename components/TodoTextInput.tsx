@@ -18,9 +18,11 @@ function TodoTextInput(props: Props) {
 		}
 	}
 	return (
-		<form onSubmit={ (event) => { formSubmission(event, props.todo && props.todo.id) }}>
+		<form method="POST"
+			  action={ "/todos?=filter=" + props.filter }
+			  onSubmit={ (event) => { formSubmission(event, props.todo && props.todo.id) }}>
 			<input className={ isEditing || isNew }
-				   name="todo"
+				   name="title"
 				   type="text"
 				   placeholder={ props.placeholder }
 				   defaultValue={ props.todo.title }

@@ -1,24 +1,23 @@
 {
-  "name": "commonweb-setup",
-  "version": "0.0.1",
-  "description": "NPM module for setting up a CommonWeb project.",
+  "name": "universal-todomvc",
+  "version": "1.0.0",
+  "description": "A universal TodoMVC with React, Redux built with TypeScript.",
   "main": "index.js",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.paypal.com/CommonWeb-R/commonweb-setup"
+    "url": "https://github.com/cerebralix/universal-todomvc"
   },
-  "contributors": [
-    {
-      "name": "Team Six",
-      "email": "DL-PayPal-TeamSix-Core@paypal.com",
-      "url": "https://rally1.rallydev.com/#/11744709963d/teamstatus"
-    }
-  ],
+  "author": {
+    "name": "Justin Lowery",
+    "email": "justin@cix.io"
+  },
+  "contributors": [],
   "publishConfig": {
-    "registry": "http://npm.paypal.com"
+    "registry": "http://npm.com"
   },
   "scripts": {
+    "start": "node server.js",
     "transpile": "tsc",
     "bundle": "tsc --jsx react -m system --outFile ./bundle.js ./client.tsx --sourceMap",
     "lint": "tslint {lib,tests}/*.ts index.ts -r node_modules/tslint-microsoft-contrib",
@@ -68,11 +67,5 @@
     "tape": "^4.4.0",
     "typescript": "^1.9.0-dev.20160403",
     "webpack": "^1.12.14"
-  },
-  "maintainers": [
-    {
-      "name": "jlowery",
-      "email": "jlowery@paypal.com"
-    }
-  ]
+  }
 }

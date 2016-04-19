@@ -1,6 +1,4 @@
-'use strict';
-
-const PORT = 3000;
+/// <reference path="./definitions/tsd.d.ts" />
 
 import { join } from 'path';
 import * as express from 'express';
@@ -12,6 +10,7 @@ import * as cookieParser from 'cookie-parser';
 import routes from './initiators/server-routes';
 
 let app = express();
+const PORT = 3000;
 
 // create the view engine with `react-engine`
 let engine = ReactEngine.server.create({

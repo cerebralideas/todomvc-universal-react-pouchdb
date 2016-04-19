@@ -1,4 +1,4 @@
-import configureStore from '../store/redux-store';
+import { configureStore  } from '../store/redux-store';
 import db from '../store/server-db';
 
 const init = function (app) {

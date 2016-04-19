@@ -3,7 +3,7 @@ import {
 	EDITING_TODO
 } from '../constants/ActionTypes';
 
-declare global Object: any;
+declare var Object: any;
 
 const initialState = [
 	{
