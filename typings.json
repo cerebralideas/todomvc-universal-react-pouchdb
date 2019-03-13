@@ -1,0 +1,7 @@
+{
+  "name": "universal-todomvc",
+  "dependencies": {},
+  "globalDependencies": {
+    "es2015-string": "registry:env/es2015-string#1.0.0+20160526151700"
+  }
+}
