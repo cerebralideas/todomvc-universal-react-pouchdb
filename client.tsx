@@ -7,21 +7,24 @@ import App from './containers/App';
 import { configureStore } from './store/redux-store';
 import routes from './initiators/client-routes';
 
-declare var __REACT_ENGINE__: any;
+declare var window: any;
 
-let serverState =  __REACT_ENGINE__;
-let store = configureStore({
-	todos: serverState.todos,
-	filter: serverState.filter
-});
+document.addEventListener("DOMContentLoaded", function () {
 
-store.subscribe(function () { console.log(store.getState()) });
+	let serverState =  window.__REACT_ENGINE__;
+	let store = configureStore({
+		todos: serverState.todos,
+		filter: serverState.filter
+	});
 
-routes(store);
+	store.subscribe(function () { console.log(store.getState()) });
 
-render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+	routes(store);
+
+	render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('root')
+	);
+})

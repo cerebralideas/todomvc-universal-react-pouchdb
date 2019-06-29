@@ -1,6 +1,6 @@
 {
 	"compilerOptions": {
-		"target": "es5",
+		"target": "es2015",
 		"module": "commonjs",
 		"moduleResolution": "node",
 		"isolatedModules": false,
@@ -18,7 +18,6 @@
 	},
 	"exclude": [
 		"node_modules",
-		"definitions",
-		"client.tsx"
+		"definitions"
 	]
 }

@@ -1,6 +1,7 @@
 *.js
 *.js.map
-.idea/
+.idea
+.vscode
 *.iml
 out
 gen

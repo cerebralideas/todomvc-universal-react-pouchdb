@@ -26,30 +26,9 @@ function Layout(props: any) {
 			<p>Created by <a href="http://github.com/remojansen/">Remo H. Jansen</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.25/system.js"></script>
 		<script type="text/javascript" src="node_modules/babel-polyfill/dist/polyfill.js"></script>
-		<script type="text/javascript" src="bundle.js"></script>
+		<script type="text/javascript" src="dist/bundle.js"></script>
 
-		<script dangerouslySetInnerHTML={{__html:
-			// set our baseURL reference path
-			`System.config({
-				baseURL: '/',
-				map: {
-					'lodash': 'node_modules/lodash/lodash.js',
-					'page': 'node_modules/page/index.js',
-					'path-to-regexp': 'node_modules/path-to-regexp/index.js',
-					'isarray': 'node_modules/isarray/index.js',
-					'react': 'node_modules/react/dist/react-with-addons.js',
-					'react-dom': 'node_modules/react-dom/dist/react-dom.js',
-					'redux': 'node_modules/redux/dist/redux.js',
-					'react-redux': 'node_modules/react-redux/dist/react-redux.js',
-					'superagent': 'node_modules/superagent/superagent.js'
-				}
-			});
-
-			System.import('client');`
-		}}>
-		</script>
 		</body>
 		</html>
 	);
