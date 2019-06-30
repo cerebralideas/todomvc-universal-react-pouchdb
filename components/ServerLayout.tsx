@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Component } from 'react';
 import { Provider } from 'react-redux';
 import App from '../containers/App';
 import { configureStore } from '../store/redux-store';
@@ -26,7 +25,6 @@ function Layout(props: any) {
 			<p>Created by <a href="http://github.com/remojansen/">Remo H. Jansen</a></p>
 			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
-		<script type="text/javascript" src="node_modules/babel-polyfill/dist/polyfill.js"></script>
 		<script type="text/javascript" src="dist/bundle.js"></script>
 
 		</body>

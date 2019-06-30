@@ -33,7 +33,6 @@
     }
   },
   "dependencies": {
-    "babel-polyfill": "^6.3.14",
     "body-parser": "^1.15.0",
     "classnames": "^2.1.2",
     "cookie-parser": "^1.4.1",
@@ -42,11 +41,12 @@
     "multer": "^1.1.0",
     "page": "^1.7.1",
     "pouchdb": "^7.1.1",
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7",
-    "react-engine": "^3.2.0",
-    "react-redux": "^4.4.5",
-    "redux": "^3.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-engine": "^4.5.1",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "redux": "^4.0.1",
     "serve-favicon": "^2.3.0",
     "superagent": "^1.8.3",
     "todomvc-app-css": "^2.0.0"
@@ -74,6 +74,7 @@
     "chokidar-cli": "^1.2.0",
     "ghooks": "^1.0.3",
     "jscs": "^2.7.0",
+    "json-loader": "^0.5.7",
     "proxyquire": "^1.7.3",
     "tape": "^4.4.0",
     "typescript": "^3.5.2",

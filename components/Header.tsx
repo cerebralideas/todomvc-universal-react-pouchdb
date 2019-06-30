@@ -7,11 +7,11 @@ interface Props {
 }
 
 function Header(props: Props) {
-	let newTodo = true;
-	let fakeTodo = {
-		editing: false,
-		title: ''
-	};
+	let newTodo = true,
+		fakeTodo = {
+			editing: false,
+			title: ''
+		};
 
 	return (
 		<header className="header">
