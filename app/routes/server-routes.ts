@@ -5,12 +5,12 @@ const init = function (app) {
 
 	app.get('/', function(req, res) {
 		db.get(req, res, configureStore, function (req, res, model) {
-			res.render('ServerLayout', model);
+			res.render('server-layout', model);
 		});
 	});
 	app.get('/:filter', function(req, res) {
 		db.get(req, res, configureStore, function (req, res, model) {
-			res.render('ServerLayout', model);
+			res.render('server-layout', model);
 		});
 	});
 	app.post('/todos', function(req, res) {

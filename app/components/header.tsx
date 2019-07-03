@@ -1,5 +1,5 @@
 import * as React from 'react';
-import TodoTextInput from './TodoTextInput';
+import TodoTextInput from './todo-text-input';
 
 interface Props {
 	addTodo?: Function;

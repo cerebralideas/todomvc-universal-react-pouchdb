@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import Header from '../components/Header';
-import MainSection from '../components/MainSection';
+import Header from '../components/header';
+import TodoList from '../components/todo-list';
 
 interface Props {
 	todos: any;
@@ -14,7 +14,7 @@ function App(props: Props) {
 	return (
 		<div>
 			<Header filter={filter} />
-			<MainSection todos={todos} filter={filter} />
+			<TodoList todos={todos} filter={filter} />
 		</div>
 	);
 }

@@ -1,17 +1,18 @@
 import page from 'page';
+import { showAll, showActive, showCompleted } from '../actions/index'
 
 const init = function init(store) {
 	page('/', function () {
-		store.dispatch({ type: 'SHOW_ALL' })
+		store.dispatch(showAll());
 	});
 	page('/show_all', function () {
-		store.dispatch({ type: 'SHOW_ALL' })
+		store.dispatch(showAll());
 	});
 	page('/show_active', function () {
-		store.dispatch({ type: 'SHOW_ACTIVE' })
+		store.dispatch(showActive());
 	});
 	page('/show_completed', function () {
-		store.dispatch({ type: 'SHOW_COMPLETED' })
+		store.dispatch(showCompleted());
 	});
 	page();
 };

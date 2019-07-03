@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/todo-filters';
 
 let FILTER_TITLES = {
 	[SHOW_ALL]: 'All',

@@ -1,8 +1,8 @@
 import * as React from 'react';
-import TodoItem from './TodoItem';
-import Footer from './Footer';
-import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters';
-import { completeAll, clearCompleted } from '../initiators/client-events';
+import TodoItem from './todo-item';
+import Footer from './footer';
+import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/todo-filters';
+import { completeAll, clearCompleted } from '../events/client-events';
 
 const TODO_FILTERS = {
 	[SHOW_ALL]: () => true,

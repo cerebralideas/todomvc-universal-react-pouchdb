@@ -1,7 +1,27 @@
 import * as PouchDB from 'pouchdb';
+import {
+	editTodo,
+	addTodo,
+	completeTodo,
+	deleteTodo,
+	showAll,
+	showActive,
+	showCompleted,
+	completeAll,
+	clearCompleted
+} from '../actions/index';
 
 let db = new PouchDB('users');
 
+function handleFilter(store, filter) {
+	if (filter === 'SHOW_COMPLETED') {
+		store.dispatch(showCompleted());
+	} else if (filter === 'SHOW_ACTIVE') {
+		store.dispatch(showActive());
+	} else {
+		store.dispatch(showAll());
+	}
+}
 // Database GET
 function get(req, res, configureStore, callback) {
 	let filter = req.params.filter && req.params.filter.toUpperCase() || 'SHOW_ALL',
@@ -12,7 +32,7 @@ function get(req, res, configureStore, callback) {
 			let store = configureStore(doc.store),
 				model;
 
-			store.dispatch({ type: filter });
+			handleFilter(store, filter);
 
 			model = {
 				_id: userId,
@@ -33,7 +53,7 @@ function get(req, res, configureStore, callback) {
 			let store = configureStore({}),
 				model;
 
-			store.dispatch({ type: filter });
+			handleFilter(store, filter);
 
 			model = {
 				_id: userId,
@@ -56,8 +76,9 @@ function create(req, res, configureStore, callback) {
 	db.get(userId).
 		then(function (doc: any) {
 			let store = configureStore(doc.store);
-			store.dispatch({ type: filter });
-			store.dispatch({ type: 'ADD_TODO', title: req.body.title });
+
+			handleFilter(store, filter);
+			store.dispatch(addTodo(req.body.title));
 
 			let model = {
 				_id: doc._id,
@@ -79,18 +100,22 @@ function create(req, res, configureStore, callback) {
 }
 // Database PUT
 function update(req, res, configureStore, callback) {
-	let actionQuery: any = { type: req.query.type, id: parseInt(req.params.id, 10) },
+	let action,
+		todoId = parseInt(req.params.id, 10),
+		todoTitle = req.body.title,
 		userId = '1';
-
-	if (req.query.type === 'EDIT_TODO') {
-		actionQuery.title = req.body.title;
-	}
 
 	db.get(userId).
 		then(function (doc: any) {
 			let store = configureStore(doc.store);
 
-			store.dispatch(actionQuery);
+			if (req.query.type === 'EDIT_TODO') {
+				store.dispatch(editTodo(todoId, todoTitle));
+			} else if (req.query.type === 'COMPLETE_TODO'){
+				store.dispatch(completeTodo(todoId));
+			} else {
+				store.dispatch(deleteTodo(todoId));
+			}
 
 			let model = {
 				_id: doc._id,
@@ -116,7 +141,12 @@ function massUpdate(req, res, configureStore, callback) {
 	db.get(userId).
 		then(function (doc: any) {
 			let store = configureStore(doc.store);
-			store.dispatch({ type: req.query.type });
+
+			if (req.query.type === 'COMPLETE_All') {
+				store.dispatch(completeAll());
+			} else {
+				store.dispatch(clearCompleted());
+			}
 
 			let model = {
 				_id: doc._id,

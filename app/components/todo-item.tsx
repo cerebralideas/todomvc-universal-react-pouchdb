@@ -1,6 +1,6 @@
 import * as React from 'react';
-import TodoTextInput from './TodoTextInput';
-import { deleteTodo, completeTodo, editingTodo } from '../initiators/client-events';
+import TodoTextInput from './todo-text-input';
+import { deleteTodo, completeTodo, editingTodo } from '../events/client-events';
 
 interface Props {
 	filter: string;

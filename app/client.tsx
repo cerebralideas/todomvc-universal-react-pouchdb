@@ -2,9 +2,9 @@ import * as React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import * as client from 'react-engine/lib/client';
-import App from './containers/App';
+import App from './views/app';
 import { configureStore } from './store/redux-store';
-import routes from './initiators/client-routes';
+import routes from './routes/client-routes';
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	routes(store);
 
 	render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('root')
+		<Provider store={store}>
+			<App />
+		</Provider>,
+		document.getElementById('root')
 	);
 });

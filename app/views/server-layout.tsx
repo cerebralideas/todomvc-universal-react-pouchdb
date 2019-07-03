@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import App from '../containers/App';
+import App from './app';
 import { configureStore } from '../store/redux-store';
 
 function Layout(props: any) {
@@ -11,7 +11,7 @@ function Layout(props: any) {
 		<html lang="en">
 		<head>
 			<meta charSet="utf-8" />
-			<title>React • TodoMVC</title>
+			<title>Universal React • TodoMVC</title>
 			<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css" />
 		</head>
 		<body>

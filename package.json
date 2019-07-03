@@ -2,7 +2,7 @@
   "name": "universal-todomvc",
   "version": "2.0.0",
   "description": "A universal TodoMVC with React, Redux built with TypeScript.",
-  "main": "server.js",
+  "main": "./app/server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/cerebralix/universal-todomvc"
@@ -47,6 +47,7 @@
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
     "serve-favicon": "^2.3.0",
     "superagent": "^1.8.3",
     "todomvc-app-css": "^2.0.0"
@@ -67,6 +68,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/react-redux": "^7.1.1",
     "@types/redux": "^3.6.0",
+    "@types/redux-actions": "^2.6.1",
     "@types/serve-favicon": "^2.2.30",
     "@types/serve-static": "^1.13.2",
     "@types/superagent": "^4.1.1",

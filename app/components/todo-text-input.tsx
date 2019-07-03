@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { formSubmission } from '../initiators/client-events';
+import { formSubmission } from '../events/client-events';
 
 interface Props {
 	placeholder: string;
