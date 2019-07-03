@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Provider } from 'react-redux';
-import App from './app';
-import { configureStore } from '../store/redux-store';
+import App from './views/app';
+import { configureStore } from './store/redux-store';
 
 function Layout(props: any) {
 

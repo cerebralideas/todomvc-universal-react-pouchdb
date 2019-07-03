@@ -9,7 +9,7 @@ import {
 	clearCompleted
 } from '../actions/index';
 
-interface State {
+export interface State {
 	title: string,
 	completed: boolean,
 	id: number,

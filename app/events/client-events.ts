@@ -6,14 +6,14 @@ import { store } from '../store/redux-store';
  * Client & Server Sync actions
  */
 export function formSubmission(event, id) {
-	let form = event.currentTarget.elements,
-		title = form && form.todo.value ||
-			event.currentTarget.value;
+	let title = event.currentTarget.id === 'todoForm' ?
+		event.currentTarget.elements.todoInput.value :
+		'';
 
 	event.preventDefault();
 
 	// Was this an edit?
-	if (!id && title.length) {
+	if (id && title.length) {
 		// Fire action on server
 		superagent
 			.post('/api/todos/' + id + '?type=EDIT_TODO')
@@ -44,7 +44,7 @@ export function formSubmission(event, id) {
 				store.dispatch(actions.addTodo(title));
 			});
 
-		event.currentTarget.elements.todo.value = '';
+		event.currentTarget.elements.todoInput.value = '';
 	}
 }
 export function completeTodo(id) {

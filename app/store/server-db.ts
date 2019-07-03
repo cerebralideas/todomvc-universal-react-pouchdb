@@ -142,7 +142,7 @@ function massUpdate(req, res, configureStore, callback) {
 		then(function (doc: any) {
 			let store = configureStore(doc.store);
 
-			if (req.query.type === 'COMPLETE_All') {
+			if (req.query.type === 'COMPLETE_ALL') {
 				store.dispatch(completeAll());
 			} else {
 				store.dispatch(clearCompleted());

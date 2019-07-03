@@ -17,16 +17,20 @@ function TodoTextInput(props: Props) {
 			formSubmission(event, props.todo.id)
 		}
 	}
+
 	return (
-		<form method="POST"
-			  action={ "/todos?=filter=" + props.filter }
-			  onSubmit={ (event) => { formSubmission(event, props.todo && props.todo.id) }}>
-			<input className={ isEditing || isNew }
-				   name="title"
-				   type="text"
-				   placeholder={ props.placeholder }
-				   defaultValue={ props.todo.title }
-				   onBlur={ saveChange } />
+		<form id='todoForm'
+			method='POST'
+			action={ `/todos?=filter=${props.filter ? props.filter : '' }`}
+			onSubmit={ (event) => formSubmission(event, props.todo && props.todo.id) }>
+
+			<input id="todoInput"
+				className={ isEditing || isNew }
+				name='title'
+				type='text'
+				placeholder={ props.placeholder }
+				defaultValue={ props.todo.title }
+				onBlur={ saveChange } />
 		</form>
 	);
 }

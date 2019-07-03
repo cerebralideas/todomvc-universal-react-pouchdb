@@ -19,7 +19,7 @@ app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(cookieParser()); // for parsing cookies
 app.engine('.js', engine);// set the engine
-app.set('views', join(__dirname, '/views'));// set the view directory
+app.set('views', join(__dirname, '/'));// set the view directory
 app.set('view engine', 'js');// set js as the view engine
 app.set('view', expressView);// finally, set the custom view
 app.use(express.static(join(__dirname, '../')));// expose public folder as static assets
