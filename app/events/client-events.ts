@@ -8,7 +8,7 @@ import { store } from '../store/redux-store';
 export function formSubmission(event, id) {
 	let title = event.currentTarget.id === 'todoForm' ?
 		event.currentTarget.elements.todoInput.value :
-		'';
+		event.currentTarget.value;
 
 	event.preventDefault();
 

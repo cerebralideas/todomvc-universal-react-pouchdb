@@ -1,9 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import TodoTextInput from './todo-text-input';
 import { deleteTodo, completeTodo, editingTodo } from '../events/client-events';
 
 import { Todo, State } from '../interfaces';
-import { connect } from 'react-redux';
 
 interface Prop {
 	todo: Todo;
@@ -41,7 +41,7 @@ function TodoItem ({ todo, filter }: Prop) { // save
 	}
 
 	return (
-		<li key={ todo.id } className={ isCompleted + ' ' + isEditing }>
+		<li className={ isCompleted + ' ' + isEditing }>
 			{element}
 		</li>
 	);
@@ -49,5 +49,5 @@ function TodoItem ({ todo, filter }: Prop) { // save
 
 export default connect((state: State, ownProps: { todoId: number }) => ({
 	filter: state.filter,
-	todo: state.todos[ownProps.todoId]
+	todo: state.todos.find((todo) => todo.id === ownProps.todoId)
 }))(TodoItem);

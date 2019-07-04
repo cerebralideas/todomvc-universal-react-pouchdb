@@ -20,9 +20,9 @@ function TodoList({ todos, filter }: State) {
 		<section className="main">
 			<ToggleAll />
 			<ul className="todo-list">
-				{filteredTodos.map(todo =>
-					<TodoItem todoId={ todo.id } />
-				)}
+				{filteredTodos.map(todo => (
+					<TodoItem key={ todo.id } todoId={ todo.id } />
+				))}
 			</ul>
 			<Footer />
 		</section>
