@@ -1,10 +1,10 @@
 import { join } from 'path';
-import * as express from 'express';
-import * as favicon from 'serve-favicon';
-import * as ReactEngine from 'react-engine';
-import * as expressView from 'react-engine/lib/expressView';
-import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
+import express from 'express';
+import favicon from 'serve-favicon';
+import ReactEngine from 'react-engine';
+import expressView from 'react-engine/lib/expressView';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import routes from './routes/server-routes';
 
 let app = express();

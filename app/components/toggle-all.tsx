@@ -1,15 +1,14 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { completeAll } from '../events/client-events';
 
-import { State as Todo } from '../reducers/todos';
+import { State } from '../interfaces/index';
 
-interface State {
-	filter: string,
-	todos: Todo[]
+interface Props {
+	count: number;
+	completed: number;
 }
-
-function ToggleAll(props) {
+function ToggleAll(props: Props) {
 	if (props.count > 0) {
 		return (
 			<>

@@ -1,20 +1,13 @@
 {
 	"compilerOptions": {
-		"target": "es2015",
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"jsx": "react",
 		"module": "commonjs",
 		"moduleResolution": "node",
-		"isolatedModules": false,
-		"jsx": "react",
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-		"declaration": false,
-		"noImplicitAny": false,
 		"removeComments": true,
-		"noLib": false,
-		"preserveConstEnums": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"sourceMap": true,
-		"allowSyntheticDefaultImports": false
+		"target": "es2015",
+		"sourceMap": true
 	},
 	"exclude": [
 		"node_modules",

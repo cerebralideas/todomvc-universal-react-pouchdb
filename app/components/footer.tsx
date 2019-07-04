@@ -1,14 +1,9 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { completeAll, clearCompleted } from '../events/client-events';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/todo-filters';
 
-import { State as Todo } from '../reducers/todos';
-
-interface State {
-	filter: string,
-	todos: Todo[]
-}
+import { State } from '../interfaces';
 
 let FILTER_TITLES = {
 	[SHOW_ALL]: 'All',

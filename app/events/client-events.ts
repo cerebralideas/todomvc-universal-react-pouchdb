@@ -1,4 +1,4 @@
-import * as superagent from 'superagent';
+import superagent from 'superagent';
 import * as actions from '../actions/index';
 import { store } from '../store/redux-store';
 

@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import * as client from 'react-engine/lib/client';
+import client from 'react-engine/lib/client';
 import App from './views/app';
 import { configureStore } from './store/redux-store';
 import routes from './routes/client-routes';

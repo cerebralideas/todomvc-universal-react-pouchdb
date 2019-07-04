@@ -9,23 +9,11 @@ import {
 	clearCompleted
 } from '../actions/index';
 
-export interface State {
-	title: string,
-	completed: boolean,
-	id: number,
-	editing: boolean
-}
-interface Action {
-	type: string,
-	payload?: {
-		id?: number,
-		title?: string
-	}
-}
+import { Todo, Action } from '../interfaces/index';
 
 export default handleActions(
 	{
-		[addTodo]: (state: State[], action: Action) => ([
+		[addTodo]: (state: Todo[], action: Action) => ([
 			{
 				id: state.reduce((maxId, todo) => Math.max(todo.id, maxId), -1) + 1,
 				completed: false,
@@ -35,13 +23,13 @@ export default handleActions(
 			...state
 		]),
 
-		[deleteTodo]: (state: State[], action: Action) => {
+		[deleteTodo]: (state: Todo[], action: Action) => {
 			return state.filter(todo =>
 				todo.id !== action.payload.id
 			);
 		},
 
-		[editingTodo]: (state: State[], action: Action) => {
+		[editingTodo]: (state: Todo[], action: Action) => {
 			return state.map(todo =>
 				todo.id === action.payload.id ?
 					Object.assign({}, todo, { editing: true }) :
@@ -49,7 +37,7 @@ export default handleActions(
 				);
 		},
 
-		[editTodo]: (state: State[], action: Action) => {
+		[editTodo]: (state: Todo[], action: Action) => {
 			return state.map(todo =>
 				todo.id === action.payload.id ?
 					Object.assign({}, todo, { title: action.payload.title, editing: false }) :
@@ -57,7 +45,7 @@ export default handleActions(
 				);
 		},
 
-		[completeTodo]: (state: State[], action: Action) => {
+		[completeTodo]: (state: Todo[], action: Action) => {
 			return state.map(todo =>
 				todo.id === action.payload.id ?
 					Object.assign({}, todo, {completed: !todo.completed}) :
@@ -65,23 +53,16 @@ export default handleActions(
 				);
 		},
 
-		[completeAll]: (state: State[], action: Action) => {
+		[completeAll]: (state: Todo[], action: Action) => {
 			const areAllMarked = state.every(todo => todo.completed);
 			return state.map(todo => Object.assign({}, todo, {
 				completed: !areAllMarked
 			}));
 		},
 
-		[clearCompleted]: (state: State[], action: Action) => {
+		[clearCompleted]: (state: Todo[], action: Action) => {
 			return state.filter(todo => todo.completed === false);
 		}
 	},
-	[
-		{
-			title: 'Use Redux',
-			completed: false,
-			id: 0,
-			editing: false
-		}
-	]
+	<Todo[]>[]
 );

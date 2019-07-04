@@ -1,6 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import TodoTextInput from './todo-text-input';
+
+import { State } from '../interfaces';
 
 function Header(props: { filter: string }) {
 	let newTodo = true,
@@ -13,12 +15,12 @@ function Header(props: { filter: string }) {
 		<header className="header">
 			<h1>todos</h1>
 			<TodoTextInput todo={ fakeTodo }
-						   newTodo={ newTodo }
-						   filter={props.filter}
-						   placeholder="What needs to be done?" />
+				newTodo={ newTodo }
+				filter={props.filter}
+				placeholder="What needs to be done?" />
 		</header>
 	);
 }
 
 
-export default connect((state: { filter: string }) => ({ filter: state.filter }))(Header);
+export default connect((state: State) => ({ filter: state.filter }))(Header);

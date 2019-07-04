@@ -1,11 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import TodoItem from './todo-item';
 import ToggleAll from './toggle-all';
 import Footer from './footer';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/todo-filters';
 
-import { State as Todo } from '../reducers/todos';
+import { State } from '../interfaces/index';
 
 const TODO_FILTERS = {
 	[SHOW_ALL]: () => true,
@@ -13,12 +13,7 @@ const TODO_FILTERS = {
 	[SHOW_COMPLETED]: (todo) => todo.completed
 };
 
-interface Props {
-	todos?: Todo[];
-	filter?: string;
-}
-
-function TodoList({ todos, filter }: Props) {
+function TodoList({ todos, filter }: State) {
 	let filteredTodos = todos.filter(TODO_FILTERS[filter]);
 
 	return (
@@ -26,7 +21,7 @@ function TodoList({ todos, filter }: Props) {
 			<ToggleAll />
 			<ul className="todo-list">
 				{filteredTodos.map(todo =>
-					<TodoItem key={ todo.id } todo={ todo } filter={ filter } />
+					<TodoItem todoId={ todo.id } />
 				)}
 			</ul>
 			<Footer />
@@ -34,4 +29,4 @@ function TodoList({ todos, filter }: Props) {
 	);
 }
 
-export default connect((state) => state)(TodoList);
+export default connect((state: State) => state)(TodoList);

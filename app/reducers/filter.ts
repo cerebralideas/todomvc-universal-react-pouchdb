@@ -1,16 +1,11 @@
 import { handleActions, combineActions } from 'redux-actions';
 import { showAll, showActive, showCompleted } from '../actions/index';
 
-interface Filter {
-	type: string;
-	payload: {
-		filter: string
-	};
-}
+import { Action } from '../interfaces';
 
 export default handleActions(
 	{
-		[<any>combineActions(showAll, showActive, showCompleted)]: (state: string, action: Filter) => {
+		[<any>combineActions(showAll, showActive, showCompleted)]: (state: string, action: Action) => {
 			return action.payload.filter;
 		}
 

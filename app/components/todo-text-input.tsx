@@ -1,10 +1,12 @@
-import * as React from 'react';
+import React from 'react';
 import { formSubmission } from '../events/client-events';
+
+import { Todo } from '../interfaces';
 
 interface Props {
 	placeholder: string;
 	filter: string;
-	todo?: any;
+	todo?: Todo;
 	newTodo?: boolean;
 }
 
