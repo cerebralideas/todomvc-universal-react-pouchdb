@@ -1,11 +1,12 @@
 import React from 'react';
+import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import rootReducer from './reducers/index';
 import App from './views/app';
-import { configureStore } from './store/redux-store';
 
 function Layout(props: any) {
 
-	let store = configureStore(props);
+	let store = createStore(rootReducer, props);
 
 	return (
 		<html lang="en">
