@@ -1,15 +1,12 @@
 import { mergeMap } from 'rxjs/operators';
 import { createStore  } from 'redux';
 import rootReducer from '../reducers/index';
-import { get$, create$, update$, massUpdate$ } from '../store/server-db';
+import { get$, put$ } from '../store/server-db';
 import {
 	editTodo,
 	addTodo,
 	completeTodo,
 	deleteTodo,
-	showAll,
-	showActive,
-	showCompleted,
 	completeAll,
 	clearCompleted
 } from '../actions/index';
@@ -17,7 +14,7 @@ import {
 export function create(req, res) {
 	get$(req, res, ).pipe(
 		mergeMap((doc: any) => {
-			let filter = req.param.query && req.param.query.toUpperCase() || 'SHOW_ALL',
+			let filter = req.param.query && req.param.query || 'show_all',
 				store = createStore(
 					rootReducer,
 					{
@@ -28,7 +25,7 @@ export function create(req, res) {
 
 			store.dispatch(addTodo(req.body.title));
 
-			return create$(req, res, store, doc);
+			return put$(req, res, store, doc);
 		})
 	).subscribe(
 		() => {
@@ -64,7 +61,7 @@ export function update(req, res) {
 				store.dispatch(deleteTodo(todoId));
 			}
 
-			return update$(req, res, store, doc);
+			return put$(req, res, store, doc);
 		})
 	).subscribe(
 		(data) => res.send('success'),
@@ -88,7 +85,7 @@ export function massUpdate(req, res) {
 				store.dispatch(clearCompleted());
 			}
 
-			return massUpdate$(req, res, store, doc);
+			return put$(req, res, store, doc);
 		})
 	).subscribe(
 		(data) => res.send('success'),
