@@ -21,7 +21,7 @@
     "dev": "npm run lint && npm run transpile",
     "lint": "tslint {lib,tests}/*.ts index.ts -r node_modules/tslint-microsoft-contrib",
     "stylecheck": "jscs {lib,tests}/*.js",
-    "start": "node server.js",
+    "start": "node app/server.js",
     "test": "tape tests/**/*.test.js",
     "transpile": "tsc",
     "watch": "chokidar -i 'node_modules' '**/*.{ts,tsx}' -c 'npm run build' --initial"

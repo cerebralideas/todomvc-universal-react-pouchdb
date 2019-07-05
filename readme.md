@@ -7,7 +7,7 @@ Install the dependencies found in the `package.json`, compile the TypeScript to 
 ```sh
 npm install
 npm run build
-node server.js
+npm start
 ```
 
 Then, visit `localhost:3000` in your browser.
@@ -23,11 +23,11 @@ Here's the full tech-stack that we've chosen to execute this idea:
 - **TypeScript**: used for transpiling (JSX and ES6) and module bundling for universal module design
 - **React**: the V in MVC
 - **Redux**: the M in MVC, though, we are abandoning the old MVC philosophy for a more "Flux'ish" approach
+- **Rx.js**: This is an powerful async library that uses Reactive Functional Programming at it's core
 - **Express**: Our lightweight, un-opinionated, server framework
-- **Page.js**: our client side routing technology [1]
+- **Page.js**: our client side routing technology
 - **PouchDB**: for data storage and future "offline" capabilities
 - **Superagent**: Universal HTTP library
-- **Babel**: for some polyfilling (TypeScript does most of the transpiling)
 
 #### A bit on the top 3:
 
@@ -42,6 +42,10 @@ Here's the full tech-stack that we've chosen to execute this idea:
 > Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
 
 > _[Redux - http://redux.js.org/](http://redux.js.org/)_
+
+>RxJS (Reactive Extensions Library for JavaScript) is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
+
+> _[RxJS - https://rxjs.dev/](https://rxjs.dev/)
 
 ## Learning TypeScript
 
@@ -106,15 +110,19 @@ Here are some links you may find helpful:
 * [Egghead.io video tutorials](https://egghead.io/series/getting-started-with-redux)
 * [Original TodoMVC from which this was made](https://github.com/reactjs/redux/tree/master/examples/todomvc)
 
+## Learning RxJS
+
+[coming soon ... ]
+
 ## How it works
 
-The large majority of code is universal, and the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are server.ts versus client.tsx and the appropriately named client and server files in the `intiators` directory. This helps us avoid the need, like in most applications, to duplicate code, or pick an environment that most of the application runs within.
+The large majority of code is universal, and the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are server.ts versus client.tsx and the few appropriately named client and server files throughout the project This helps us avoid the need, like in most applications, to duplicate code, or pick an environment that most of the application runs within.
 
-One might think, just build an SPA that runs in the browser! That can be done, but many times its not optimal if you care about users mobile users or SEO or fast deep-linking. With a truly universal application, you can the benefits of an SPA without the consequences. 
+One might think, just build an SPA that runs in the browser! That can be done, but many times its not optimal if you care about mobile users (especially in developing nations) or SEO or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
 
 ## TODO
 
 - [ ] Add completion feature of todos to server for persistence
 - [ ] Add deletion feature of todos to server for persistence
 - [ ] Add better TypeScript definitions and typings
-- [ ] Switch React components to the newer, functional style (rather than class based)
+- [x] Switch React components to the newer, functional style (rather than class based)
