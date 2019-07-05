@@ -5,7 +5,7 @@ import { store } from '../store/redux-store';
 /** *******************************
  * Client & Server Sync actions
  */
-export function formSubmission(event, id) {
+export function formSubmission(event, id): void {
 	let title = event.currentTarget.id === 'todoForm' ?
 		event.currentTarget.elements.todoInput.value :
 		event.currentTarget.value;
@@ -18,7 +18,7 @@ export function formSubmission(event, id) {
 		superagent
 			.post('/api/todos/' + id + '?type=EDIT_TODO')
 			.send({ title: title })
-			.end((err, response) => {
+			.end((): void => {
 				// Fire action on client
 				store.dispatch(actions.editTodo(id, title));
 			});
@@ -28,7 +28,7 @@ export function formSubmission(event, id) {
 		// Fire action on server
 		superagent
 			.post('/api/todos/' + id + '?type=DELETE_TODO')
-			.end((err, response) => {
+			.end((): void => {
 				// Fire action on client
 				store.dispatch(actions.deleteTodo(id));
 			});
@@ -39,7 +39,7 @@ export function formSubmission(event, id) {
 		superagent
 			.post('/api/todos')
 			.send({ title: title })
-			.end((err, response) => {
+			.end((): void => {
 				// Fire action on client
 				store.dispatch(actions.addTodo(title));
 			});
@@ -47,38 +47,38 @@ export function formSubmission(event, id) {
 		event.currentTarget.elements.todoInput.value = '';
 	}
 }
-export function completeTodo(id) {
+export function completeTodo(id): void {
 	// Fire action on server
 	superagent
 		.post('/api/todos/' + id + '?type=COMPLETE_TODO')
-		.end((err, response) => {
+		.end((): void => {
 			// Fire action on client
 			store.dispatch(actions.completeTodo(id));
 		});
 }
-export function completeAll() {
+export function completeAll(): void {
 	// Fire action on server
 	superagent
 		.post('/api/todos/all?type=COMPLETE_ALL')
-		.end((err, response) => {
+		.end((): void => {
 			// Fire action on client
 			store.dispatch(actions.completeAll());
 		});
 }
-export function clearCompleted() {
+export function clearCompleted(): void {
 	// Fire action on server
 	superagent
 		.post('/api/todos/all?type=CLEAR_COMPLETED')
-		.end((err, response) => {
+		.end((): void => {
 			// Fire action on client
 			store.dispatch(actions.clearCompleted());
 		});
 }
-export function deleteTodo(id) {
+export function deleteTodo(id): void {
 	// Fire action on server
 	superagent
 		.post('/api/todos/' + id + '?type=DELETE_TODO')
-		.end((err, response) => {
+		.end((): void => {
 			// Fire action on client
 			store.dispatch(actions.deleteTodo(id));
 		});
@@ -87,6 +87,6 @@ export function deleteTodo(id) {
 /** *******************************
  * Client side only action
  */
-export function editingTodo(id) {
+export function editingTodo(id): void {
 	store.dispatch(actions.editingTodo(id));
 }

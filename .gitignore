@@ -1,7 +1,6 @@
-*.js
-*.js.map
 .idea
 .vscode
+
 *.iml
 out
 gen
@@ -10,3 +9,10 @@ node_modules/
 users/
 system
 npm-debug.log
+
+*.js
+*.js.map
+!webpack.config.js
+!.editorconfig
+!.eslintrc.js
+!.prettierrc.js

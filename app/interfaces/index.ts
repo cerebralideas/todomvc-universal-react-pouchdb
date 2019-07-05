@@ -11,8 +11,8 @@ export interface State {
 export interface Action {
 	type: string;
 	payload?: {
-		id?: number,
-		title?: string,
-		filter?: string
+		id?: number;
+		title?: string;
+		filter?: string;
 	};
 }

@@ -3,7 +3,7 @@ import rootReducer from '../reducers/index';
 
 export let store;
 
-export function configureStore(initialState) {
+export function configureStore(initialState): any {
 	if (!store) {
 		store = createStore(rootReducer, initialState);
 	}

@@ -10,10 +10,11 @@ import {
 	completeAll,
 	clearCompleted
 } from '../actions/index';
+import { Observable } from 'rxjs';
 
-export function create(req, res) {
-	get$(req, res, ).pipe(
-		mergeMap((doc: any) => {
+export function create(req, res): void {
+	get$().pipe(
+		mergeMap((doc: any): Observable<any> => {
 			let filter = req.param.query && req.param.query || 'show_all',
 				store = createStore(
 					rootReducer,
@@ -25,10 +26,10 @@ export function create(req, res) {
 
 			store.dispatch(addTodo(req.body.title));
 
-			return put$(req, res, store, doc);
+			return put$(store.getState().todos, doc);
 		})
 	).subscribe(
-		() => {
+		(): void => {
 			if (req.path.includes('api')) {
 				res.send('success');
 			} else if (req.query.filter) {
@@ -37,12 +38,12 @@ export function create(req, res) {
 				res.redirect('/');
 			}
 		},
-		(err: any) => console.log(err)
+		(err: any): void => console.log(err)
 	);
 }
-export function update(req, res) {
-	get$(req, res, ).pipe(
-		mergeMap((doc: any) => {
+export function update(req, res): void {
+	get$().pipe(
+		mergeMap((doc: any): Observable<any> => {
 
 			let todoId = parseInt(req.params.id, 10),
 				todoTitle = req.body.title,
@@ -61,16 +62,16 @@ export function update(req, res) {
 				store.dispatch(deleteTodo(todoId));
 			}
 
-			return put$(req, res, store, doc);
+			return put$(store.getState().todos, doc);
 		})
 	).subscribe(
-		(data) => res.send('success'),
-		(err: any) => console.log(err)
+		(): void => res.send('success'),
+		(err: any): void => console.log(err)
 	);
 }
-export function massUpdate(req, res) {
-	get$(req, res, ).pipe(
-		mergeMap((doc: any) => {
+export function massUpdate(req, res): void {
+	get$().pipe(
+		mergeMap((doc: any): Observable<any> => {
 
 			let store = createStore(
 				rootReducer,
@@ -85,10 +86,10 @@ export function massUpdate(req, res) {
 				store.dispatch(clearCompleted());
 			}
 
-			return put$(req, res, store, doc);
+			return put$(store.getState().todos, doc);
 		})
 	).subscribe(
-		(data) => res.send('success'),
-		(err: any) => console.log(err)
+		(): void => res.send('success'),
+		(err: any): void => console.log(err)
 	);
 }

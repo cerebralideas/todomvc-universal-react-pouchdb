@@ -1,7 +1,7 @@
 import { get } from '../reqhandlers';
 import { create, update, massUpdate } from '../posthandlers';
 
-const init = function (app) {
+function init(app): void {
 	app.get('/', get);
 	app.get('/:filter', get);
 	app.post('/todos', create);

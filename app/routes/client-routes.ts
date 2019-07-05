@@ -5,11 +5,11 @@ import {
 	showCompleted
 } from '../actions/index'
 
-const init = function init(store) {
-	page('/', () => store.dispatch(showAll()));
-	page('/show_all',  () => store.dispatch(showAll()));
-	page('/show_active',  () => store.dispatch(showActive()));
-	page('/show_completed',  () => store.dispatch(showCompleted()));
+function init(store): void {
+	page('/', (): void => store.dispatch(showAll()));
+	page('/show_all',  (): void => store.dispatch(showAll()));
+	page('/show_active',  (): void => store.dispatch(showActive()));
+	page('/show_completed',  (): void => store.dispatch(showCompleted()));
 	page();
 };
 

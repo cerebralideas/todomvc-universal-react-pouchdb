@@ -11,9 +11,7 @@ let app = express();
 const PORT = 3000;
 
 // create the view engine with `react-engine`
-let engine = ReactEngine.server.create({
-	performanceCollector: function(stats) {}
-});
+let engine = ReactEngine.server.create({});
 
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -27,6 +25,6 @@ app.use(favicon(join(__dirname, '/favicon.ico')));// Use the favicon
 
 routes(app);// Initialize the server routes
 
-const server = app.listen(PORT, function() {
+app.listen(PORT, (): void => {
 	console.log('Example app listening at http://localhost:%s', PORT);
 });

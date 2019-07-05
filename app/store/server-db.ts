@@ -4,40 +4,40 @@ import { Observable } from 'rxjs';
 let db = new PouchDB('users');
 
 // Database GET
-export function get$(req, res) {
+export function get$(): Observable<any> {
 	let userId = '1';
 
-	return new Observable((observer) => {
+	return new Observable((observer): void => {
 		db.get(userId).
-			then((doc: any = {}) => {
+			then((doc: any = {}): void => {
 				observer.next(doc);
-			}).catch((err: any) => {
+			}).catch((): void => {
 				db.put({
-						_id: userId,
-						todos: []
-					}).
-					then(() => {
+					_id: userId,
+					todos: []
+				}).
+					then((): void => {
 						observer.next();
 						observer.complete();
 					}).
-					catch((err) => observer.error(err));
+					catch((err): void => observer.error(err));
 			})
 	});
 }
 // Database PUT
-export function put$(req, res, store, doc) {
+export function put$(todos, doc): Observable<any> {
 
-	return new Observable((observer) => {
+	return new Observable((observer): void => {
 
 		db.put({
-				_id: doc._id,
-				_rev: doc._rev,
-				todos: store.getState().todos
-			}).
-			then(() => {
+			_id: doc._id,
+			_rev: doc._rev,
+			todos
+		}).
+			then((): void => {
 				observer.next();
 				observer.complete();
 			}).
-			catch((err) => observer.error(err));
-		});
+			catch((err): void => observer.error(err));
+	});
 }

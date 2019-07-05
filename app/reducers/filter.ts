@@ -5,7 +5,7 @@ import { Action } from '../interfaces';
 
 export default handleActions(
 	{
-		[<any>combineActions(showAll, showActive, showCompleted)]: (state: string, action: Action) => {
+		[combineActions(showAll, showActive, showCompleted) as any]: (state: string, action: Action): string => {
 			return action.payload.filter;
 		}
 

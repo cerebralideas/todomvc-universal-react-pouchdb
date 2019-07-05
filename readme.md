@@ -122,6 +122,7 @@ One might think, just build an SPA that runs in the browser! That can be done, b
 
 ## TODO
 
+- [ ] Implement Prettier into ESLint
 - [ ] Add completion feature of todos to server for persistence
 - [ ] Add deletion feature of todos to server for persistence
 - [ ] Add better TypeScript definitions and typings
