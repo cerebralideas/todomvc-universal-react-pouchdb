@@ -23,7 +23,7 @@ export function formSubmission(event, id): void {
 				store.dispatch(actions.editTodo(id, title));
 			});
 
-	} else if (!id && !title) {
+	} else if (id && !title) {
 		// If provided id, but title is empty delete item
 		// Fire action on server
 		superagent

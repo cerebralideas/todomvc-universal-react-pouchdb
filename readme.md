@@ -23,13 +23,13 @@ Here's the full tech-stack that we've chosen to execute this idea:
 - **TypeScript**: used for transpiling (JSX and ES6) and module bundling for universal module design
 - **React**: the V in MVC
 - **Redux**: the M in MVC, though, we are abandoning the old MVC philosophy for a more "Flux'ish" approach
-- **Rx.js**: This is an powerful async library that uses Reactive Functional Programming at it's core
+- **Rx.js**: This is an powerful async library that uses Reactive Functional Programming at its core
 - **Express**: Our lightweight, un-opinionated, server framework
 - **Page.js**: our client side routing technology
 - **PouchDB**: for data storage and future "offline" capabilities
 - **Superagent**: Universal HTTP library
 
-#### A bit on the top 3:
+#### A bit on the top 4:
 
 > TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source.
 
@@ -45,7 +45,7 @@ Here's the full tech-stack that we've chosen to execute this idea:
 
 >RxJS (Reactive Extensions Library for JavaScript) is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
 
-> _[RxJS - https://rxjs.dev/](https://rxjs.dev/)
+> _[RxJS - https://rxjs.dev/](https://rxjs.dev/)_
 
 ## Learning TypeScript
 

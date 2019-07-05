@@ -12,7 +12,7 @@ export function get(req, res): void {
 					rootReducer,
 					{
 						filter: filter,
-						todos: doc.todos
+						todos: (doc && doc.todos) || []
 					}
 				);
 

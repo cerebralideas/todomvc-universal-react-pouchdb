@@ -14,9 +14,9 @@ function TodoTextInput(props: Props) {
 	let isEditing = props.todo.editing ? 'edit' : '';
 	let isNew = props.newTodo ? 'new-todo' : '';
 
-	function saveChange(event) {
+	function saveChange(event, id) {
 		if (isEditing) {
-			formSubmission(event, props.todo.id)
+			formSubmission(event, id)
 		}
 	}
 
@@ -32,7 +32,7 @@ function TodoTextInput(props: Props) {
 				type='text'
 				placeholder={ props.placeholder }
 				defaultValue={ props.todo.title }
-				onBlur={ saveChange } />
+				onBlur={ (event) => saveChange(event, props.todo.id) } />
 		</form>
 	);
 }
