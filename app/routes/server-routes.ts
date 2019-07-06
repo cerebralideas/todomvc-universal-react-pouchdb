@@ -8,6 +8,6 @@ function init(app): void {
 	app.post('/api/todos', create);
 	app.post('/api/todos/all', massUpdate);
 	app.post('/api/todos/:id', update);
-};
+}
 
 export default init;

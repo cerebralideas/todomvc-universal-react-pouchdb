@@ -8,7 +8,6 @@ export default handleActions(
 		[combineActions(showAll, showActive, showCompleted) as any]: (state: string, action: Action): string => {
 			return action.payload.filter;
 		}
-
 	},
 	'show_all'
 );
