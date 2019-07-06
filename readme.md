@@ -116,15 +116,19 @@ Here are some links you may find helpful:
 
 ## How it works
 
-The large majority of code is universal, and the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are server.ts versus client.tsx and the few appropriately named client and server files throughout the project This helps us avoid the need, like in most applications, to duplicate code, or pick an environment that most of the application runs within.
+The large majority of code is universal, and the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are `server.ts` versus `client.tsx` and the few appropriately named `client` and `server` files throughout the project. This helps us avoid the need, like in most applications, to duplicate code, or pick an environment that most of the application runs within.
 
 One might think, just build an SPA that runs in the browser! That can be done, but many times its not optimal if you care about mobile users (especially in developing nations) or SEO or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
 
 ## TODO
 
 - [ ] Add `react-axe` with accessibility linting and testing to project
-- [ ] Implement Prettier into ESLint
-- [ ] Add completion feature of todos to server for persistence
-- [ ] Add deletion feature of todos to server for persistence
-- [ ] Add better TypeScript definitions and typings
+- [ ] Add hooks (`husky`) for Git integration and task running
+- [ ] Add unit and integration testing (`Jest`)
+- [ ] Add completion and deletion feature of todos as non-JS feature
+- [-] Add better TypeScript definitions and typings
+- [x] Implement Prettier into ESLint
+- [x] Add redux-actions to clean up Redux boilerplate
+- [x] Add RxJS to normalize async related work
+- [x] Modernize all libraries, frameworks and tooling
 - [x] Switch React components to the newer, functional style (rather than class based)

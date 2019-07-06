@@ -1,10 +1,18 @@
 import React from 'react';
-import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import client from 'react-engine/lib/client';
 import App from './views/app';
 import { configureStore } from './store/redux-store';
 import routes from './routes/client-routes';
+
+//@ts-ignore
+console.log(WEBPACK_ENV);
+//@ts-ignore
+if (WEBPACK_ENV !== 'production') {
+	let axe = require('react-axe');
+	axe(React, ReactDOM);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -18,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	routes(store);
 
-	render(
+	ReactDOM.render(
 		<Provider store={store}>
 			<App />
 		</Provider>,

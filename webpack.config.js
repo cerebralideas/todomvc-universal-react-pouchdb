@@ -1,20 +1,19 @@
 const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
+module.exports = (env, argv) => ({
+	mode: argv.mode,
 	entry: './app/client.js',
 	resolve: {
-		extensions: ['', '.js', '.jsx', '.json']
+		extensions: ['.js', '.jsx', '.json']
 	},
-	module: {
-		loaders: [
-			{
-				test: /\.json$/,
-				loader: 'json-loader'
-			}
-		]
-	},
+	plugins: [
+		new webpack.DefinePlugin({
+			WEBPACK_ENV: JSON.stringify(argv.mode)
+		})
+	],
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'bundle.js'
 	}
-};
+});

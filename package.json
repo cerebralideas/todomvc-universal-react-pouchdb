@@ -17,16 +17,17 @@
   },
   "scripts": {
     "build": "npm run transpile && npm run bundle",
-    "bundle": "webpack",
+    "build:dev": "npm run lint && npm run transpile && npm run bundle:dev",
+    "bundle": "webpack --mode production",
+    "bundle:dev": "webpack --mode development",
     "clean": "rm -rf node_modules && git clean -fX",
     "clean:data": "rm -rf users",
-    "dev": "npm run lint && npm run transpile",
     "lint": "eslint '**/*.ts' --fix",
-    "stylecheck": "jscs {lib,tests}/*.js",
-    "start": "node app/server.js",
+    "start": "NODE_ENV=production node app/server.js",
+    "start:dev": "node app/server.js",
     "test": "echo 'coming soon ... '",
     "transpile": "tsc",
-    "watch": "chokidar -i 'node_modules' '**/*.{ts,tsx}' -c 'npm run build' --initial"
+    "watch": "chokidar -i 'node_modules' '**/*.{ts,tsx}' -c 'npm run build:dev' --initial"
   },
   "config": {
     "ghooks": {
@@ -86,13 +87,14 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.14.2",
-    "ghooks": "^1.0.3",
+    "husky": "^3.0.0",
     "json-loader": "^0.5.7",
     "prettier": "^1.18.2",
     "proxyquire": "^1.7.3",
+    "react-axe": "^3.2.0",
     "tape": "^4.4.0",
     "typescript": "^3.5.2",
-    "webpack": "^1.15.0",
+    "webpack": "^4.35.2",
     "webpack-cli": "^3.3.5"
   }
 }
