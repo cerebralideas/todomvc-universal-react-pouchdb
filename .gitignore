@@ -12,6 +12,7 @@ npm-debug.log
 
 *.js
 *.js.map
+!react-test-setup.js
 !webpack.config.js
 !.editorconfig
 !.eslintrc.js
