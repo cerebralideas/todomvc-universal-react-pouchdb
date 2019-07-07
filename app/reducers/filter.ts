@@ -1,5 +1,5 @@
 import { handleActions, combineActions } from 'redux-actions';
-import { showAll, showActive, showCompleted } from '../actions/index';
+import { showAll, showActive, showCompleted } from '../actions';
 
 import { Action } from '../interfaces';
 

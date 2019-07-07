@@ -1,15 +1,7 @@
 import { handleActions } from 'redux-actions';
-import {
-	addTodo,
-	deleteTodo,
-	editingTodo,
-	editTodo,
-	completeTodo,
-	completeAll,
-	clearCompleted
-} from '../actions/index';
+import { addTodo, deleteTodo, editingTodo, editTodo, completeTodo, completeAll, clearCompleted } from '../actions';
 
-import { Todo, Action } from '../interfaces/index';
+import { Todo, Action } from '../interfaces';
 
 export default handleActions(
 	{

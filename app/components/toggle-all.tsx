@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { completeAll } from '../events/client-events';
 
-import { State } from '../interfaces/index';
+import { State } from '../interfaces';
 
 interface Props {
 	count: number;

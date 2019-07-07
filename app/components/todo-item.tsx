@@ -41,7 +41,7 @@ function TodoItem ({ todo, filter }: Prop) { // save
 	}
 
 	return (
-		<li className={ isCompleted + ' ' + isEditing }>
+		<li className={`todoItem ${isCompleted} ${isEditing}`}>
 			{element}
 		</li>
 	);

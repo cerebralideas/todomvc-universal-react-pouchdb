@@ -1,5 +1,5 @@
 import page from 'page';
-import { showAll, showActive, showCompleted } from '../actions/index';
+import { showAll, showActive, showCompleted } from '../actions';
 
 function init(store): void {
 	page('/', (): void => store.dispatch(showAll()));

@@ -5,7 +5,7 @@ import ToggleAll from './toggle-all';
 import Footer from './footer';
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/todo-filters';
 
-import { State } from '../interfaces/index';
+import { State } from '../interfaces';
 
 const TODO_FILTERS = {
 	[SHOW_ALL]: () => true,
@@ -13,7 +13,7 @@ const TODO_FILTERS = {
 	[SHOW_COMPLETED]: (todo) => todo.completed
 };
 
-function TodoList({ todos, filter }: State) {
+export function TodoList({ todos, filter }: State) {
 	let filteredTodos = todos.filter(TODO_FILTERS[filter]);
 
 	return (

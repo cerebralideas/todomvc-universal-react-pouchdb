@@ -1,6 +1,6 @@
 import { map } from 'rxjs/operators';
 import { createStore } from 'redux';
-import rootReducer from '../reducers/index';
+import rootReducer from '../reducers';
 import { get$ } from '../store/server-db';
 import { State } from '../interfaces';
 

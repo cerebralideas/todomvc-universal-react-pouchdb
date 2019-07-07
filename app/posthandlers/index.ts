@@ -1,8 +1,8 @@
 import { mergeMap } from 'rxjs/operators';
 import { createStore } from 'redux';
-import rootReducer from '../reducers/index';
+import rootReducer from '../reducers';
 import { get$, put$ } from '../store/server-db';
-import { editTodo, addTodo, completeTodo, deleteTodo, completeAll, clearCompleted } from '../actions/index';
+import { editTodo, addTodo, completeTodo, deleteTodo, completeAll, clearCompleted } from '../actions';
 import { Observable } from 'rxjs';
 
 export function create(req, res): void {
