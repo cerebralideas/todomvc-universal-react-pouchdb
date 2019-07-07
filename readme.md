@@ -53,23 +53,23 @@ The [TypeScript website](http://typescriptlang.org) is a great resource for gett
 
 Here are some links you may find helpful:
 
-* [Tutorial](http://www.typescriptlang.org/Tutorial)
-* [Code Playground](http://www.typescriptlang.org/Playground)
-* [Documentation](https://github.com/Microsoft/TypeScript/wiki)
-* [Applications built with TypeScript](http://www.typescriptlang.org/Samples)
-* [Blog](http://blogs.msdn.com/b/typescript)
-* [Source Code](https://github.com/Microsoft/TypeScript)
+- [Tutorial](http://www.typescriptlang.org/Tutorial)
+- [Code Playground](http://www.typescriptlang.org/Playground)
+- [Documentation](https://github.com/Microsoft/TypeScript/wiki)
+- [Applications built with TypeScript](http://www.typescriptlang.org/Samples)
+- [Blog](http://blogs.msdn.com/b/typescript)
+- [Source Code](https://github.com/Microsoft/TypeScript)
 
 Articles and guides from the community:
 
-* [Thoughts on TypeScript](http://www.nczonline.net/blog/2012/10/04/thoughts-on-typescript)
-* [ScreenCast - Why I Like TypeScript](http://www.leebrimelow.com/why-i-like-typescripts)
+- [Thoughts on TypeScript](http://www.nczonline.net/blog/2012/10/04/thoughts-on-typescript)
+- [ScreenCast - Why I Like TypeScript](http://www.leebrimelow.com/why-i-like-typescripts)
 
 Get help from other TypeScript users:
 
-* [TypeScript on StackOverflow](http://stackoverflow.com/questions/tagged/typescript)
-* [Forums](https://github.com/Microsoft/TypeScript/issues)
-* [TypeScript on Twitter](http://twitter.com/typescriptlang)
+- [TypeScript on StackOverflow](http://stackoverflow.com/questions/tagged/typescript)
+- [Forums](https://github.com/Microsoft/TypeScript/issues)
+- [TypeScript on Twitter](http://twitter.com/typescriptlang)
 
 _If you have other helpful links to share, or find any of the links above no longer work, please [let us know](https://github.com/tastejs/todomvc/issues)._
 
@@ -83,16 +83,16 @@ The [React getting started documentation](http://facebook.github.io/react/docs/g
 
 Here are some links you may find helpful:
 
-* [Documentation](http://facebook.github.io/react/docs/getting-started.html)
-* [API Reference](http://facebook.github.io/react/docs/reference.html)
-* [Blog](http://facebook.github.io/react/blog/)
-* [React on GitHub](https://github.com/facebook/react)
-* [Support](http://facebook.github.io/react/support.html)
+- [Documentation](http://facebook.github.io/react/docs/getting-started.html)
+- [API Reference](http://facebook.github.io/react/docs/reference.html)
+- [Blog](http://facebook.github.io/react/blog/)
+- [React on GitHub](https://github.com/facebook/react)
+- [Support](http://facebook.github.io/react/support.html)
 
 Articles and guides from the community:
 
-* [How is Facebook's React JavaScript library](http://www.quora.com/React-JS-Library/How-is-Facebooks-React-JavaScript-library)
-* [React: Under the hood](http://www.quora.com/Pete-Hunt/Posts/React-Under-the-Hood)
+- [How is Facebook's React JavaScript library](http://www.quora.com/React-JS-Library/How-is-Facebooks-React-JavaScript-library)
+- [React: Under the hood](http://www.quora.com/Pete-Hunt/Posts/React-Under-the-Hood)
 
 Get help from other React users:
 
@@ -107,26 +107,40 @@ Redux has some great documentation at their main site here: http://redux.js.org/
 
 Here are some links you may find helpful:
 
-* [Egghead.io video tutorials](https://egghead.io/series/getting-started-with-redux)
-* [Original TodoMVC from which this was made](https://github.com/reactjs/redux/tree/master/examples/todomvc)
+- [Egghead.io video tutorials](https://egghead.io/series/getting-started-with-redux)
+- [Original TodoMVC from which this was made](https://github.com/reactjs/redux/tree/master/examples/todomvc)
 
-## Learning RxJS
+## Learning RxJS (RFP)
 
-[coming soon ... ]
+There's a lot of information out there about Reactive Functional Programming (RFP), much of which can get really academic. What I like to do when teaching RFP is start with something almost any JS dev is going to be familiar with using, and those are arrays and array methods.
+
+Here's are some links that discuss the foundations:
+
+- [2 minute introduction to Rx](https://medium.com/@andrestaltz/2-minute-introduction-to-rx-24c8ca793877)
+- [Asynchronous Programming: The End of The Loop](https://egghead.io/courses/asynchronous-programming-the-end-of-the-loop)
+- [RxJS Beyond the Basics: Creating Observables from scratch](https://egghead.io/courses/rxjs-beyond-the-basics-creating-observables-from-scratch)
+- [Save time avoiding common mistakes using RxJS](https://egghead.io/courses/save-time-avoiding-common-mistakes-using-rxjs)
+
+Here is the more academic stuff:
+
+- [The introduction to Reactive Programming you've been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
+
+There's even a whole online "manual": [Learn RxJS](https://www.learnrxjs.io/)
 
 ## How it works
 
 The large majority of code is universal, and the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are `server.ts` versus `client.tsx` and the few appropriately named `client` and `server` files throughout the project. This helps us avoid the need, like in most applications, to duplicate code, or pick an environment that most of the application runs within.
 
-One might think, just build an SPA that runs in the browser! That can be done, but many times its not optimal if you care about mobile users (especially in developing nations) or SEO or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
+One might think, just build an SPA that runs in the browser! That can be done, but many times it's not optimal if you care about mobile users (especially in developing nations), SEO, or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
 
 ## TODO
 
-- [ ] Add `react-axe` with accessibility linting and testing to project
+- [ ] Add hot module reloading
 - [ ] Add hooks (`husky`) for Git integration and task running
 - [ ] Add unit and integration testing (`Jest`)
-- [ ] Add completion and deletion feature of todos as non-JS feature
+- [ ] Add completion and deletion feature of todos as w/o JS feature
 - [-] Add better TypeScript definitions and typings
+- [x] Add `react-axe` with accessibility linting and testing to project
 - [x] Implement Prettier into ESLint
 - [x] Add redux-actions to clean up Redux boilerplate
 - [x] Add RxJS to normalize async related work
