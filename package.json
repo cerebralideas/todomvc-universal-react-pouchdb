@@ -16,7 +16,7 @@
     "registry": "http://npm.com"
   },
   "scripts": {
-    "build": "npm run transpile && npm run bundle",
+    "build": "npm run lint && npm run transpile && npm run bundle",
     "build:dev": "npm run lint && npm run transpile && npm run bundle:dev",
     "bundle": "webpack --mode production",
     "bundle:dev": "webpack --mode development",
@@ -29,10 +29,10 @@
     "transpile": "tsc",
     "watch": "chokidar -i 'node_modules' '**/*.{ts,tsx}' -c 'npm run build:dev' --initial"
   },
-  "config": {
-    "ghooks": {
-      "pre-commit": "",
-      "pre-push": ""
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run transpile",
+      "pre-push": "npm run test && npm run build"
     }
   },
   "dependencies": {

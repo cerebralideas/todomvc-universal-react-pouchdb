@@ -136,9 +136,9 @@ One might think, just build an SPA that runs in the browser! That can be done, b
 ## TODO
 
 - [ ] Add hot module reloading
-- [ ] Add hooks (`husky`) for Git integration and task running
 - [ ] Add completion and deletion feature of todos as w/o JS feature
 - [ ] Add better TypeScript definitions and typings
+- [x] Add hooks (`husky`) for Git integration and task running
 - [x] Add unit and integration testing (`Jest`)
 - [x] Add `react-axe` with accessibility linting and testing to project
 - [x] Implement Prettier into ESLint
