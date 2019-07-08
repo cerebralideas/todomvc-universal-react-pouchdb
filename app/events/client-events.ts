@@ -44,7 +44,8 @@ export function formSubmission(event, id: number): void {
 		event.currentTarget.elements.todoInput.value = '';
 	}
 }
-export function completeTodo(id: number): void {
+export function completeTodo(event, id: number): void {
+	event.preventDefault();
 	// Fire action on server
 	superagent.post('/api/todos/' + id + '?type=COMPLETE_TODO').end((): void => {
 		// Fire action on client

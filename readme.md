@@ -139,7 +139,9 @@ One might think, "just build an SPA that runs in the browser!" That can be done,
 
 - [ ] Improve A11y
 - [ ] Add hot module reloading
-- [ ] Add completion and deletion feature of todos as w/o JS feature
+- [ ] Add better error handling
+- [ ] Add bulk action features to server-only w/o JS
+- [x] Add completion and deletion feature of todos as w/o JS feature
 - [x] Add better TypeScript definitions and typings
 - [x] Add hooks (`husky`) for Git integration and task running
 - [x] Add unit and integration testing (`Jest`)

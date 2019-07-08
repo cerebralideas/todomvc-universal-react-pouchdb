@@ -4,8 +4,11 @@ import { create, update, massUpdate } from '../posthandlers';
 function init(app): void {
 	app.get('/', get);
 	app.get('/:filter', get);
+
 	app.post('/todos', create);
+	app.post('/todos/all', massUpdate);
 	app.post('/todos/:id', update);
+
 	app.post('/api/todos', create);
 	app.post('/api/todos/all', massUpdate);
 	app.post('/api/todos/:id', update);

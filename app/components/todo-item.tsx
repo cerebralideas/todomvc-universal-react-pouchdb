@@ -20,6 +20,11 @@ let cssDestroyForm = {
 	},
 	cssDestroyEl = {
 		textDecoration: 'none'
+	},
+	cssCompleteButton = {
+		display: 'block',
+		width: '100%',
+		textAlign: 'left' as 'left'
 	};
 
 function TodoItem ({ todo, filter }: Prop) { // save
@@ -39,13 +44,23 @@ function TodoItem ({ todo, filter }: Prop) { // save
 	} else {
 		element = (
 			<div className="view">
-				<input className="toggle"
-					type="checkbox"
-					checked={ todo.completed }
-					onChange={ () => completeTodo(todo.id) }/>
-				<label onDoubleClick={ () => editingTodo(todo.id) }>
-					{todo.title}
-				</label>
+				<form id="completeForm"
+					method="POST"
+					action={ `/todos/${ todo.id }?type=COMPLETE_TODO&filter=${ filter }` }>
+					<input id="completeTodo"
+						className="toggle"
+						type="checkbox"
+						checked={ todo.completed }
+						onChange={ (event) => completeTodo(event, todo.id) } />
+					<label htmlFor="completeTodo">
+						<button type="submit"
+							style={ cssCompleteButton }
+							onClick={ (event) => completeTodo(event, todo.id) }
+							onDoubleClick={ () => editingTodo(todo.id) }>
+							{todo.title}
+						</button>
+					</label>
+				</form>
 				<form id="deleteForm"
 					method="POST"
 					action={ `/todos/${ todo.id }?type=DELETE_TODO&filter=${ filter }` }
