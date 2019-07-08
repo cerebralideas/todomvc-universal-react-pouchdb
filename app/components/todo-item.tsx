@@ -4,11 +4,23 @@ import TodoTextInput from './todo-text-input';
 import { deleteTodo, completeTodo, editingTodo } from '../events/client-events';
 
 import { Todo, State } from '../interfaces';
+import { Z_FIXED } from 'zlib';
 
 interface Prop {
 	todo: Todo;
 	filter: string
 }
+
+let cssDestroyForm = {
+		height: '0px'
+	},
+	cssDestroyText = {
+		position: 'fixed' as 'fixed',
+		top: '-100px'
+	},
+	cssDestroyEl = {
+		textDecoration: 'none'
+	};
 
 function TodoItem ({ todo, filter }: Prop) { // save
 
@@ -34,8 +46,17 @@ function TodoItem ({ todo, filter }: Prop) { // save
 				<label onDoubleClick={ () => editingTodo(todo.id) }>
 					{todo.title}
 				</label>
-				<button className="destroy"
-					onClick={ () => deleteTodo(todo.id) }/>
+				<form id="deleteForm"
+					method="POST"
+					action={ `/todos/${ todo.id }?type=DELETE_TODO&filter=${ filter }` }
+					style={ cssDestroyForm }>
+					<button type="submit"
+						style={ cssDestroyEl}
+						className="destroy"
+						onClick={ (event) => deleteTodo(event, todo.id) }>
+						<span style={ cssDestroyText }>Delete Todo</span>
+					</button>
+				</form>
 			</div>
 		);
 	}

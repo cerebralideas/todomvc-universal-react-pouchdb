@@ -58,7 +58,16 @@ export function update(req, res): void {
 				}
 			)
 		)
-		.subscribe((): void => res.send('success'), (err: any): void => console.log(err));
+		.subscribe(
+			(): void => {
+				if (req.path.includes('api')) {
+					res.send('success');
+				} else {
+					res.redirect('/' + req.query.filter);
+				}
+			},
+			(err: any): void => console.log(err)
+		);
 }
 export function massUpdate(req, res): void {
 	get$()

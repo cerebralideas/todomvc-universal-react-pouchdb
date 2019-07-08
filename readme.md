@@ -135,6 +135,7 @@ One might think, just build an SPA that runs in the browser! That can be done, b
 
 ## TODO
 
+- [ ] Improve A11y
 - [ ] Add hot module reloading
 - [ ] Add completion and deletion feature of todos as w/o JS feature
 - [x] Add better TypeScript definitions and typings

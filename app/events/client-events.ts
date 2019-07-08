@@ -65,7 +65,9 @@ export function clearCompleted(): void {
 		store.dispatch(actions.clearCompleted());
 	});
 }
-export function deleteTodo(id: number): void {
+export function deleteTodo(event, id: number): void {
+	event.preventDefault();
+
 	// Fire action on server
 	superagent.post('/api/todos/' + id + '?type=DELETE_TODO').end((): void => {
 		// Fire action on client
