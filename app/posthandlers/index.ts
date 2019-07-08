@@ -1,7 +1,7 @@
 import { mergeMap } from 'rxjs/operators';
 import { createStore } from 'redux';
 import rootReducer from '../reducers';
-import { get$, put$ } from '../store/server-db';
+import { get$, put$ } from '../store/db.server';
 import { editTodo, addTodo, completeTodo, deleteTodo, completeAll, clearCompleted } from '../actions';
 import { Observable } from 'rxjs';
 
@@ -9,7 +9,7 @@ export function create(req, res): void {
 	get$()
 		.pipe(
 			mergeMap(
-				(doc: any): Observable<any> => {
+				(doc): Observable<void> => {
 					let filter = (req.param.query && req.param.query) || 'show_all',
 						store = createStore(rootReducer, {
 							filter,
@@ -39,7 +39,7 @@ export function update(req, res): void {
 	get$()
 		.pipe(
 			mergeMap(
-				(doc: any): Observable<any> => {
+				(doc): Observable<void> => {
 					let todoId = parseInt(req.params.id, 10),
 						todoTitle = req.body.title,
 						store = createStore(rootReducer, {
@@ -64,7 +64,7 @@ export function massUpdate(req, res): void {
 	get$()
 		.pipe(
 			mergeMap(
-				(doc: any): Observable<any> => {
+				(doc): Observable<void> => {
 					let store = createStore(rootReducer, {
 						todos: doc.todos
 					});

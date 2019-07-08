@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 import { mount, configure } from 'enzyme';
 import { Provider } from 'react-redux';
 import Adapter from 'enzyme-adapter-react-16';
-import reactSetup from '../../utilities/react-test-setup';
+import '../../utilities/test/react-test-setup';
 import rootReducer from '../reducers';
 import TodoList from './todo-list';
 

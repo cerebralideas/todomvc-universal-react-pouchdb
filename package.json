@@ -37,7 +37,6 @@
   },
   "dependencies": {
     "body-parser": "^1.15.0",
-    "classnames": "^2.1.2",
     "cookie-parser": "^1.4.1",
     "express": "^4.13.3",
     "history": "^1.17.0",
@@ -59,7 +58,6 @@
   "devDependencies": {
     "@types/async": "^3.0.0",
     "@types/body-parser": "^1.17.0",
-    "@types/classnames": "^2.2.8",
     "@types/cookie-parser": "^1.4.1",
     "@types/express": "^4.17.0",
     "@types/express-serve-static-core": "^4.16.7",
@@ -77,7 +75,6 @@
     "@types/serve-favicon": "^2.2.30",
     "@types/serve-static": "^1.13.2",
     "@types/superagent": "^4.1.1",
-    "@types/tape": "^4.2.33",
     "@typescript-eslint/eslint-plugin": "^1.11.0",
     "@typescript-eslint/parser": "^1.11.0",
     "@typescript-eslint/typescript-estree": "^1.11.0",
@@ -97,7 +94,6 @@
     "proxyquire": "^1.7.3",
     "react-axe": "^3.2.0",
     "react-test-renderer": "^16.8.6",
-    "tape": "^4.4.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.2",
     "webpack": "^4.35.2",

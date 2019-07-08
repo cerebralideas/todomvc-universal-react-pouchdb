@@ -17,3 +17,4 @@ npm-debug.log
 !.editorconfig
 !.eslintrc.js
 !.prettierrc.js
+!jest.config.js

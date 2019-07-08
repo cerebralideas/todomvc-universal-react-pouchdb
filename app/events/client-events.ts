@@ -1,12 +1,12 @@
 import superagent from 'superagent';
 import * as actions from '../actions';
-import { store } from '../store/redux-store';
+import { store } from '../store/store.client';
 
 /** *******************************
  * Client & Server Sync actions
  */
-export function formSubmission(event, id): void {
-	let title =
+export function formSubmission(event, id: number): void {
+	let title: string =
 		event.currentTarget.id === 'todoForm'
 			? event.currentTarget.elements.todoInput.value
 			: event.currentTarget.value;
@@ -44,7 +44,7 @@ export function formSubmission(event, id): void {
 		event.currentTarget.elements.todoInput.value = '';
 	}
 }
-export function completeTodo(id): void {
+export function completeTodo(id: number): void {
 	// Fire action on server
 	superagent.post('/api/todos/' + id + '?type=COMPLETE_TODO').end((): void => {
 		// Fire action on client
@@ -65,7 +65,7 @@ export function clearCompleted(): void {
 		store.dispatch(actions.clearCompleted());
 	});
 }
-export function deleteTodo(id): void {
+export function deleteTodo(id: number): void {
 	// Fire action on server
 	superagent.post('/api/todos/' + id + '?type=DELETE_TODO').end((): void => {
 		// Fire action on client
@@ -76,6 +76,6 @@ export function deleteTodo(id): void {
 /** *******************************
  * Client side only action
  */
-export function editingTodo(id): void {
+export function editingTodo(id: number): void {
 	store.dispatch(actions.editingTodo(id));
 }
