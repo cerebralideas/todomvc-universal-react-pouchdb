@@ -2,49 +2,51 @@
 
 ## Up and Running
 
-Install the dependencies found in the `package.json`, compile the TypeScript to JavaScript, run the server:
+1. Install the dependencies found in the `package.json`
+2. Compile the TypeScript to JavaScript
+3. Run the server
 
-```sh
-npm install
-npm run build
-npm start
-```
+  ```
+  npm install
+  npm run build
+  npm start
+  ```
 
-Then, visit `localhost:3000` in your browser.
+4. Visit `localhost:3000` in your browser.
 
 ## What's a universal application?
 
-It's an isomorphic application. Okay, that may need more explanation. Remember that mantra that Java promised of write once, run anywhere. Well, think of that for the web. Code that is environment agnostic and can run on the server or browser.
+It's an isomorphic application. Okay, that may need more explanation. Remember that mantra that Java promised of _write once, run anywhere_? Well, think of that for the web. Code that is environment-agnostic and can run on the server or browser.
 
-To do that, we compose our application of libraries that free us from the shackles of specific environmental APIs. React is one of the most important aspects to this idea as you can write view related code without ever referencing any DOM APIs. We then add other libraries for "modeling" that are also universal by nature.
+To do that, we compose our application of libraries that free us from the shackles of specific environmental APIs. React is one of the most important aspects to this idea, as you can write view-related code without ever referencing any DOM APIs. We then add other libraries for "modeling" that are also universal by nature.
 
 Here's the full tech-stack that we've chosen to execute this idea:
 
 - **TypeScript**: used for transpiling (JSX and ES6) and module bundling for universal module design
 - **React**: the V in MVC
 - **Redux**: the M in MVC, though, we are abandoning the old MVC philosophy for a more "Flux'ish" approach
-- **Rx.js**: This is an powerful async library that uses Reactive Functional Programming at its core
-- **Express**: Our lightweight, un-opinionated, server framework
+- **Rx.js**: this is a powerful async library that uses Reactive Functional Programming at its core
+- **Express**: our lightweight, un-opinionated, server framework
 - **Page.js**: our client side routing technology
 - **PouchDB**: for data storage and future "offline" capabilities
-- **Superagent**: Universal HTTP library
+- **Superagent**: universal HTTP library
 
 #### A bit on the top 4:
 
 > TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source.
-
+> 
 > _[TypeScript - typescriptlang.org](http://typescriptlang.org)_
 
 > React is a JavaScript library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes.
-
+> 
 > _[React - facebook.github.io/react](http://facebook.github.io/react)_
 
 > Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
-
+> 
 > _[Redux - http://redux.js.org/](http://redux.js.org/)_
 
 >RxJS (Reactive Extensions Library for JavaScript) is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
-
+> 
 > _[RxJS - https://rxjs.dev/](https://rxjs.dev/)_
 
 ## Learning TypeScript
@@ -75,7 +77,7 @@ _If you have other helpful links to share, or find any of the links above no lon
 
 ## Learning Express
 
-Express has been around for a very long time and is not new, so documentation is ubiquitous. But, if you need a reference, the framework's main site is the place to go: http://expressjs.com/.
+Express has been around for a very long time, so documentation is ubiquitous. But, if you need a reference, the framework's main site is the place to go: http://expressjs.com/.
 
 ## Learning React
 
@@ -112,9 +114,9 @@ Here are some links you may find helpful:
 
 ## Learning RxJS (RFP)
 
-There's a lot of information out there about Reactive Functional Programming (RFP), much of which can get really academic. What I like to do when teaching RFP is start with something almost any JS dev is going to be familiar with using, and those are arrays and array methods.
+There's a lot of information out there about Reactive Functional Programming (RFP), much of which can get really academic. What I like to do when teaching RFP is start with something almost any JS dev is going to be familiar with using &ndash; arrays and array methods.
 
-Here's are some links that discuss the foundations:
+Here are some links that discuss the foundations:
 
 - [2 minute introduction to Rx](https://medium.com/@andrestaltz/2-minute-introduction-to-rx-24c8ca793877)
 - [Asynchronous Programming: The End of The Loop](https://egghead.io/courses/asynchronous-programming-the-end-of-the-loop)
@@ -129,15 +131,15 @@ There's even a whole online "manual": [Learn RxJS](https://www.learnrxjs.io/)
 
 ## How it works
 
-The large majority of code is universal, and the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are `server.ts` versus `client.tsx` and the few appropriately named `client` and `server` files throughout the project. This helps us avoid the need, like in most applications, to duplicate code, or pick an environment that most of the application runs within.
+The large majority of code is universal; the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are `server.ts` versus `client.tsx` and the few appropriately-named `client-` and `server-` files throughout the project. This helps us avoid having to duplicate code or pick an environment that most of the application runs within (as is needed with most applications).
 
-One might think, just build an SPA that runs in the browser! That can be done, but many times it's not optimal if you care about mobile users (especially in developing nations), SEO, or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
+One might think, "just build an SPA that runs in the browser!" That can be done, but many times it's not optimal if you care about mobile users (especially in developing nations), SEO, or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
 
 ## TODO
 
 - [ ] Add hot module reloading
 - [ ] Add completion and deletion feature of todos as w/o JS feature
-- [x] Add better TypeScript definitions and typings
+- [ ] Add better TypeScript definitions and typings
 - [x] Add hooks (`husky`) for Git integration and task running
 - [x] Add unit and integration testing (`Jest`)
 - [x] Add `react-axe` with accessibility linting and testing to project
@@ -145,4 +147,4 @@ One might think, just build an SPA that runs in the browser! That can be done, b
 - [x] Add redux-actions to clean up Redux boilerplate
 - [x] Add RxJS to normalize async related work
 - [x] Modernize all libraries, frameworks and tooling
-- [x] Switch React components to the newer, functional style (rather than class based)
+- [x] Switch React components to the newer, functional style (rather than class-based)
