@@ -5,7 +5,7 @@ import { Todo, Action } from '../interfaces';
 
 export default handleActions(
 	{
-		[addTodo]: (state: Todo[], action: Action): Todo[] => [
+		[addTodo as any]: (state: Todo[], action: Action): Todo[] => [
 			{
 				id: state.reduce((maxId, todo): number => Math.max(todo.id, maxId), -1) + 1,
 				completed: false,
@@ -15,17 +15,17 @@ export default handleActions(
 			...state
 		],
 
-		[deleteTodo]: (state: Todo[], action: Action): Todo[] => {
+		[deleteTodo as any]: (state: Todo[], action: Action): Todo[] => {
 			return state.filter((todo): boolean => todo.id !== action.payload.id);
 		},
 
-		[editingTodo]: (state: Todo[], action: Action): Todo[] => {
+		[editingTodo as any]: (state: Todo[], action: Action): Todo[] => {
 			return state.map(
 				(todo): Todo => (todo.id === action.payload.id ? Object.assign({}, todo, { editing: true }) : todo)
 			);
 		},
 
-		[editTodo]: (state: Todo[], action: Action): Todo[] => {
+		[editTodo as any]: (state: Todo[], action: Action): Todo[] => {
 			return state.map(
 				(todo): Todo =>
 					todo.id === action.payload.id
@@ -34,14 +34,14 @@ export default handleActions(
 			);
 		},
 
-		[completeTodo]: (state: Todo[], action: Action): Todo[] => {
+		[completeTodo as any]: (state: Todo[], action: Action): Todo[] => {
 			return state.map(
 				(todo): Todo =>
 					todo.id === action.payload.id ? Object.assign({}, todo, { completed: !todo.completed }) : todo
 			);
 		},
 
-		[completeAll]: (state: Todo[]): Todo[] => {
+		[completeAll as any]: (state: Todo[]): Todo[] => {
 			const areAllMarked = state.every((todo): boolean => todo.completed);
 			return state.map(
 				(todo): Todo =>
@@ -51,7 +51,7 @@ export default handleActions(
 			);
 		},
 
-		[clearCompleted]: (state: Todo[]): Todo[] => {
+		[clearCompleted as any]: (state: Todo[]): Todo[] => {
 			return state.filter((todo): boolean => todo.completed === false);
 		}
 	},

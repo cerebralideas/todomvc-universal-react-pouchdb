@@ -3,26 +3,26 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import client from 'react-engine/lib/client';
 import App from './views/app';
-import { configureStore } from './store/redux-store';
-import routes from './routes/client-routes';
+import { configureStore } from './store/store.client';
+import routes from './routes/routes.client';
 
-//@ts-ignore
-console.log(WEBPACK_ENV);
+import { State } from './interfaces';
+
 //@ts-ignore
 if (WEBPACK_ENV !== 'production') {
 	let axe = require('react-axe');
 	axe(React, ReactDOM);
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", (): void => {
 
-	var serverState = client.data();
+	var serverState: State = client.data();
 	let store = configureStore({
 		todos: serverState.todos,
 		filter: serverState.filter
 	});
 
-	store.subscribe(() => { console.log(store.getState()) });
+	store.subscribe((): void => { console.log(store.getState()) });
 
 	routes(store);
 

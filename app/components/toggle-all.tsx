@@ -8,6 +8,7 @@ interface Props {
 	count: number;
 	completed: number;
 }
+
 function ToggleAll(props: Props) {
 	if (props.count > 0) {
 		return (

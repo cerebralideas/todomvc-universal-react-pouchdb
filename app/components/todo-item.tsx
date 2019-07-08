@@ -8,8 +8,8 @@ import { Todo, State } from '../interfaces';
 interface Prop {
 	todo: Todo;
 	filter: string
-
 }
+
 function TodoItem ({ todo, filter }: Prop) { // save
 
 	let isCompleted = todo.completed ? 'completed' : '',

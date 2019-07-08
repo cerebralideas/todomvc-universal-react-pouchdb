@@ -5,7 +5,7 @@ import ReactEngine from 'react-engine';
 import expressView from 'react-engine/lib/expressView';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import routes from './routes/server-routes';
+import routes from './routes/routes.server';
 
 let app = express();
 const PORT = 3000;

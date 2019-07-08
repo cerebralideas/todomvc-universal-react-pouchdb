@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = (env, argv) => ({
 	mode: argv.mode,
-	entry: './app/client.js',
+	entry: './app/index.client.js',
 	resolve: {
 		extensions: ['.js', '.jsx', '.json']
 	},

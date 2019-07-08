@@ -1,10 +1,12 @@
 import PouchDB from 'pouchdb';
 import { Observable } from 'rxjs';
 
+import { Doc } from '../interfaces';
+
 let db = new PouchDB('users');
 
 // Database GET
-export function get$(): Observable<any> {
+export function get$(): Observable<Doc> {
 	let userId = '1';
 
 	return new Observable((observer): void => {
@@ -26,7 +28,7 @@ export function get$(): Observable<any> {
 	});
 }
 // Database PUT
-export function put$(todos, doc): Observable<any> {
+export function put$(todos, doc): Observable<void> {
 	return new Observable((observer): void => {
 		db.put({
 			_id: doc._id,

@@ -4,7 +4,9 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import App from './views/app';
 
-function Layout(props: any) {
+import { State } from './interfaces';
+
+function Layout(props: State) {
 
 	let store = createStore(rootReducer, props);
 
@@ -13,7 +15,7 @@ function Layout(props: any) {
 		<head>
 			<meta charSet="utf-8" />
 			<title>Universal React • TodoMVC</title>
-			<link rel="stylesheet" href="node_modules/todomvc-app-css.css" />
+			<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css" />
 		</head>
 		<body>
 		<section className="todoapp" id="root">
