@@ -2,7 +2,7 @@
   "name": "universal-todomvc",
   "version": "2.0.0",
   "description": "A universal TodoMVC with React, Redux built with TypeScript.",
-  "main": "./app/server.js",
+  "main": "./app/index.server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/cerebralix/universal-todomvc"
@@ -23,7 +23,7 @@
     "clean": "rm -rf node_modules && git clean -fX",
     "clean:data": "rm -rf users",
     "lint": "eslint '**/*.ts' --fix",
-    "start": "NODE_ENV=production node app/server.js",
+    "start": "NODE_ENV=production node app/index.server.js",
     "start:dev": "node app/server.js",
     "test": "jest",
     "transpile": "tsc",
