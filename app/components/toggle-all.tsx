@@ -9,14 +9,14 @@ interface Props {
 	completed: number;
 }
 
-function ToggleAll(props: Props) {
-	if (props.count > 0) {
+function ToggleAll({ count, completed }: Props) {
+	if (count > 0) {
 		return (
 			<>
 				<input id="toggle-all"
 						className="toggle-all"
 						type="checkbox"
-						checked={ props.completed === props.count }
+						checked={ completed === count }
 						onChange={ completeAll }/>
 				<label htmlFor="toggle-all" />
 			</>
@@ -26,9 +26,9 @@ function ToggleAll(props: Props) {
 	}
 }
 
-export default connect((state: State) => ({
-	count: state.todos.length,
-	completed: state.todos.reduce((count, todo) => (
+export default connect(({ todos }: State) => ({
+	count: todos.length,
+	completed: todos.reduce((count, todo) => (
 			todo.completed ? count + 1 : count
 		),
 		0

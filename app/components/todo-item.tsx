@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import TodoTextInput from './todo-text-input';
-import { deleteTodo, completeTodo, editingTodo } from '../events/client-events';
+import { deleteTodo, completeTodo } from '../events/client-events';
 
 import { Todo, State } from '../interfaces';
-import { Z_FIXED } from 'zlib';
 
 interface Prop {
 	todo: Todo;
@@ -29,17 +28,18 @@ let cssDestroyForm = {
 
 function TodoItem ({ todo, filter }: Prop) { // save
 
-	let isCompleted = todo.completed ? 'completed' : '',
-		isEditing = todo.editing ? 'editing' : '',
+	let [ editing, flipEdit ] = useState(false),
 		newTodo = false,
 		element;
 
-	if (todo.editing) {
+	if (editing) {
 		element = (
 			<TodoTextInput todo={ todo }
+				editing={ editing }
+				flipEdit={ flipEdit }
 				newTodo={ newTodo }
 				filter={ filter }
-				placeholder="Leaving empty deletes todo!"/>
+				placeholder="Leaving empty deletes todo!" />
 		);
 	} else {
 		element = (
@@ -56,7 +56,7 @@ function TodoItem ({ todo, filter }: Prop) { // save
 						<button type="submit"
 							style={ cssCompleteButton }
 							onClick={ (event) => completeTodo(event, todo.id) }
-							onDoubleClick={ () => editingTodo(todo.id) }>
+							onDoubleClick={ () => flipEdit(true) }>
 							{todo.title}
 						</button>
 					</label>
@@ -77,7 +77,11 @@ function TodoItem ({ todo, filter }: Prop) { // save
 	}
 
 	return (
-		<li className={`todoItem ${isCompleted} ${isEditing}`}>
+		<li className={
+			`todoItem
+			${todo.completed ? 'completed' : ''}
+			${editing ? 'editing' : ''}`
+			}>
 			{element}
 		</li>
 	);

@@ -24,7 +24,7 @@
     "clean:data": "rm -rf users",
     "lint": "eslint '**/*.ts' --fix",
     "start": "NODE_ENV=production node app/index.server.js",
-    "start:dev": "node app/server.js",
+    "start:dev": "node app/index.server.js",
     "test": "jest",
     "transpile": "tsc",
     "watch": "chokidar -i 'node_modules' '**/*.{ts,tsx}' -c 'npm run build:dev' --initial"

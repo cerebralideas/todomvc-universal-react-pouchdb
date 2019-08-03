@@ -4,7 +4,7 @@ import TodoTextInput from './todo-text-input';
 
 import { State } from '../interfaces';
 
-function Header(props: { filter: string }) {
+function Header({ filter }: { filter: string }) {
 	let newTodo = true,
 		fakeTodo = {
 			editing: false,
@@ -16,7 +16,7 @@ function Header(props: { filter: string }) {
 			<h1>todos</h1>
 			<TodoTextInput todo={ fakeTodo }
 				newTodo={ newTodo }
-				filter={props.filter}
+				filter={filter}
 				placeholder="What needs to be done?" />
 		</header>
 	);

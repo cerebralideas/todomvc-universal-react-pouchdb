@@ -34,19 +34,19 @@ Here's the full tech-stack that we've chosen to execute this idea:
 #### A bit on the top 4:
 
 > TypeScript is a language for application-scale JavaScript development. TypeScript is a typed superset of JavaScript that compiles to plain JavaScript. Any browser. Any host. Any OS. Open Source.
-> 
+>
 > _[TypeScript - typescriptlang.org](http://typescriptlang.org)_
 
 > React is a JavaScript library for creating user interfaces. Its core principles are declarative code, efficiency, and flexibility. Simply specify what your component looks like and React will keep it up-to-date when the underlying data changes.
-> 
+>
 > _[React - facebook.github.io/react](http://facebook.github.io/react)_
 
 > Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. On top of that, it provides a great developer experience, such as live code editing combined with a time traveling debugger.
-> 
+>
 > _[Redux - http://redux.js.org/](http://redux.js.org/)_
 
 >RxJS (Reactive Extensions Library for JavaScript) is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
-> 
+>
 > _[RxJS - https://rxjs.dev/](https://rxjs.dev/)_
 
 ## Learning TypeScript
@@ -141,6 +141,7 @@ One might think, "just build an SPA that runs in the browser!" That can be done,
 - [ ] Add hot module reloading
 - [ ] Add better error handling
 - [ ] Add bulk action features to server-only w/o JS
+- [x] Use React Hooks to reduce the reliance on Redux for local state (todo editing)
 - [x] Add completion and deletion feature of todos as w/o JS feature
 - [x] Add better TypeScript definitions and typings
 - [x] Add hooks (`husky`) for Git integration and task running

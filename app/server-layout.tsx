@@ -25,10 +25,10 @@ function Layout(props: State) {
 		</section>
 		<footer className="info">
 			<p>Double-click to edit a todo</p>
-			<p>Created by <a href="http://github.com/remojansen/">Remo H. Jansen</a></p>
-			<p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+			<p>Created by <a href="http://github.com/cerebrl/">Justin Lowery</a></p>
+			<p>Inspired by <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
-		<script type="text/javascript" src="dist/bundle.js"></script>
+		<script type="text/javascript" src="build/bundle.js"></script>
 
 		</body>
 		</html>

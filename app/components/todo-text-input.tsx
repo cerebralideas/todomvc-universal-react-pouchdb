@@ -6,35 +6,47 @@ import { Todo } from '../interfaces';
 interface Props {
 	placeholder: string;
 	filter: string;
+	editing?: boolean;
+	flipEdit?: (boolean) => void;
 	todo?: Todo;
 	newTodo?: boolean;
 }
 
-function TodoTextInput(props: Props) {
-	let isEditing = props.todo.editing ? 'edit' : '';
-	let isNew = props.newTodo ? 'new-todo' : '';
+function TodoTextInput({
+		editing,
+		newTodo,
+		placeholder,
+		todo,
+		flipEdit,
+		filter
+	}: Props) {
+		let isEditing = editing ? 'edit' : '';
+		let isNew = newTodo ? 'new-todo' : '';
 
-	function saveChange(event, id) {
-		if (isEditing) {
-			formSubmission(event, id)
+		function saveChange(event, id) {
+			if (editing) {
+				formSubmission(event, id, flipEdit);
+			}
 		}
+
+		return (
+			<form id='todoForm'
+				method='POST'
+				action={ `/todos?=filter=${filter ? filter : '' }`}
+				onSubmit={
+					(event) => formSubmission(event, todo && todo.id, flipEdit)
+				}>
+
+				<input id="todoInput"
+					className={ isEditing || isNew }
+					name='title'
+					type='text'
+					placeholder={ placeholder }
+					defaultValue={ todo.title }
+					autoFocus={ editing }
+					onBlur={ (event) => saveChange(event, todo.id) } />
+			</form>
+		);
 	}
-
-	return (
-		<form id='todoForm'
-			method='POST'
-			action={ `/todos?=filter=${props.filter ? props.filter : '' }`}
-			onSubmit={ (event) => formSubmission(event, props.todo && props.todo.id) }>
-
-			<input id="todoInput"
-				className={ isEditing || isNew }
-				name='title'
-				type='text'
-				placeholder={ props.placeholder }
-				defaultValue={ props.todo.title }
-				onBlur={ (event) => saveChange(event, props.todo.id) } />
-		</form>
-	);
-}
 
 export default TodoTextInput;

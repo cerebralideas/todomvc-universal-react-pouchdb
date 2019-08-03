@@ -5,7 +5,7 @@ import { store } from '../store/store.client';
 /** *******************************
  * Client & Server Sync actions
  */
-export function formSubmission(event, id: number): void {
+export function formSubmission(event, id: number, flipEdit?): void {
 	let title: string =
 		event.currentTarget.id === 'todoForm'
 			? event.currentTarget.elements.todoInput.value
@@ -13,8 +13,11 @@ export function formSubmission(event, id: number): void {
 
 	event.preventDefault();
 
-	// Was this an edit?
-	if (id && title.length) {
+	// If adding an empty todo, just return out.
+	if (!id && !title) {
+		return;
+	} else if (id && title.length) {
+		// Was this an edit?
 		// Fire action on server
 		superagent
 			.post('/api/todos/' + id + '?type=EDIT_TODO')
@@ -22,6 +25,7 @@ export function formSubmission(event, id: number): void {
 			.end((): void => {
 				// Fire action on client
 				store.dispatch(actions.editTodo(id, title));
+				flipEdit(false);
 			});
 	} else if (id && !title) {
 		// If provided id, but title is empty delete item
@@ -74,11 +78,4 @@ export function deleteTodo(event, id: number): void {
 		// Fire action on client
 		store.dispatch(actions.deleteTodo(id));
 	});
-}
-
-/** *******************************
- * Client side only action
- */
-export function editingTodo(id: number): void {
-	store.dispatch(actions.editingTodo(id));
 }

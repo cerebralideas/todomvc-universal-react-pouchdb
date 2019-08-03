@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { addTodo, deleteTodo, editingTodo, editTodo, completeTodo, completeAll, clearCompleted } from '../actions';
+import { addTodo, deleteTodo, editTodo, completeTodo, completeAll, clearCompleted } from '../actions';
 
 import { Todo, Action } from '../interfaces';
 
@@ -9,8 +9,7 @@ export default handleActions(
 			{
 				id: state.reduce((maxId, todo): number => Math.max(todo.id, maxId), -1) + 1,
 				completed: false,
-				title: action.payload.title,
-				editing: false
+				title: action.payload.title
 			},
 			...state
 		],
@@ -19,18 +18,10 @@ export default handleActions(
 			return state.filter((todo): boolean => todo.id !== action.payload.id);
 		},
 
-		[editingTodo as any]: (state: Todo[], action: Action): Todo[] => {
-			return state.map(
-				(todo): Todo => (todo.id === action.payload.id ? Object.assign({}, todo, { editing: true }) : todo)
-			);
-		},
-
 		[editTodo as any]: (state: Todo[], action: Action): Todo[] => {
 			return state.map(
 				(todo): Todo =>
-					todo.id === action.payload.id
-						? Object.assign({}, todo, { title: action.payload.title, editing: false })
-						: todo
+					todo.id === action.payload.id ? Object.assign({}, todo, { title: action.payload.title }) : todo
 			);
 		},
 
