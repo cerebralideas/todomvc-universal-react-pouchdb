@@ -4,18 +4,18 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import App from './views/app';
 
-import { State } from './interfaces';
+import { Todo } from './interfaces';
 
-function Layout(props: State) {
+function Layout({ todos, filter, serveStatic }: { todos: Todo[], filter: string, serveStatic: boolean }) {
 
-	let store = createStore(rootReducer, props);
+	let store = createStore(rootReducer, { todos, filter });
 
 	return (
 		<html lang="en">
 		<head>
 			<meta charSet="utf-8" />
 			<title>Universal React • TodoMVC</title>
-			<link rel="stylesheet" href="node_modules/todomvc-app-css/index.css" />
+			<link rel="stylesheet" href="public/main.css" />
 		</head>
 		<body>
 		<section className="todoapp" id="root">
@@ -28,7 +28,7 @@ function Layout(props: State) {
 			<p>Created by <a href="http://github.com/cerebrl/">Justin Lowery</a></p>
 			<p>Inspired by <a href="http://todomvc.com">TodoMVC</a></p>
 		</footer>
-		<script type="text/javascript" src="build/bundle.js"></script>
+		<script type="text/javascript" src="public/main.js"></script>
 
 		</body>
 		</html>

@@ -10,6 +10,7 @@ users/
 system
 npm-debug.log
 
+public
 *.js
 *.js.map
 !react-test-setup.js

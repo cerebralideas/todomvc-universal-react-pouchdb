@@ -141,6 +141,7 @@ One might think, "just build an SPA that runs in the browser!" That can be done,
 - [ ] Add hot module reloading
 - [ ] Add better error handling
 - [ ] Add bulk action features to server-only w/o JS
+- [ ] Add server-less requtest and offline capability with PouchDB on the client
 - [x] Use React Hooks to reduce the reliance on Redux for local state (todo editing)
 - [x] Add completion and deletion feature of todos as w/o JS feature
 - [x] Add better TypeScript definitions and typings

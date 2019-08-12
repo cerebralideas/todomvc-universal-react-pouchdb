@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = (env, argv) => ({
 	mode: argv.mode,
@@ -8,12 +9,24 @@ module.exports = (env, argv) => ({
 		extensions: ['.js', '.jsx', '.json']
 	},
 	plugins: [
+		new MiniCssExtractPlugin(),
 		new webpack.DefinePlugin({
 			WEBPACK_ENV: JSON.stringify(argv.mode)
 		})
 	],
+	module: {
+		rules: [
+			{
+				test: /\.css$/i,
+				use: [
+					{ loader: MiniCssExtractPlugin.loader },
+					'css-loader'
+				]
+			}
+		]
+	},
 	output: {
-		path: path.resolve(__dirname, 'build'),
-		filename: 'bundle.js'
+		path: path.resolve(__dirname, 'public'),
+		filename: 'main.js'
 	}
 });

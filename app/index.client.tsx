@@ -6,6 +6,9 @@ import App from './views/app';
 import { configureStore } from './store/store.client';
 import routes from './routes/routes.client';
 
+import 'todomvc-app-css/index.css';
+import './views/app.css';
+
 import { State } from './interfaces';
 
 //@ts-ignore
