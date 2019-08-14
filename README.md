@@ -1,10 +1,32 @@
-# Universal TodoMVC Example
+# Universal TodoMVC Example Application
+
+## Project Intention
+
+This is not how I'd write a todo application. It's absolutely overkill. But, this is how I built the critical, complex, global applications for PayPal. So, yes, this is over-engineered for a todo app, but this is exactly what we needed to build super resilient, high availability, Web platforms to handle millions of requests a day.
+
+## Project Progress
+
+[NOTE: Each linked commit below is be a working version of the application. Earlier versions, may have some bugs. Listed from latest to oldest.]
+
+- [ ] Feature: Improve A11y
+- [ ] Feature: Add hot module reloading
+- [ ] Feature: Add better error handling
+- [ ] Feature: Add bulk action features to server-only w/o JS
+- [ ] Bug: Rewrite data handling in Redux for better array update performance
+- [x] Tech: Code cleanup and add CSS to Webpack bundling [(#b1be4df)](https://github.com/cerebralideas/todomvc-universal-react-pouchdb/commit/b1be4df629140be941fca8ca04d8aeead299326b)
+- [x] Feature: Use React Hooks to reduce the reliance on Redux (todo editing) [(#92c0ee5)](https://github.com/cerebralideas/todomvc-universal-react-pouchdb/commit/92c0ee5a1b6f1cd068a8282426cb30a7514369f8)
+- [x] Feature: Add completion and deletion feature of todos as w/o JS feature ([#1101477](https://github.com/cerebralideas/todomvc-universal-react-pouchdb/commit/1101477d65b4d90c7b905ce5bced09ab5ad45e5b) has bug though, you need the [subsequent commit as well](https://github.com/cerebralideas/todomvc-universal-react-pouchdb/commit/3492396953fba001ec57873e90ba9ca45c401e1c))
+- [x] Tech: Add better TypeScript definitions and typings
+- [x] Feature: Add hooks (`husky`) for Git integration and task running
+- [x] Feature: Add unit and integration testing (`Jest`)
+- [x] Feature: Add `react-axe` with accessibility linting and testing to project
+- [x] Feature: Implement Prettier into ESLint
+- [x] Tech: Add RxJS to add better iterative, functional style to handling async data management[(#5c578c8)](https://github.com/cerebralideas/todomvc-universal-react-pouchdb/commit/5c578c80fd11f8bbd01f31e1bc05e0a770170507)
+- [x] Tech: Add redux-actions to clean up Redux boilerplate [(#9d76749)](https://github.com/cerebralideas/todomvc-universal-react-pouchdb/commit/9d7674944857a6de6bdbbeb2552ba5ce74856207)
+- [x] Tech: Modernize all libraries, frameworks and tooling
+- [x] Tech: Switch React components to the newer, functional style (rather than class based)
 
 ## Up and Running
-
-1. Install the dependencies found in the `package.json`
-2. Compile the TypeScript to JavaScript
-3. Run the server
 
   ```
   npm install
@@ -12,7 +34,7 @@
   npm start
   ```
 
-4. Visit `localhost:3000` in your browser.
+Visit `localhost:3000` in your browser.
 
 ## What's a universal application?
 
@@ -134,22 +156,3 @@ There's even a whole online "manual": [Learn RxJS](https://www.learnrxjs.io/)
 The large majority of code is universal; the same code that is executed on the server is bundled up and deployed to the browser. The exceptions to this are `server.ts` versus `client.tsx` and the few appropriately-named `client` and `server` files throughout the project. This helps us avoid having to duplicate code, or pick an environment that most of the application runs within (as is needed with most applications).
 
 One might think, "just build an SPA that runs in the browser!" That can be done, but many times it's not optimal if you care about mobile users (especially in developing nations), SEO, or fast deep-linking. With a truly universal application, you can have the benefits of an SPA without the consequences.
-
-## TODO
-
-- [ ] Improve A11y
-- [ ] Add hot module reloading
-- [ ] Add better error handling
-- [ ] Add bulk action features to server-only w/o JS
-- [ ] Add server-less requtest and offline capability with PouchDB on the client
-- [x] Use React Hooks to reduce the reliance on Redux for local state (todo editing)
-- [x] Add completion and deletion feature of todos as w/o JS feature
-- [x] Add better TypeScript definitions and typings
-- [x] Add hooks (`husky`) for Git integration and task running
-- [x] Add unit and integration testing (`Jest`)
-- [x] Add `react-axe` with accessibility linting and testing to project
-- [x] Implement Prettier into ESLint
-- [x] Add redux-actions to clean up Redux boilerplate
-- [x] Add RxJS to normalize async related work
-- [x] Modernize all libraries, frameworks and tooling
-- [x] Switch React components to the newer, functional style (rather than class based)
